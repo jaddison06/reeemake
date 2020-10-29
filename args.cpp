@@ -12,5 +12,5 @@ ArgParser::ArgParser(int w, char *x[], std::vector<OptionalArg *> *y, std::vecto
 
 void ArgParser::ParseArgs(std::vector<std::string> *output)
 {
-
+    
 }
