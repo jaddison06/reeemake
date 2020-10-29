@@ -19,19 +19,25 @@ struct PositionalArg
     enum type {integer, decimal, string, boolean};
 };
 
+struct ReturnArg
+{
+    std::string name;
+    std::string val;
+};
+
 
 class ArgParser
 {
     public:
-        ArgParser(int, char *[], std::vector<OptionalArg *> *, std::vector<PositionalArg *> *);
-        void ParseArgs(std::vector<std::string> *);
+        ArgParser(int, std::vector<char*> *, std::vector<OptionalArg *> *, std::vector<PositionalArg *> *);
+        void ParseArgs(std::vector<ReturnArg> *);
     
     private:
         int argc;
-        std::vector<std::string> argv;
+        std::vector<char*> * argv;
         std::vector<OptionalArg *> * allowedOptionals;
         std::vector<PositionalArg *> * allowedPositionals;
 
-        
+        Logger logger{"reeemake.args"};
 
 };

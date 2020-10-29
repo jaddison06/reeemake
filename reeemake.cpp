@@ -3,11 +3,6 @@
 // TODO: filename compatibility on Windows?
 int main(int argc, char *argv[])
 {
-    ArgParser argParser(argc, argv, {}, {});
-    std::vector<std::string> parsedArgs;
-    argParser.ParseArgs(&parsedArgs);
-
-
     // init some tings
     std::string dataFolder = "./.reeemake/";
 
@@ -26,6 +21,24 @@ int main(int argc, char *argv[])
     {
         logger.warning("./.reeemake folder didn't exist, created it.");
     }
+
+    logger.debug("Initialized");
+
+    // parse da proverbial args
+
+    std::vector<char*> argvVector;
+    for (int i=0; i<argc; i++) {
+        argvVector.push_back(argv[i]);
+    }
+
+    std::vector<OptionalArg *> allowedOptionals;
+    std::vector<PositionalArg *> allowedPositionals;
+
+    ArgParser argParser(argc, &argvVector, &allowedOptionals, &allowedPositionals);
+    
+    std::vector<ReturnArg> parsedArgs;
+    argParser.ParseArgs(&parsedArgs);
+
 
     // look for reeemake config files
 
