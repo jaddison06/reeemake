@@ -50,7 +50,7 @@ for f in files:
 objFiles = f"build/objects/{'.o build/objects/'.join([ f[f.rfind('/')+1:] for f in fnames ])}.o"
 
 makefile = ""
-makefile += f"main: {objFiles}\n		g++-8 {objFiles} -o ./reeemake\n\n"
+makefile += f"main: {objFiles}\n		g++-8 {objFiles} -o ./reeemake -lstdc++fs\n\n"
 makefile += "clean:\n		rm -r ./build/objects\n		mkdir ./build/objects\n		rm ./reeemake\n\n"
 makefile += "makefile:\n		python3 ./build/generate_makefile.py\n\n"
 

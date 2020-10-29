@@ -1,5 +1,5 @@
 main: build/objects/reeemake.o build/objects/logging.o build/objects/args.o
-		g++-8 build/objects/reeemake.o build/objects/logging.o build/objects/args.o -o ./reeemake
+		g++-8 build/objects/reeemake.o build/objects/logging.o build/objects/args.o -o ./reeemake -lstdc++fs
 
 clean:
 		rm -r ./build/objects
