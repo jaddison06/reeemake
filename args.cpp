@@ -21,22 +21,47 @@ ArgParser::ArgParser(int w, std::vector<std::string> * x, std::vector<OptionalAr
     
 }
 
-void ArgParser::generateHelp()
+void ArgParser::printHelp()
 {
     logger.info("Generating help");
 
     helpText += argv->at(0) + " (version " + std::to_string(version) + ")\n" + *description;
 
     logger.debug("Help text generated:\n"+helpText);
+
+    std::cout << helpText << "\n";
+
+    logger.info("Exiting");
+    exit(0);
 }
 
 // TODO:
 // arg type checking
 // check for duplicate keys
+// make sure optionals w parameter get it
 
 void ArgParser::ParseArgs(std::vector<ReturnArg> *output)
 {
     logger.info("Parsing args");
+
+    // check that hard-coded data is fine before we start
+    // looking at user input
+    std::vector<std::string> argNames;
+    for (auto positional : *allowedPositionals)
+    {
+        if ( std::find(argNames.begin(), argNames.end(), positional->name) != argNames.end() )
+        {
+            logger.error("Argument name " + positional->name + " used more than once");
+        }
+    }
+
+    for (auto optional : *allowedOptionals)
+    {
+        if ( std::find(argNames.begin(), argNames.end(), optional->longName) != argNames.end() )
+        {
+            logger.error("Argument name " + optional->longName + " used more than once");
+        }
+    }
 
     std::vector<std::string> positionals;
     ReturnArg nextArg;
@@ -92,6 +117,12 @@ void ArgParser::ParseArgs(std::vector<ReturnArg> *output)
                 {
                     nextArg.name = argCopy.longName;
                     logger.debug("Is a valid arg");
+
+                    if ( argCopy.longName == "help" )
+                    {
+                        // exits w status 0
+                        printHelp();
+                    }
                     
                     // does the arg take a parameter ting?
                     if ( !( argCopy.type == storeTrue || argCopy.type == storeFalse ) )

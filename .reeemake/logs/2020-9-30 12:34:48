@@ -1,0 +1,24 @@
+2020-9-30 12:34:48   DEBUG (reeemake.main) Initialized
+
+2020-9-30 12:34:48   DEBUG (reeemake.args) ArgParser created
+
+2020-9-30 12:34:48   INFO (reeemake.args) Parsing args
+
+2020-9-30 12:34:48   DEBUG (reeemake.args) Got arg ./reeemake
+
+2020-9-30 12:34:48   DEBUG (reeemake.args) Is first arg - program name
+
+2020-9-30 12:34:48   DEBUG (reeemake.args) Got arg -h
+
+2020-9-30 12:34:48   DEBUG (reeemake.args) is optional switch
+
+2020-9-30 12:34:48   DEBUG (reeemake.args) is short name
+
+2020-9-30 12:34:48   DEBUG (reeemake.args) Is a valid arg
+
+2020-9-30 12:34:48   DEBUG (reeemake.args) Arg doesn't take a parameter
+
+2020-9-30 12:34:48   INFO (reeemake.main) Config arg wasn't supplied
+
+2020-9-30 12:34:48   INFO (reeemake.main) No conf files in dir, using default config
+

@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <algorithm>
 
 enum ArgType {integer, decimal, string, boolean, storeTrue, storeFalse};
 
@@ -45,7 +46,7 @@ class ArgParser
         std::string *description;
         int version;
         std::string helpText;
-        void generateHelp();
+        void printHelp();
 
         OptionalArg helpArg
         {
