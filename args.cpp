@@ -62,7 +62,7 @@ void ArgParser::ParseArgs(std::vector<ReturnArg> *output)
             logger.error("Argument name " + optional->longName + " used more than once");
         }
     }
-
+// e
     std::vector<std::string> positionals;
     ReturnArg nextArg;
 
