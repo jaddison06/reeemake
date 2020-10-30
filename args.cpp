@@ -7,6 +7,89 @@ std::string returnArgToString(ReturnArg returnArg)
     std::to_string(returnArg.receivedParameter);
 }
 
+std::string argTypeToString(ArgType argType)
+{
+    switch(argType)
+    {
+        case integer: { return "int"; }
+        case string: { return "string"; }
+        case boolean: { return "boolean"; }
+        case decimal: { return "float"; }
+        default: { return ""; }
+    }
+}
+
+bool ArgParser::isNumber(std::string arg)
+{
+    logger.debug("Checking if "+arg+" is a number");
+    char* p;
+    strtol(arg.c_str(), &p, 10);
+    bool output = (*p == 0);
+    logger.debug("Result: "+std::to_string(output));
+    return output;
+}
+
+bool ArgParser::isInt(float num)
+{
+    logger.debug("Checking if "+std::to_string(num)+" is an int");
+    bool output = ( (int)num == num );
+    logger.debug("Result: "+std::to_string(output));
+    return output;
+}
+
+bool ArgParser::checkArgType(std::string val, ArgType type)
+{
+    bool valid = true;
+    switch (type)
+    {
+        case integer:
+        {
+            // check if it's a number
+            if ( !isNumber(val) )
+            {
+                valid = false;
+            } else
+            {
+                float num = std::stof(val);
+                if ( !isInt(num) )
+                {
+                    valid = false;
+                }
+            }
+            break;
+        }
+        case decimal:
+        {
+            if ( !isNumber(val) )
+            {
+                valid = false;
+            }
+            break;
+        }
+        case boolean:
+        {
+            if ( !(val == "true" || val == "false") )
+            {
+                valid = false;
+            }
+            break;
+        }
+
+        // useless but it pleases the compiler
+        default: {}
+    }
+
+    if (valid)
+    {
+        logger.debug("Type is good");
+    } else
+    {
+        logger.debug("Type not good");
+    }
+    
+    return valid;
+}
+
 ArgParser::ArgParser(int w, std::vector<std::string> * x, std::vector<OptionalArg *> *y, std::vector<PositionalArg *> *z, std::string u, std::string *v)
 {
     argc = w;
@@ -28,9 +111,43 @@ ArgParser::ArgParser(int w, std::vector<std::string> * x, std::vector<OptionalAr
 
 void ArgParser::printHelp()
 {
+    int spacesInTab = 5;
     logger.info("Generating help");
 
-    helpText += argv->at(0) + " (version " + version + ")\n" + *description;
+    helpText += argv->at(0) + " (version " + version + ")\n" + *description+"\n\n";
+
+    // add positional args, if they exist
+    if ( allowedPositionals->size() > 0 )
+    {
+        helpText += "Positional args:\n\n";
+        for (auto positional : *allowedPositionals)
+        {
+            for (int i=0; i<spacesInTab; i++) { helpText += " "; }
+
+            helpText +=positional->name + " : " + positional->description;
+            if ( !(argTypeToString(positional->type) == "") )
+            {
+                helpText += " ("+argTypeToString(positional->type)+")";
+            }
+            helpText += "\n\n";
+        }
+    }
+
+    // same for optionals
+    if ( allowedOptionals->size() > 0 )
+    {
+        helpText += "Optional args:\n\n";
+        for (auto optional : *allowedOptionals)
+        {
+            for (int i=0; i<spacesInTab; i++) { helpText += " "; }
+            helpText += "-"+optional->shortName + ", --"+optional->longName+" : " + optional->description;
+            if ( !(argTypeToString(optional->type) == "") )
+            {
+                helpText += " ("+argTypeToString(optional->type)+")";
+            }
+            helpText += "\n\n";
+        }
+    }
 
     logger.debug("Help text generated:\n"+helpText);
 
@@ -49,19 +166,8 @@ void ArgParser::ParseArgs(std::vector<ReturnArg> *output)
     // looking at user input
 
     logger.debug("Checking for duplicate arg names");
+
     std::vector<std::string> argNames;
-    for (auto positional : *allowedPositionals)
-    {
-        logger.debug("Checking positional " + positional->name);
-        if ( std::find(argNames.begin(), argNames.end(), positional->name) != argNames.end() )
-        {
-            logger.error("Argument name " + positional->name + " used more than once");
-        } else
-        {
-            logger.debug("Positional "+positional->name+" OK");
-            argNames.push_back(positional->name);
-        }
-    }
 
     for (auto optional : *allowedOptionals)
     {
@@ -73,6 +179,26 @@ void ArgParser::ParseArgs(std::vector<ReturnArg> *output)
         {
             logger.debug("Optional "+optional->longName+" OK");
             argNames.push_back(optional->longName);
+        }
+    }
+
+    // in positionals, also check that it's not storeTrue/False
+    for (auto positional : *allowedPositionals)
+    {
+        logger.debug("Checking positional " + positional->name);
+
+        if (positional->type == storeTrue || positional->type == storeFalse)
+        {
+            logger.error("Positional arg cannot be of type storeTrue or storeFalse");
+        }
+
+        if ( std::find(argNames.begin(), argNames.end(), positional->name) != argNames.end() )
+        {
+            logger.error("Argument name " + positional->name + " used more than once");
+        } else
+        {
+            logger.debug("Positional "+positional->name+" OK");
+            argNames.push_back(positional->name);
         }
     }
 
@@ -115,7 +241,6 @@ void ArgParser::ParseArgs(std::vector<ReturnArg> *output)
                             argCopy = *optional;
                             
                             validArg = true;
-                            break;
                         }
                     }
                 } else {
@@ -127,7 +252,6 @@ void ArgParser::ParseArgs(std::vector<ReturnArg> *output)
                             argCopy = *optional;
                             
                             validArg = true;
-                            break;
                         }
                     }
                 }
@@ -180,29 +304,13 @@ void ArgParser::ParseArgs(std::vector<ReturnArg> *output)
                 if ( nextArg.needsParameter )
                 {
                     logger.debug("is a value for an optional arg");
+                    nextArg.val = arg;
 
                     logger.debug("Checking type");
-                    switch (nextArg.type)
+                    if (!checkArgType(nextArg.val, nextArg.type))
                     {
-                        case integer:
-                        {
-                            bool invalid = false;
-                            // check if it's a number
-                            if ( "isn't a number" )
-                            {
-                                invalid = true;
-                            } else
-                            {
-                                // get number, then check if it's an int
-                            }
-
-                            if (invalid)
-                            {
-                                logger.error("Arg "+nextArg.name+" must be a valid int");
-                            }
-                        }
+                        logger.error("Arg "+nextArg.name+" must be the correct type, use --help for more.");
                     }
-
 
                     nextArg.needsParameter = false;
                     // name should already be there, so whack in the val & push
@@ -220,37 +328,45 @@ void ArgParser::ParseArgs(std::vector<ReturnArg> *output)
             }
         } else
         {
-
             logger.debug("Is first arg - program name");
             firstArg = false;
         }
-
-        // at this point all optionals should have
-        // been parsed, now for positionals
-        if ( !(positionals.size() == allowedPositionals->size()) )
-        {
-            // ewww
-            logger.error("Received "+std::to_string(positionals.size())+" positional arguments, was expecting "+std::to_string(allowedPositionals->size()));
-        } else
-        {
-            // all good, parse da positional tingz
-            
-            for ( int i=0; i<positionals.size(); i++ )
-            {
-                ReturnArg returnArg
-                {
-                    allowedPositionals->at(i)->name,
-                    positionals.at(i)
-                };
-                output->push_back(returnArg);
-            }
-        }
     }
 
-    // if the last arg is missing a parameter, we shouldddd catch it here
-        if (nextArg.needsParameter && !nextArg.receivedParameter)
+
+    // at this point all optionals should have
+    // been parsed, now for positionals
+    if ( !(positionals.size() == allowedPositionals->size()) )
+    {
+        // ewww
+        logger.error("Received "+std::to_string(positionals.size())+" positional arguments, was expecting "+std::to_string(allowedPositionals->size()));
+    } else
+    {
+        // all good, parse da positional tingz
+        
+        for ( int i=0; i<positionals.size(); i++ )
         {
-            logger.error("Optional arg "+nextArg.name+" needed a parameter");
+            // check type
+            if (!checkArgType(positionals.at(i), allowedPositionals->at(i)->type))
+            {
+                logger.error("Arg "+allowedPositionals->at(i)->name+" must be the correct type, use --help for more.");
+            }
+
+            ReturnArg returnArg
+            {
+                allowedPositionals->at(i)->name,
+                positionals.at(i),
+                false, false
+            };
+            output->push_back(returnArg);
         }
+    }
+    
+
+    // if the last arg is missing a parameter, we shouldddd catch it here
+    if (nextArg.needsParameter && !nextArg.receivedParameter)
+    {
+        logger.error("Optional arg "+nextArg.name+" needed a parameter");
+    }
 
 }

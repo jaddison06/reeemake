@@ -1,0 +1,60 @@
+2020-9-30 20:55:53   DEBUG (./reeemake.main) Initialized
+
+2020-9-30 20:55:53   INFO (./reeemake.args) Super-Fast, Cross-Platform Build System For C++! Simple And Exciting! (version 0.1)
+
+2020-9-30 20:55:53   DEBUG (./reeemake.args) ArgParser created
+
+2020-9-30 20:55:53   INFO (./reeemake.args) Parsing args
+
+2020-9-30 20:55:53   DEBUG (./reeemake.args) Checking for duplicate arg names
+
+2020-9-30 20:55:53   DEBUG (./reeemake.args) Checking optional conf
+
+2020-9-30 20:55:53   DEBUG (./reeemake.args) Optional conf OK
+
+2020-9-30 20:55:53   DEBUG (./reeemake.args) Checking optional bonk
+
+2020-9-30 20:55:53   DEBUG (./reeemake.args) Optional bonk OK
+
+2020-9-30 20:55:53   DEBUG (./reeemake.args) Checking optional help
+
+2020-9-30 20:55:53   DEBUG (./reeemake.args) Optional help OK
+
+2020-9-30 20:55:53   DEBUG (./reeemake.args) Checking positional conk
+
+2020-9-30 20:55:53   DEBUG (./reeemake.args) Positional conk OK
+
+2020-9-30 20:55:53   DEBUG (./reeemake.args) Got arg ./reeemake
+
+2020-9-30 20:55:53   DEBUG (./reeemake.args) Is first arg - program name
+
+2020-9-30 20:55:53   DEBUG (./reeemake.args) Got arg -h
+
+2020-9-30 20:55:53   DEBUG (./reeemake.args) is optional switch
+
+2020-9-30 20:55:53   DEBUG (./reeemake.args) is short name
+
+2020-9-30 20:55:53   DEBUG (./reeemake.args) Is a valid arg
+
+2020-9-30 20:55:53   INFO (./reeemake.args) Generating help
+
+2020-9-30 20:55:53   DEBUG (./reeemake.args) Help text generated:
+./reeemake (version 0.1)
+Super-Fast, Cross-Platform Build System For C++! Simple And Exciting!
+
+Positional args:
+
+     conk : conk dat ting (float)
+
+Optional args:
+
+     -c, --conf : Configuration file to read from (string)
+
+     -b, --bonk : bonk dat ting (int)
+
+     -h, --help : Show help and exit
+
+
+
+2020-9-30 20:55:53   INFO (./reeemake.args) Exiting
+

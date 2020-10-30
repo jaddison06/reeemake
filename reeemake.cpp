@@ -41,6 +41,21 @@ int main(int argc, char *argv[])
         string
     };
 
+    OptionalArg test1
+    {
+        "b",
+        "bonk",
+        "bonk dat ting",
+        integer
+    };
+
+    PositionalArg test2
+    {
+        "conk",
+        "conk dat ting",
+        decimal
+    };
+
 
     std::vector<OptionalArg *> allowedOptionals {&conf};
     std::vector<PositionalArg *> allowedPositionals {};

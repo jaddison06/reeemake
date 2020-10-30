@@ -1,0 +1,32 @@
+2020-9-30 20:29:45   DEBUG (./reeemake.main) Initialized
+
+2020-9-30 20:29:45   INFO (./reeemake.args) Super-Fast, Cross-Platform Build System For C++! Simple And Exciting! (version 0.1)
+
+2020-9-30 20:29:45   DEBUG (./reeemake.args) ArgParser created
+
+2020-9-30 20:29:45   INFO (./reeemake.args) Parsing args
+
+2020-9-30 20:29:45   DEBUG (./reeemake.args) Checking for duplicate arg names
+
+2020-9-30 20:29:45   DEBUG (./reeemake.args) Checking optional conf
+
+2020-9-30 20:29:45   DEBUG (./reeemake.args) Optional conf OK
+
+2020-9-30 20:29:45   DEBUG (./reeemake.args) Checking optional bonk
+
+2020-9-30 20:29:45   DEBUG (./reeemake.args) Optional bonk OK
+
+2020-9-30 20:29:45   DEBUG (./reeemake.args) Checking optional help
+
+2020-9-30 20:29:45   DEBUG (./reeemake.args) Optional help OK
+
+2020-9-30 20:29:45   DEBUG (./reeemake.args) Checking positional conk
+
+2020-9-30 20:29:45   DEBUG (./reeemake.args) Positional conk OK
+
+2020-9-30 20:29:45   DEBUG (./reeemake.args) Got arg ./reeemake
+
+2020-9-30 20:29:45   DEBUG (./reeemake.args) Is first arg - program name
+
+2020-9-30 20:29:45   WARNING (./reeemake.args) Error - Received 0 positional arguments, was expecting 1
+

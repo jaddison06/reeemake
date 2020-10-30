@@ -1,0 +1,58 @@
+2020-9-30 20:41:34   DEBUG (./reeemake.main) Initialized
+
+2020-9-30 20:41:34   INFO (./reeemake.args) Super-Fast, Cross-Platform Build System For C++! Simple And Exciting! (version 0.1)
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) ArgParser created
+
+2020-9-30 20:41:34   INFO (./reeemake.args) Parsing args
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) Checking for duplicate arg names
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) Checking optional conf
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) Optional conf OK
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) Checking optional bonk
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) Optional bonk OK
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) Checking optional help
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) Optional help OK
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) Checking positional conk
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) Positional conk OK
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) Got arg ./reeemake
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) Is first arg - program name
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) Got arg 3
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) isn't a switch
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) is a positional arg
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) Got arg -b
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) is optional switch
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) is short name
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) Is a valid arg
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) Arg takes a parameter
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) Got arg 12
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) isn't a switch
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) is a value for an optional arg
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) Checking type
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) Checking if  is a number
+
+2020-9-30 20:41:34   DEBUG (./reeemake.args) Result: 1
+

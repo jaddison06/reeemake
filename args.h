@@ -52,6 +52,10 @@ class ArgParser
         std::string helpText;
         void printHelp();
 
+        bool isNumber(std::string);
+        bool isInt(float);
+        bool checkArgType(std::string, ArgType);
+
         OptionalArg helpArg
         {
             "h",
