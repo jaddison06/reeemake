@@ -4,7 +4,8 @@ std::string returnArgToString(ReturnArg returnArg)
 {
     return returnArg.name + ", " + returnArg.val + "\n" +
     std::to_string(returnArg.needsParameter) + " " +
-    std::to_string(returnArg.receivedParameter);
+    std::to_string(returnArg.receivedParameter) + "\n" +
+    argTypeToString(returnArg.type) + "\n";
 }
 
 std::string argTypeToString(ArgType argType)
@@ -90,6 +91,43 @@ bool ArgParser::checkArgType(std::string val, ArgType type)
     return valid;
 }
 
+void ArgParser::addReturnArgToOutput(std::vector<ParserOutputItem> *output, ReturnArg *arg)
+{
+    logger.info("Adding return arg to output:\n"+returnArgToString(*arg));
+    
+    // does the output already have a ParserOutputItem for this?
+    ParserOutputItem *outputItem;
+    std::cout << "e" << outputItem << std::endl;
+    bool itemExists = false;
+    for (auto item : *output)
+    {
+        if (item.name == arg->name)
+        {
+            itemExists = true;
+            outputItem = &item;
+        }
+    }
+
+
+    if (itemExists)
+    {
+        logger.debug("Output already has a ParserOutputItem for this, adding it");
+    } else
+    {
+        logger.debug("Output doesn't have a ParserOutputItem for this, creating one");
+        ParserOutputItem newItem;
+        newItem.name = arg->name;
+        outputItem = &newItem;
+    }
+
+    // TODO:
+    // SEGFAULTS because outputItem->argInstances is read-only
+    // fix: create copy and then send back?
+    outputItem->argInstances.push_back(*arg);
+    
+    output->push_back(*outputItem);
+}
+
 ArgParser::ArgParser(int w, std::vector<std::string> * x, std::vector<OptionalArg *> *y, std::vector<PositionalArg *> *z, std::string u, std::string *v)
 {
     argc = w;
@@ -158,7 +196,7 @@ void ArgParser::printHelp()
 }
 
 
-void ArgParser::ParseArgs(std::vector<ReturnArg> *output)
+void ArgParser::ParseArgs(std::vector<ParserOutputItem> *output)
 {
     logger.info("Parsing args");
 
@@ -259,8 +297,10 @@ void ArgParser::ParseArgs(std::vector<ReturnArg> *output)
                 // stuff for all optionals
                 if ( validArg )
                 {
-                    nextArg.name = argCopy.longName;
                     logger.debug("Is a valid arg");
+                    
+                    nextArg.name = argCopy.longName;
+                    nextArg.fmt = optional;
 
                     if ( argCopy.longName == "help" )
                     {
@@ -290,7 +330,7 @@ void ArgParser::ParseArgs(std::vector<ReturnArg> *output)
                             nextArg.val = "false";
                         }
 
-                        output->push_back(nextArg);
+                        addReturnArgToOutput(output, &nextArg);
                     }
                 } else
                 {
@@ -316,7 +356,7 @@ void ArgParser::ParseArgs(std::vector<ReturnArg> *output)
                     // name should already be there, so whack in the val & push
                     nextArg.val = arg;
                     nextArg.receivedParameter = true;
-                    output->push_back(nextArg);
+                    addReturnArgToOutput(output, &nextArg);
 
                 } else
                 {
@@ -333,6 +373,33 @@ void ArgParser::ParseArgs(std::vector<ReturnArg> *output)
         }
     }
 
+    // check if any illegal duplicates exist
+    logger.debug("Checking for illegal duplicates");
+    for (auto item : *output)
+    {
+        // only check optionals
+        if (item.argInstances.at(0).fmt == optional)
+        {
+            // is it allowed duplicates?
+            OptionalArg *original;
+            for (auto optional : *allowedOptionals)
+            {
+                if (optional->longName == item.argInstances.at(0).name) { original = optional; }
+            }
+
+            if (!original->duplicatesAllowed)
+            {
+                logger.debug(original->longName + " isn't allowed duplicates, checking");
+                if (item.argInstances.size() > 1)
+                {
+                    logger.error("Argument "+original->longName+" cannot be used more than once");
+                } else
+                {
+                    logger.debug("Argument "+original->longName+" didn't have any illegal duplicates");
+                }
+            }
+        }
+    }
 
     // at this point all optionals should have
     // been parsed, now for positionals
@@ -356,9 +423,11 @@ void ArgParser::ParseArgs(std::vector<ReturnArg> *output)
             {
                 allowedPositionals->at(i)->name,
                 positionals.at(i),
-                false, false
+                false, false,
+                allowedPositionals->at(i)->type,
+                positional
             };
-            output->push_back(returnArg);
+            addReturnArgToOutput(output, &returnArg);
         }
     }
     

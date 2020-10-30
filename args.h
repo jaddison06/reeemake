@@ -8,6 +8,7 @@
 
 // don't use this in namespace std cause string will collide
 enum ArgType {integer, decimal, string, boolean, storeTrue, storeFalse};
+enum ArgFmt {positional, optional};
 
 struct OptionalArg
 {
@@ -15,6 +16,7 @@ struct OptionalArg
     std::string longName;
     std::string description;
     ArgType type;
+    bool duplicatesAllowed;
 };
 
 struct PositionalArg
@@ -31,15 +33,23 @@ struct ReturnArg
     bool needsParameter = false;
     bool receivedParameter = true;
     ArgType type;
+    ArgFmt fmt;
+};
+
+struct ParserOutputItem
+{
+    std::vector<ReturnArg> argInstances;
+    std::string name;
 };
 
 std::string returnArgToString(ReturnArg);
+std::string argTypeToString(ArgType);
 
 class ArgParser
 {
     public:
         ArgParser(int, std::vector<std::string> *, std::vector<OptionalArg *> *, std::vector<PositionalArg *> *, std::string, std::string *);
-        void ParseArgs(std::vector<ReturnArg> *);
+        void ParseArgs(std::vector<ParserOutputItem> *);
     
     private:
         int argc;
@@ -55,6 +65,8 @@ class ArgParser
         bool isNumber(std::string);
         bool isInt(float);
         bool checkArgType(std::string, ArgType);
+
+        void addReturnArgToOutput(std::vector<ParserOutputItem> *, ReturnArg *);
 
         OptionalArg helpArg
         {

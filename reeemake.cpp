@@ -38,7 +38,8 @@ int main(int argc, char *argv[])
         "c",
         "conf",
         "Configuration file to read from",
-        string
+        string,
+        false
     };
 
     OptionalArg test1
@@ -46,7 +47,8 @@ int main(int argc, char *argv[])
         "b",
         "bonk",
         "bonk dat ting",
-        integer
+        integer,
+        true
     };
 
     PositionalArg test2
@@ -63,15 +65,20 @@ int main(int argc, char *argv[])
     std::string description = DESCRIPTION;
     ArgParser argParser(argc, &argvVector, &allowedOptionals, &allowedPositionals, VERSION, &description);
     
-    std::vector<ReturnArg> parsedArgs;
+    std::vector<ParserOutputItem> parsedArgs;
     argParser.ParseArgs(&parsedArgs);
 
-    /*
-    for (auto arg : parsedArgs)
+    
+    for (auto item : parsedArgs)
     {
-        std::cout << returnArgToString(arg) << "\n\n";
+        std::cout << item.name << "\n";
+        for (auto arg : item.argInstances)
+        {
+            std::cout << returnArgToString(arg) << "\n";
+        }
+        std::cout << "\n\n";
     }
-    */
+    
 
     // look for reeemake config files
 
@@ -91,7 +98,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    std::string configToUse = "";
+    std::string configToUse = "default";
 
     // figure out what we're gonna do
 
@@ -100,11 +107,10 @@ int main(int argc, char *argv[])
     ReturnArg confArg;
     for ( auto arg : parsedArgs )
     {
-        if ( arg.name == "conf" )
+        if ( arg.name == "conf" && arg.argInstances.size() > 0 )
         {
             confArgSupplied = true;
-            confArg = arg;
-            break;
+            confArg = arg.argInstances.at(0);
         }
     }
 
@@ -126,6 +132,16 @@ int main(int argc, char *argv[])
         {
             logger.error("More than one config file present - please specify one with the --conf option");
         }
+    }
+
+    // pre-build stuff
+
+
+    fs::path configPath("./.reeemake/" + configToUse + "/");
+    if ( !(fs::exists(configPath) && fs::is_directory(configPath)) )
+    {
+        logger.warning("");
+        fs::create_directories(configPath);
     }
 
 

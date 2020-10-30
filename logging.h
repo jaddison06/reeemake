@@ -26,6 +26,7 @@ class Logger
         void error(std::string);
 
         bool enableDebug = true;
+        bool printLogs = false;
     
     private:
         void setup(std::string);

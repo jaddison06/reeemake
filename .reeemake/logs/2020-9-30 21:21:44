@@ -1,0 +1,66 @@
+2020-9-30 21:21:44   DEBUG (./reeemake.main) Initialized
+
+2020-9-30 21:21:44   INFO (./reeemake.args) Super-Fast, Cross-Platform Build System For C++! Simple And Exciting! (version 0.1)
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) ArgParser created
+
+2020-9-30 21:21:44   INFO (./reeemake.args) Parsing args
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) Checking for duplicate arg names
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) Checking optional conf
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) Optional conf OK
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) Checking optional help
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) Optional help OK
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) Got arg ./reeemake
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) Is first arg - program name
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) Got arg -c
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) is optional switch
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) is short name
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) Is a valid arg
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) Arg takes a parameter
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) Got arg yeet
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) isn't a switch
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) is a value for an optional arg
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) Checking type
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) Type is good
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) Got arg -c
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) is optional switch
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) is short name
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) Is a valid arg
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) Arg takes a parameter
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) Got arg dummy
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) isn't a switch
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) is a value for an optional arg
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) Checking type
+
+2020-9-30 21:21:44   DEBUG (./reeemake.args) Type is good
+
+2020-9-30 21:21:44   INFO (./reeemake.main) Config arg was supplied, using it
+
+2020-9-30 21:21:44   WARNING (./reeemake.main) 
+

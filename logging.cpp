@@ -134,8 +134,12 @@ std::string Logger::fmtLog(std::string *level, std::string *msg)
 void Logger::writeLog(std::string level, std::string *msg)
 {    
     std::string output = fmtLog(&level, msg);
-    //std::cout << output;
     logfile << output;
 
     logfile.flush();
+
+    if (printLogs)
+    {
+        std::cout << output << std::endl;
+    }
 }
