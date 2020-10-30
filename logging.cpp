@@ -85,7 +85,10 @@ void Logger::destroy()
 // wrappers for various log levels
 void Logger::debug(std::string msg)
 {
-    writeLog("DEBUG", &msg);
+    if (enableDebug)
+    {
+        writeLog("DEBUG", &msg);
+    }
 }
 
 void Logger::info(std::string msg)

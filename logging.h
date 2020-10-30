@@ -24,6 +24,8 @@ class Logger
         void warning(std::string);
         
         void error(std::string);
+
+        bool enableDebug = true;
     
     private:
         void setup(std::string);
