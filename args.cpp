@@ -2,13 +2,13 @@
 
 std::string returnArgToString(ReturnArg returnArg)
 {
-    return returnArg.name + ", " + returnArg.val;
+    return returnArg.name + ", " + returnArg.val + "\n" +
+    std::to_string(returnArg.needsParameter) + " " +
+    std::to_string(returnArg.receivedParameter);
 }
 
-ArgParser::ArgParser(int w, std::vector<std::string> * x, std::vector<OptionalArg *> *y, std::vector<PositionalArg *> *z, int u, std::string *v)
+ArgParser::ArgParser(int w, std::vector<std::string> * x, std::vector<OptionalArg *> *y, std::vector<PositionalArg *> *z, std::string u, std::string *v)
 {
-    logger.debug("ArgParser created");
-    
     argc = w;
     argv = x;
     allowedOptionals = y;
@@ -18,6 +18,11 @@ ArgParser::ArgParser(int w, std::vector<std::string> * x, std::vector<OptionalAr
     description = v;
 
     allowedOptionals->push_back(&helpArg);
+
+    logger.setSender(argv->at(0)+".args");
+    logger.info(*description + " (version "+version+")");
+
+    logger.debug("ArgParser created");
     
 }
 
@@ -25,7 +30,7 @@ void ArgParser::printHelp()
 {
     logger.info("Generating help");
 
-    helpText += argv->at(0) + " (version " + std::to_string(version) + ")\n" + *description;
+    helpText += argv->at(0) + " (version " + version + ")\n" + *description;
 
     logger.debug("Help text generated:\n"+helpText);
 
@@ -35,10 +40,6 @@ void ArgParser::printHelp()
     exit(0);
 }
 
-// TODO:
-// arg type checking
-// check for duplicate keys
-// make sure optionals w parameter get it
 
 void ArgParser::ParseArgs(std::vector<ReturnArg> *output)
 {
@@ -46,27 +47,40 @@ void ArgParser::ParseArgs(std::vector<ReturnArg> *output)
 
     // check that hard-coded data is fine before we start
     // looking at user input
+
+    logger.debug("Checking for duplicate arg names");
     std::vector<std::string> argNames;
     for (auto positional : *allowedPositionals)
     {
+        logger.debug("Checking positional " + positional->name);
         if ( std::find(argNames.begin(), argNames.end(), positional->name) != argNames.end() )
         {
             logger.error("Argument name " + positional->name + " used more than once");
+        } else
+        {
+            logger.debug("Positional "+positional->name+" OK");
+            argNames.push_back(positional->name);
         }
     }
 
     for (auto optional : *allowedOptionals)
     {
+        logger.debug("Checking optional "+optional->longName);
         if ( std::find(argNames.begin(), argNames.end(), optional->longName) != argNames.end() )
         {
             logger.error("Argument name " + optional->longName + " used more than once");
+        } else
+        {
+            logger.debug("Optional "+optional->longName+" OK");
+            argNames.push_back(optional->longName);
         }
     }
-// e
+
+
+    // now parse all args
     std::vector<std::string> positionals;
     ReturnArg nextArg;
 
-    bool nextArgIsValue = false;
     bool firstArg = true;
     for (auto arg : *argv)
     {
@@ -80,6 +94,12 @@ void ArgParser::ParseArgs(std::vector<ReturnArg> *output)
             {
                 
                 logger.debug("is optional switch");
+
+                if (nextArg.needsParameter)
+                {
+                    // oops, there should've been a value before this
+                    logger.error("Optional arg "+nextArg.name+" needed a parameter");
+                }
 
                 bool validArg = false;
                 OptionalArg argCopy;
@@ -128,10 +148,13 @@ void ArgParser::ParseArgs(std::vector<ReturnArg> *output)
                     if ( !( argCopy.type == storeTrue || argCopy.type == storeFalse ) )
                     {
                         logger.debug("Arg takes a parameter");
-                        nextArgIsValue = true;
+                        nextArg.needsParameter = true;
+                        nextArg.receivedParameter = false;
                     } else
                     {
                         logger.debug("Arg doesn't take a parameter");
+
+                        nextArg.needsParameter = false;
 
                         // we've already got the name, so now add the val & push it
                         if ( argCopy.type == storeTrue )
@@ -153,12 +176,13 @@ void ArgParser::ParseArgs(std::vector<ReturnArg> *output)
 
             } else {
                 logger.debug("isn't a switch");
-                if ( nextArgIsValue )
+                if ( nextArg.needsParameter )
                 {
                     logger.debug("is a value for an optional arg");
-                    nextArgIsValue = false;
+                    nextArg.needsParameter = false;
                     // name should already be there, so whack in the val & push
                     nextArg.val = arg;
+                    nextArg.receivedParameter = true;
                     output->push_back(nextArg);
 
                 } else
@@ -197,4 +221,11 @@ void ArgParser::ParseArgs(std::vector<ReturnArg> *output)
             }
         }
     }
+
+    // if the last arg is missing a parameter, we shouldddd catch it here
+        if (nextArg.needsParameter && !nextArg.receivedParameter)
+        {
+            logger.error("Optional arg "+nextArg.name+" needed a parameter");
+        }
+
 }

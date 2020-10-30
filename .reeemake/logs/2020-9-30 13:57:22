@@ -1,0 +1,26 @@
+2020-9-30 13:57:22   DEBUG (./test.main) Initialized
+
+2020-9-30 13:57:22   DEBUG (./test.args) ArgParser created
+
+2020-9-30 13:57:22   INFO (./test.args) Super-Fast, Cross-Platform Build System For C++! Simple And Exciting!
+
+2020-9-30 13:57:22   INFO (./test.args) Parsing args
+
+2020-9-30 13:57:22   DEBUG (./test.args) Checking for duplicate arg names
+
+2020-9-30 13:57:22   DEBUG (./test.args) Checking optional conf
+
+2020-9-30 13:57:22   DEBUG (./test.args) Optional conf OK
+
+2020-9-30 13:57:22   DEBUG (./test.args) Checking optional help
+
+2020-9-30 13:57:22   DEBUG (./test.args) Optional help OK
+
+2020-9-30 13:57:22   DEBUG (./test.args) Got arg ./test
+
+2020-9-30 13:57:22   DEBUG (./test.args) Is first arg - program name
+
+2020-9-30 13:57:22   INFO (./test.main) Config arg wasn't supplied
+
+2020-9-30 13:57:22   INFO (./test.main) No conf files in dir, using default config
+

@@ -1,6 +1,6 @@
 #include "reeemake.h"
 
-// TODO: filename compatibility on Windows?
+
 int main(int argc, char *argv[])
 {
     // init some tings
@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     std::string logFolder = dataFolder + "logs/";
     initLogging(&logFolder);
 
-    Logger logger("reeemake.main");
+    Logger logger((std::string)argv[0] + ".main");
     if (!folderExisted)
     {
         logger.warning("./.reeemake folder didn't exist, created it.");
@@ -32,7 +32,6 @@ int main(int argc, char *argv[])
     }
 
     
-
     // config file to use
     OptionalArg conf
     {
@@ -42,8 +41,9 @@ int main(int argc, char *argv[])
         string
     };
 
+
     std::vector<OptionalArg *> allowedOptionals {&conf};
-    std::vector<PositionalArg *> allowedPositionals;
+    std::vector<PositionalArg *> allowedPositionals {};
 
     std::string description = DESCRIPTION;
     ArgParser argParser(argc, &argvVector, &allowedOptionals, &allowedPositionals, VERSION, &description);
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
     /*
     for (auto arg : parsedArgs)
     {
-        std::cout << returnArgToString(arg) << "\n";
+        std::cout << returnArgToString(arg) << "\n\n";
     }
     */
 
@@ -105,15 +105,15 @@ int main(int argc, char *argv[])
             logger.info("No conf files in dir, using default config");
         } else if ( configFiles.size() == 1 )
         {
-            logger.info("Only 1 conf file in the dir, using it");
             configToUse = configFiles.at(0);
+            logger.info("Only 1 conf file in the dir ("+configToUse+"), using it");
         } else
         {
             logger.error("More than one config file present - please specify one with the --conf option");
         }
     }
 
-    
+
 
 
 

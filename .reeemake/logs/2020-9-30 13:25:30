@@ -1,0 +1,16 @@
+2020-9-30 13:25:30   DEBUG (reeemake.main) Initialized
+
+2020-9-30 13:25:30   DEBUG (reeemake.args) ArgParser created
+
+2020-9-30 13:25:30   INFO (reeemake.args) Parsing args
+
+2020-9-30 13:25:30   DEBUG (reeemake.args) Checking for duplicate arg names
+
+2020-9-30 13:25:30   DEBUG (reeemake.args) Checking optional conf
+
+2020-9-30 13:25:30   DEBUG (reeemake.args) Optional conf OK
+
+2020-9-30 13:25:30   DEBUG (reeemake.args) Checking optional conf
+
+2020-9-30 13:25:30   WARNING (reeemake.args) Error - Argument name conf used more than once
+

@@ -6,6 +6,7 @@
 #include <iostream>
 #include <algorithm>
 
+// don't use this in namespace std cause string will collide
 enum ArgType {integer, decimal, string, boolean, storeTrue, storeFalse};
 
 struct OptionalArg
@@ -27,6 +28,8 @@ struct ReturnArg
 {
     std::string name;
     std::string val;
+    bool needsParameter = false;
+    bool receivedParameter = true;
 };
 
 std::string returnArgToString(ReturnArg);
@@ -34,7 +37,7 @@ std::string returnArgToString(ReturnArg);
 class ArgParser
 {
     public:
-        ArgParser(int, std::vector<std::string> *, std::vector<OptionalArg *> *, std::vector<PositionalArg *> *, int, std::string *);
+        ArgParser(int, std::vector<std::string> *, std::vector<OptionalArg *> *, std::vector<PositionalArg *> *, std::string, std::string *);
         void ParseArgs(std::vector<ReturnArg> *);
     
     private:
@@ -44,7 +47,7 @@ class ArgParser
         std::vector<PositionalArg *> * allowedPositionals;
 
         std::string *description;
-        int version;
+        std::string version;
         std::string helpText;
         void printHelp();
 
@@ -56,6 +59,6 @@ class ArgParser
             storeTrue
         };
 
-        Logger logger{"reeemake.args"};
+        Logger logger;
 
 };
