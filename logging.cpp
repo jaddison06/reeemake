@@ -98,6 +98,15 @@ void Logger::warning(std::string msg)
     writeLog("WARNING", &msg);
 }
 
+void Logger::error(std::string msg)
+{
+    msg = "Error - " + msg;
+    warning(msg);
+    std::cout << msg << "\n";
+
+    exit(69);
+}
+
 // format a log entry
 std::string Logger::fmtLog(std::string *level, std::string *msg)
 {

@@ -26,19 +26,37 @@ int main(int argc, char *argv[])
 
     // parse da proverbial args
 
-    std::vector<char*> argvVector;
+    std::vector<std::string> argvVector;
     for (int i=0; i<argc; i++) {
-        argvVector.push_back(argv[i]);
+        argvVector.push_back((std::string)argv[i]);
     }
 
-    std::vector<OptionalArg *> allowedOptionals;
+    
+
+    // config file to use
+    OptionalArg conf
+    {
+        "c",
+        "conf",
+        "Configuration file to read from",
+        string
+    };
+
+    std::vector<OptionalArg *> allowedOptionals {&conf};
     std::vector<PositionalArg *> allowedPositionals;
 
-    ArgParser argParser(argc, &argvVector, &allowedOptionals, &allowedPositionals);
+    std::string description = DESCRIPTION;
+    ArgParser argParser(argc, &argvVector, &allowedOptionals, &allowedPositionals, VERSION, &description);
     
     std::vector<ReturnArg> parsedArgs;
     argParser.ParseArgs(&parsedArgs);
 
+    /*
+    for (auto arg : parsedArgs)
+    {
+        std::cout << returnArgToString(arg) << "\n";
+    }
+    */
 
     // look for reeemake config files
 
@@ -57,6 +75,45 @@ int main(int argc, char *argv[])
             }
         }
     }
+
+    std::string configToUse = "";
+
+    // figure out what we're gonna do
+
+    // were we given the conf arg?
+    bool confArgSupplied = false;
+    ReturnArg confArg;
+    for ( auto arg : parsedArgs )
+    {
+        if ( arg.name == "conf" )
+        {
+            confArgSupplied = true;
+            confArg = arg;
+            break;
+        }
+    }
+
+    if ( confArgSupplied )
+    {
+        logger.info("Config arg was supplied, using it");
+        configToUse = confArg.val;
+    } else
+    {
+        logger.info("Config arg wasn't supplied");
+        if ( configFiles.size() == 0 )
+        {
+            logger.info("No conf files in dir, using default config");
+        } else if ( configFiles.size() == 1 )
+        {
+            logger.info("Only 1 conf file in the dir, using it");
+            configToUse = configFiles.at(0);
+        } else
+        {
+            logger.error("More than one config file present - please specify one with the --conf option");
+        }
+    }
+
+    
 
 
 

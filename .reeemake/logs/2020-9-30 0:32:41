@@ -1,0 +1,10 @@
+2020-9-30 0:32:41   DEBUG (reeemake.main) Initialized
+
+2020-9-30 0:32:41   DEBUG (reeemake.args) ArgParser created
+
+2020-9-30 0:32:41   INFO (reeemake.args) Parsing args
+
+2020-9-30 0:32:41   DEBUG (reeemake.args) Got arg ./reeemake
+
+2020-9-30 0:32:41   DEBUG (reeemake.args) Is first arg - program name
+

@@ -1,0 +1,28 @@
+2020-9-29 23:47:16   DEBUG (reeemake.main) Initialized
+
+2020-9-29 23:47:16   DEBUG (reeemake.args) ArgParser created
+
+2020-9-29 23:47:16   INFO (reeemake.args) Parsing args
+
+2020-9-29 23:47:16   DEBUG (reeemake.args) Got arg ./reeemake
+
+2020-9-29 23:47:16   DEBUG (reeemake.args) Is first arg - program name
+
+2020-9-29 23:47:16   DEBUG (reeemake.args) Got arg --yeet
+
+2020-9-29 23:47:16   DEBUG (reeemake.args) is optional switch
+
+2020-9-29 23:47:16   DEBUG (reeemake.args) is long name
+
+2020-9-29 23:47:16   DEBUG (reeemake.args) Got arg -y
+
+2020-9-29 23:47:16   DEBUG (reeemake.args) is optional switch
+
+2020-9-29 23:47:16   DEBUG (reeemake.args) is short name
+
+2020-9-29 23:47:16   DEBUG (reeemake.args) Got arg helelelllo
+
+2020-9-29 23:47:16   DEBUG (reeemake.args) isn't a switch
+
+2020-9-29 23:47:16   DEBUG (reeemake.args) is a positional arg
+

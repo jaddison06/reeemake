@@ -3,20 +3,23 @@
 #include "logging.h"
 #include <string>
 #include <vector>
+#include <iostream>
+
+enum ArgType {integer, decimal, string, boolean, storeTrue, storeFalse};
 
 struct OptionalArg
 {
     std::string shortName;
     std::string longName;
     std::string description;
-    enum type {integer, decimal, string, boolean, storeTrue, storeFalse};
+    ArgType type;
 };
 
 struct PositionalArg
 {
     std::string name;
     std::string description;
-    enum type {integer, decimal, string, boolean};
+    ArgType type;
 };
 
 struct ReturnArg
@@ -25,18 +28,32 @@ struct ReturnArg
     std::string val;
 };
 
+std::string returnArgToString(ReturnArg);
 
 class ArgParser
 {
     public:
-        ArgParser(int, std::vector<char*> *, std::vector<OptionalArg *> *, std::vector<PositionalArg *> *);
+        ArgParser(int, std::vector<std::string> *, std::vector<OptionalArg *> *, std::vector<PositionalArg *> *, int, std::string *);
         void ParseArgs(std::vector<ReturnArg> *);
     
     private:
         int argc;
-        std::vector<char*> * argv;
+        std::vector<std::string> * argv;
         std::vector<OptionalArg *> * allowedOptionals;
         std::vector<PositionalArg *> * allowedPositionals;
+
+        std::string *description;
+        int version;
+        std::string helpText;
+        void generateHelp();
+
+        OptionalArg helpArg
+        {
+            "h",
+            "help",
+            "Show help and exit",
+            storeTrue
+        };
 
         Logger logger{"reeemake.args"};
 

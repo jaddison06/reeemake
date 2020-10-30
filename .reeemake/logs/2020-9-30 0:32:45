@@ -1,0 +1,18 @@
+2020-9-30 0:32:45   DEBUG (reeemake.main) Initialized
+
+2020-9-30 0:32:45   DEBUG (reeemake.args) ArgParser created
+
+2020-9-30 0:32:45   INFO (reeemake.args) Parsing args
+
+2020-9-30 0:32:45   DEBUG (reeemake.args) Got arg ./reeemake
+
+2020-9-30 0:32:45   DEBUG (reeemake.args) Is first arg - program name
+
+2020-9-30 0:32:45   DEBUG (reeemake.args) Got arg wassup
+
+2020-9-30 0:32:45   DEBUG (reeemake.args) isn't a switch
+
+2020-9-30 0:32:45   DEBUG (reeemake.args) is a positional arg
+
+2020-9-30 0:32:45   WARNING (reeemake.args) Error - Received 1 positional arguments, was expecting 0
+

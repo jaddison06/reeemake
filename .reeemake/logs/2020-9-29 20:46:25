@@ -1,0 +1,15 @@
+2020-9-29 20:46:25   DEBUG (reeemake.main) Initialized
+
+2020-9-29 20:46:25   DEBUG (reeemake.args) ArgParser created
+
+2020-9-29 20:46:25   INFO (reeemake.args) Generating help
+
+2020-9-29 20:46:25   DEBUG (reeemake.args) Help text generated:
+./reeemake(version 0)
+
+Super-Fast, Cross-Platform Build System For C++!
+
+2020-9-29 20:46:25   INFO (reeemake.args) Parsing args
+
+2020-9-29 20:46:25   DEBUG (reeemake.args) Got arg ./reeemake
+

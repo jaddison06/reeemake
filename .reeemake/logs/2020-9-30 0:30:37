@@ -1,0 +1,20 @@
+2020-9-30 0:30:37   DEBUG (reeemake.main) Initialized
+
+2020-9-30 0:30:37   DEBUG (reeemake.args) ArgParser created
+
+2020-9-30 0:30:37   INFO (reeemake.args) Parsing args
+
+2020-9-30 0:30:37   DEBUG (reeemake.args) Got arg ./reeemake
+
+2020-9-30 0:30:37   DEBUG (reeemake.args) Is first arg - program name
+
+2020-9-30 0:30:37   DEBUG (reeemake.args) Got arg --conf
+
+2020-9-30 0:30:37   DEBUG (reeemake.args) is optional switch
+
+2020-9-30 0:30:37   DEBUG (reeemake.args) is long name
+
+2020-9-30 0:30:37   DEBUG (reeemake.args) Is a valid arg
+
+2020-9-30 0:30:37   DEBUG (reeemake.args) Arg takes a parameter
+
