@@ -150,6 +150,7 @@ void ArgParser::ParseArgs(std::vector<ReturnArg> *output)
                         logger.debug("Arg takes a parameter");
                         nextArg.needsParameter = true;
                         nextArg.receivedParameter = false;
+                        nextArg.type = argCopy.type;
                     } else
                     {
                         logger.debug("Arg doesn't take a parameter");
@@ -179,6 +180,30 @@ void ArgParser::ParseArgs(std::vector<ReturnArg> *output)
                 if ( nextArg.needsParameter )
                 {
                     logger.debug("is a value for an optional arg");
+
+                    logger.debug("Checking type");
+                    switch (nextArg.type)
+                    {
+                        case integer:
+                        {
+                            bool invalid = false;
+                            // check if it's a number
+                            if ( "isn't a number" )
+                            {
+                                invalid = true;
+                            } else
+                            {
+                                // get number, then check if it's an int
+                            }
+
+                            if (invalid)
+                            {
+                                logger.error("Arg "+nextArg.name+" must be a valid int");
+                            }
+                        }
+                    }
+
+
                     nextArg.needsParameter = false;
                     // name should already be there, so whack in the val & push
                     nextArg.val = arg;

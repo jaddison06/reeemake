@@ -30,6 +30,7 @@ struct ReturnArg
     std::string val;
     bool needsParameter = false;
     bool receivedParameter = true;
+    ArgType type;
 };
 
 std::string returnArgToString(ReturnArg);
