@@ -57,11 +57,6 @@ std::string Reeemake::time_t_to_string(time_t *time)
     return std::asctime(std::localtime(time));
 }
 
-std::vector<fs::path> Reeemake::getDependencies(fs::path *file, std::vector<fs::path> *filesInDir)
-{
-    
-}
-
 bool Reeemake::fileDataExists(fs::path *path, std::vector<SourceFile> *fileData, int *fileDataIndex)
 {
     for (int i=0; i<fileData->size(); i++)
@@ -131,6 +126,54 @@ void Reeemake::parseArgs(int argc, char *argv[])
         std::cout << "\n\n";
     }
     */
+
+}
+
+bool Reeemake::needToBuild(fs::path *sourceFile, std::vector<SourceFile> *fileData)
+{
+    logger.info("Checking whether to build "+(std::string)*sourceFile);
+    int fileDataIndex;
+
+    if ( fileDataExists(sourceFile, fileData, &fileDataIndex) )
+    {
+        logger.debug("Found file data");
+        auto lastWriteTimeRaw = fs::last_write_time(*sourceFile);
+
+        // IMPORTANT:
+        // this isn't portable until c++20,
+        // until then it won't work on g++>=9 or MSVC
+        //
+        // see https://en.cppreference.com/w/cpp/filesystem/file_time_type
+        time_t lastWriteTime = decltype(lastWriteTimeRaw)::clock::to_time_t(lastWriteTimeRaw);
+        time_t lastBuildTime = fileData->at(fileDataIndex).lastBuildTime;
+
+        logger.debug("Last write time "+time_t_to_string(&lastWriteTime)+"\nLast build time "+time_t_to_string(&lastBuildTime));
+
+        if (difftime(lastWriteTime, lastBuildTime) > 0)
+        {
+            // file has changed since it was last built, build it now
+            logger.debug("File change detected, adding it to the build list");
+            return true;
+        } else
+        {
+            logger.debug("File hasn't been modified");
+            return false;
+        }
+    } else
+    {
+        // this source file is new to us
+        logger.debug("This source file is new, adding it to the build list");
+        return true;
+    }
+}
+
+std::vector<fs::path> Reeemake::getDependencies(fs::path *sourceFile, std::vector<fs::path> *allFilesInDir)
+{
+
+}
+
+bool Reeemake::hasBeenModified(SourceFile *sourceFile)
+{
 
 }
 
@@ -244,6 +287,7 @@ void Reeemake::build(int argc, char *argv[])
     SourceFileSerializationUtil serializationUtil;
     std::vector<SourceFile> fileData;
     fs::path fileDataPath((std::string)configPath+"/fileData");
+    if (!fs::exists(fileDataPath)) { fs::create_directories(fileDataPath); }
     for (auto sourceFile : fs::directory_iterator(fileDataPath))
     {
         fileData.push_back(serializationUtil.DeserializeSourceFile(&sourceFile));
@@ -251,39 +295,7 @@ void Reeemake::build(int argc, char *argv[])
 
     for (auto sourceFile : cxxSourceFiles)
     {
-        logger.info("Checking whether to build "+(std::string)sourceFile);
-        int fileDataIndex;
-
-        if ( fileDataExists(&sourceFile, &fileData, &fileDataIndex) )
-        {
-            logger.debug("Found file data");
-            auto lastWriteTimeRaw = fs::last_write_time(sourceFile);
-
-            // IMPORTANT:
-            // this isn't portable until c++20,
-            // until then it won't work on g++>=9 or MSVC
-            //
-            // see https://en.cppreference.com/w/cpp/filesystem/file_time_type
-            time_t lastWriteTime = decltype(lastWriteTimeRaw)::clock::to_time_t(lastWriteTimeRaw);
-            time_t lastBuildTime = fileData.at(fileDataIndex).lastBuildTime;
-
-            logger.debug("Last write time "+time_t_to_string(&lastWriteTime)+"\nLast build time "+time_t_to_string(&lastBuildTime));
-
-            if (difftime(lastWriteTime, lastBuildTime) > 0)
-            {
-                // file has changed since it was last built, build it now
-                logger.debug("File change detected, adding it to the build list");
-                filesToBuild.push_back(fileData.at(fileDataIndex).path); 
-            } else
-            {
-                logger.debug("File hasn't been modified");
-            }
-        } else
-        {
-            // this source file is new to us
-            logger.debug("This source file is new, adding it to the build list");
-            filesToBuild.push_back(fileData.at(fileDataIndex).path);
-        }
+        if (needToBuild(&sourceFile, &fileData)) { filesToBuild.push_back(sourceFile); }
     }
     
 
@@ -317,7 +329,7 @@ void Reeemake::build(int argc, char *argv[])
     std::string buildCommand = COMPILER + " ";
     for (auto file : filesToBuild)
     {
-        buildCommand += (std::string)objDir + (std::string)file.stem() + ".o ";
+        buildCommand += (std::string)objDir + "/" + (std::string)file.stem() + ".o ";
     }
     buildCommand += "-o ./" + BIN_NAME;
     for (auto lib : LIBRARIES)

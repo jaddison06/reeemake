@@ -26,9 +26,10 @@ class Reeemake
         bool isAnnoyingDir(std::string dirName);
         bool fileDataExists(fs::path *, std::vector<SourceFile> *, int *);
         std::string time_t_to_string(time_t *);
-
+        
+        bool needToBuild(fs::path *, std::vector<SourceFile> *);
         std::vector<fs::path> getDependencies(fs::path *, std::vector<fs::path> *);
-        std::vector<fs::path> 
+        bool hasBeenModified(SourceFile *);
 
         std::vector<ParserOutputItem> parsedArgs;
 

@@ -4,18 +4,28 @@ void SourceFileSerializationUtil::SerializeSourceFile(SourceFile *sourceFile, fs
 {
     logger.info("Serializing source file "+(std::string)path);
     // if the file already exists, delete it and start afresh
-    if (fs::exists(path)) { fs::remove(path); }
+    if (fs::exists(path))
+    {
+        fs::remove(path);
+        logger.debug("The .dat file already existed, removed it");
+    }
 
+    logger.debug("Opening file handle");
     std::ofstream fh(path);
 
+    logger.debug("Adding path");
     fh << (std::string)sourceFile->path+"\n";
 
     // shouldn't implicitly convert this but idk
     // how else to do it. please don't break
+    logger.debug("Adding lastBuildTime");
     fh << sourceFile->lastBuildTime + "\n";
+
+    logger.debug("Adding dependencies");
     fh << "DEPENDS START\n";
     for (auto dependency : sourceFile->dependencies)
     {
+        logger.debug("Adding dependency "+(std::string)dependency);
         fh << (std::string)dependency + "\n";
     }
     //fh << "DEPENDS END\n";
@@ -53,4 +63,6 @@ SourceFile SourceFileSerializationUtil::DeserializeSourceFile(fs::directory_entr
             output.dependencies.push_back(fs::path(line));
         }
     }
+
+    return output;
 }
