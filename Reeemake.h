@@ -2,8 +2,10 @@
 
 #include <filesystem>
 #include <vector>
-#include "logging.h"
-#include "args.h"
+#include "Logging.h"
+#include "Args.h"
+#include "SourceFile.h"
+#include "ConfigFile.h"
 
 #define VERSION "0.2"
 #define DESCRIPTION "Super-Fast, Cross-Platform Build System For C++! Simple And Exciting!"
@@ -20,8 +22,9 @@ class Reeemake
         void parseArgs(int, char *[]);
 
         void verboseSystem(std::string);
-
         bool isAnnoyingDir(std::string dirName);
+        bool fileDataExists(fs::path *, std::vector<SourceFile> *, int *);
+        std::string time_t_to_string(time_t *);
 
         std::vector<ParserOutputItem> parsedArgs;
 

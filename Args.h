@@ -1,6 +1,6 @@
 #pragma once
 
-#include "logging.h"
+#include "Logging.h"
 #include <string>
 #include <vector>
 #include <iostream>
@@ -16,7 +16,7 @@ struct OptionalArg
     std::string longName;
     std::string description;
     ArgType type;
-    bool duplicatesAllowed;
+    bool duplicatesAllowed = false;
 };
 
 struct PositionalArg

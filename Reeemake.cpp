@@ -1,4 +1,6 @@
-#include "reeemake.h"
+#include "Reeemake.h"
+
+// file paths should not be having a trailing / please
 
 // TODO: optimise this nugget
 std::vector<fs::path> Reeemake::getFilesInDir(fs::path dir)
@@ -48,6 +50,25 @@ bool Reeemake::isAnnoyingDir(std::string dirName)
     return false;
 }
 
+std::string Reeemake::time_t_to_string(time_t *time)
+{
+    return std::asctime(std::localtime(time));
+}
+
+bool Reeemake::fileDataExists(fs::path *path, std::vector<SourceFile> *fileData, int *fileDataIndex)
+{
+    for (int i=0; i<fileData->size(); i++)
+    {
+        auto file = fileData->at(i);
+        if (file.path == *path)
+        {
+            *fileDataIndex = i;
+            return true;
+        }
+    }
+    return false;
+}
+
 void Reeemake::parseArgs(int argc, char *argv[])
 {
     // parse da proverbial args
@@ -64,7 +85,6 @@ void Reeemake::parseArgs(int argc, char *argv[])
         "conf",
         "Configuration file to read from",
         string,
-        false
     };
 
     OptionalArg test1
@@ -173,7 +193,7 @@ void Reeemake::build(int argc, char *argv[])
     // pre-build stuff
 
 
-    fs::path configPath("./.reeemake/" + configToUse + "/");
+    fs::path configPath("./.reeemake/" + configToUse);
     if ( !(fs::exists(configPath) && fs::is_directory(configPath)) )
     {
         fs::create_directories(configPath);
@@ -183,6 +203,7 @@ void Reeemake::build(int argc, char *argv[])
 
     std::vector<fs::path> allFilesInDir;
     std::vector<fs::path> cxxSourceFiles;
+    std::vector<fs::path> cxxHeaderFiles;
 
     allFilesInDir = getFilesInDir(".");
     std::vector<int> entriesToRemove;
@@ -207,9 +228,67 @@ void Reeemake::build(int argc, char *argv[])
         {
             logger.debug("Found c++ source file "+(std::string)file);
             cxxSourceFiles.push_back(file);
+        } else if (file.extension() == ".h" || file.extension() == ".hpp")
+        {
+            logger.debug("Found c++ header file "+(std::string)file);
+            cxxHeaderFiles.push_back(file);
         }
     }
 
+    // spicy dependency tracking
+    std::vector<fs::path> filesToBuild;
+
+
+    SourceFileSerializationUtil serializationUtil;
+    std::vector<SourceFile> fileData;
+    fs::path fileDataPath((std::string)configPath+"/fileData");
+    for (auto sourceFile : fs::directory_iterator(fileDataPath))
+    {
+        fileData.push_back(serializationUtil.DeserializeSourceFile(&sourceFile));
+    }
+
+    for (auto sourceFile : cxxSourceFiles)
+    {
+        logger.info("Checking whether to build "+(std::string)sourceFile);
+        int fileDataIndex;
+
+        if ( fileDataExists(&sourceFile, &fileData, &fileDataIndex) )
+        {
+            logger.debug("Found file data");
+            auto lastWriteTimeRaw = fs::last_write_time(sourceFile);
+
+            // IMPORTANT:
+            // this isn't portable until c++20,
+            // until then it won't work on g++>=9 or MSVC
+            //
+            // see https://en.cppreference.com/w/cpp/filesystem/file_time_type
+            time_t lastWriteTime = decltype(lastWriteTimeRaw)::clock::to_time_t(lastWriteTimeRaw);
+            time_t lastBuildTime = fileData.at(fileDataIndex).lastBuildTime;
+
+            logger.debug("Last write time "+time_t_to_string(&lastWriteTime)+"\nLast build time "+time_t_to_string(&lastBuildTime));
+
+            if (difftime(lastWriteTime, lastBuildTime) > 0)
+            {
+                // file has changed since it was last built, build it now
+                logger.debug("File change detected, adding it to the build list");
+                filesToBuild.push_back(fileData.at(fileDataIndex).path); 
+            } else
+            {
+                logger.debug("File hasn't been modified");
+            }
+        } else
+        {
+            // this source file is new to us
+            logger.debug("This source file is new, adding it to the build list");
+            filesToBuild.push_back(fileData.at(fileDataIndex).path);
+        }
+    }
+
+    //DEBUG
+    filesToBuild = cxxSourceFiles;
+    
+
+    // actual build
     // TODO: actually make this cross-platform
 
     std::string COMPILER = "g++-8";
@@ -219,14 +298,14 @@ void Reeemake::build(int argc, char *argv[])
 
     // compile to objects
     
-    fs::path objDir("./.reeemake/"+configToUse+"/objects/");
+    fs::path objDir((std::string)configPath+"/build");
     fs::create_directories(objDir);
 
     logger.info("Compiling objects");
 
-    for (auto file : cxxSourceFiles)
+    for (auto file : filesToBuild)
     {
-        std::string command = COMPILER+" -c "+(std::string)file+" -I . -Wall -std=c++17 -o "+(std::string)objDir+(std::string)file.stem()+".o";
+        std::string command = COMPILER+" -c "+(std::string)file+" -I . -Wall -std=c++17 -o "+(std::string)objDir+"/"+(std::string)file.stem()+".o";
         for (auto flag : COMPILER_FLAGS)
         {
             command += " " + flag;
@@ -237,7 +316,7 @@ void Reeemake::build(int argc, char *argv[])
 
     logger.info("Building");
     std::string buildCommand = COMPILER + " ";
-    for (auto file : cxxSourceFiles)
+    for (auto file : filesToBuild)
     {
         buildCommand += (std::string)objDir + (std::string)file.stem() + ".o ";
     }
@@ -248,38 +327,13 @@ void Reeemake::build(int argc, char *argv[])
     }
     verboseSystem(buildCommand);
 
-}
-
-int main(int argc, char *argv[])
-{
-    // init some tings
-    std::string dataFolder = "./.reeemake/";
-
-    bool folderExisted = true;
-    if ( !fs::exists(fs::path(dataFolder)) )
+    // cleanup
+    logger.info("Updating fileData");
+    for (auto file : cxxSourceFiles)
     {
-        fs::create_directories(fs::path(dataFolder));
-        folderExisted = false;
+        logger.debug("Updating fileData for file "+(std::string)file);
+
     }
 
-    std::string logFolder = dataFolder + "logs/";
-    initLogging(&logFolder);
-
-    Logger logger((std::string)argv[0] + ".main");
-    if (!folderExisted)
-    {
-        logger.warning("./.reeemake folder didn't exist, created it.");
-    }
-
-    logger.debug("Initialized");
-
-
-    Reeemake reeemake(argv);
-    reeemake.build(argc, argv);
-
-    
-
-    
-
-
 }
+
