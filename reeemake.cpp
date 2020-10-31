@@ -187,8 +187,9 @@ void Reeemake::build(int argc, char *argv[])
     // TODO: actually make this cross-platform
 
     std::string COMPILER = "g++-8";
+    std::string BIN_NAME = "reeemake";
     std::vector<std::string> COMPILER_FLAGS {"-Wno-sign-compare"};
-    std::vector<std::string> LIBRARIES {};
+    std::vector<std::string> LIBRARIES {"stdc++fs"};
 
     // compile to objects
     
@@ -209,7 +210,17 @@ void Reeemake::build(int argc, char *argv[])
 
 
     logger.info("Building");
-    
+    std::string buildCommand = COMPILER + " ";
+    for (auto file : cxxSourceFiles)
+    {
+        buildCommand += (std::string)objDir + (std::string)file.stem() + ".o ";
+    }
+    buildCommand += "-o ./" + BIN_NAME;
+    for (auto lib : LIBRARIES)
+    {
+        buildCommand += " -l" + lib;
+    }
+    verboseSystem(buildCommand);
 
 }
 
