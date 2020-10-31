@@ -16,10 +16,13 @@ void SourceFileSerializationUtil::SerializeSourceFile(SourceFile *sourceFile, fs
     logger.debug("Adding path");
     fh << (std::string)sourceFile->path+"\n";
 
-    // shouldn't implicitly convert this but idk
-    // how else to do it. please don't break
+
+    // fsr this segfaults if you do it inline,
+    // you have to get the val first and then stream it in
+    logger.debug("Getting lastBuildTime");
+    int lastBuildTime = sourceFile->lastBuildTime;
     logger.debug("Adding lastBuildTime");
-    fh << sourceFile->lastBuildTime + "\n";
+    fh << lastBuildTime << "\n";
 
     logger.debug("Adding dependencies");
     fh << "DEPENDS START\n";
