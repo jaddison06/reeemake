@@ -1,0 +1,446 @@
+2020-9-31 1:36:33   DEBUG (./reeemake.main) Initialized
+
+2020-9-31 1:36:33   INFO (./reeemake.ArgParser) Super-Fast, Cross-Platform Build System For C++! Simple And Exciting! (version 0.1)
+
+2020-9-31 1:36:33   DEBUG (./reeemake.ArgParser) ArgParser created
+
+2020-9-31 1:36:33   INFO (./reeemake.ArgParser) Parsing args
+
+2020-9-31 1:36:33   DEBUG (./reeemake.ArgParser) Checking for duplicate arg names
+
+2020-9-31 1:36:33   DEBUG (./reeemake.ArgParser) Checking optional conf
+
+2020-9-31 1:36:33   DEBUG (./reeemake.ArgParser) Optional conf OK
+
+2020-9-31 1:36:33   DEBUG (./reeemake.ArgParser) Checking optional bonk
+
+2020-9-31 1:36:33   DEBUG (./reeemake.ArgParser) Optional bonk OK
+
+2020-9-31 1:36:33   DEBUG (./reeemake.ArgParser) Checking optional help
+
+2020-9-31 1:36:33   DEBUG (./reeemake.ArgParser) Optional help OK
+
+2020-9-31 1:36:33   DEBUG (./reeemake.ArgParser) Got arg ./reeemake
+
+2020-9-31 1:36:33   DEBUG (./reeemake.ArgParser) Is first arg - program name
+
+2020-9-31 1:36:33   DEBUG (./reeemake.ArgParser) Checking for illegal duplicates
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Config arg wasn't supplied
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) No conf files in dir, using default config
+
+2020-9-31 1:36:33   WARNING (./reeemake.Reeemake) ./.reeemake/default/ didn't exist, created it
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir .
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.vscode
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.reeemake
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./build
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.reeemake/default
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.reeemake/logs
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./build/objects
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/branches
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/info
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/hooks
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/logs
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/refs
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/fb
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/12
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/e9
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/5a
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/da
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/dc
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/1b
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/f4
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/ee
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/c3
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/94
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/23
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/b6
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/72
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/e6
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/db
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/3f
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/46
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/1e
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/44
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/9d
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/b4
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/34
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/53
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/5f
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/c6
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/ce
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/3e
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/a9
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/e2
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/c2
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/48
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/04
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/66
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/55
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/7f
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/d7
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/d3
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/36
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/0a
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/9c
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/0b
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/20
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/01
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/51
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/78
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/aa
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/81
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/02
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/45
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/bc
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/6a
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/b5
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/8c
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/ef
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/67
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/dd
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/d5
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/14
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/43
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/info
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/f3
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/28
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/65
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/1a
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/71
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/9a
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/ff
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/75
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/2c
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/84
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/41
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/e0
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/62
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/89
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/b2
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/92
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/18
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/d4
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/c9
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/8e
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/fd
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/2f
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/bf
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/bd
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/17
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/ca
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/2d
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/59
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/4e
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/97
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/cd
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/1d
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/a3
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/19
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/cf
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/fa
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/c0
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/60
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/73
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/4c
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/61
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/f8
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/0c
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/83
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/31
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/42
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/40
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/13
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/e1
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/a0
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/5c
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/80
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/33
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/3a
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/8d
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/bb
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/b7
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/08
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/b9
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/7e
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/7d
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/4a
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/be
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/6d
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/87
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/ab
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/9f
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/7b
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/21
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/58
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/35
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/8f
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/88
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/2e
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/54
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/f2
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/f7
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/98
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/05
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/93
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/f5
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/29
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/37
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/3b
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/6c
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/b1
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/95
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/86
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/fe
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/32
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/22
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/0e
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/30
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/47
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/d0
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/ac
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/16
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/ea
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/2a
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/d6
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/ec
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/8a
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/79
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/6f
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/f1
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/91
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/8b
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/10
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/a1
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/ad
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/ba
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/e8
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/06
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/85
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/96
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/50
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/07
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/b3
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/a8
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/e3
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/77
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/pack
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/objects/c1
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/logs/refs
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/refs/heads
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/refs/remotes
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/refs/tags
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/logs/refs/heads
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/logs/refs/remotes
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/refs/remotes/origin
+
+2020-9-31 1:36:33   INFO (./reeemake.Reeemake) Getting all files in dir ./.git/logs/refs/remotes/origin
+

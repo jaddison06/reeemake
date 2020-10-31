@@ -1,31 +1,34 @@
 #include "reeemake.h"
 
-
-int main(int argc, char *argv[])
+// TODO: optimise this nugget
+std::vector<fs::path> Reeemake::getFilesInDir(fs::path dir)
 {
-    // init some tings
-    std::string dataFolder = "./.reeemake/";
-
-    bool folderExisted = true;
-    if ( !fs::exists(fs::path(dataFolder)) )
+    logger.info("Getting all files in dir "+(std::string)dir);
+    std::vector<fs::path> output;
+    for (auto entry : fs::directory_iterator(dir))
     {
-        fs::create_directories(fs::path(dataFolder));
-        folderExisted = false;
+        logger.info("Got dir entry "+(std::string)(fs::path)entry);
+        output.push_back(entry);
     }
+    return output;
+}
 
-    std::string logFolder = dataFolder + "logs/";
-    initLogging(&logFolder);
+Reeemake::Reeemake(char *argv[])
+{
+    logger.setSender((std::string)argv[0] + ".Reeemake");
+    logger.info("Reeemake initialized");
+}
 
-    Logger logger((std::string)argv[0] + ".main");
-    if (!folderExisted)
-    {
-        logger.warning("./.reeemake folder didn't exist, created it.");
-    }
+void Reeemake::verboseSystem(std::string cmd)
+{
+    std::cout << cmd << std::endl;
+    logger.info("Running system command "+cmd);
+    system(cmd.c_str());
+}
 
-    logger.debug("Initialized");
-
+void Reeemake::parseArgs(int argc, char *argv[])
+{
     // parse da proverbial args
-
     std::vector<std::string> argvVector;
     for (int i=0; i<argc; i++) {
         argvVector.push_back((std::string)argv[i]);
@@ -79,7 +82,12 @@ int main(int argc, char *argv[])
         std::cout << "\n\n";
     }
     */
-    
+
+}
+
+void Reeemake::build(int argc, char *argv[])
+{
+    parseArgs(argc, argv);
 
     // look for reeemake config files
 
@@ -94,6 +102,9 @@ int main(int argc, char *argv[])
             // check for a .reee extension
             if ( fs::path(entry).extension().string() == ".reee" )
             {
+                // very incorrect type but um ok?
+                // pretty sure i already tested this and it
+                // works fine...
                 configFiles.push_back(entry);
             }
         }
@@ -135,6 +146,8 @@ int main(int argc, char *argv[])
         }
     }
 
+    logger.info("Using config "+configToUse);
+
     // pre-build stuff
 
 
@@ -146,8 +159,90 @@ int main(int argc, char *argv[])
 
     }
 
+    std::vector<fs::path> allFilesInDir;
+    std::vector<fs::path> cxxSourceFiles;
+
+    allFilesInDir = getFilesInDir(".");
+    std::vector<int> entriesToRemove;
+    for (int i=0; i<allFilesInDir.size(); i++)
+    {
+        auto entry = allFilesInDir.at(i);
+        if (fs::is_directory(entry))
+        {
+            logger.debug("Found directory "+(std::string)entry+", searching it");
+            entriesToRemove.push_back(i);
+            std::vector<fs::path> newFiles = getFilesInDir(allFilesInDir.at(i));
+            allFilesInDir.insert(allFilesInDir.end(), newFiles.begin(), newFiles.end());
+        }
+    }
+
+    for (auto file: allFilesInDir) {
+        if (file.extension() == ".cpp")
+        {
+            logger.debug("Found c++ source file "+(std::string)file);
+            cxxSourceFiles.push_back(file);
+        }
+    }
+
+    // TODO: actually make this cross-platform
+
+    std::string COMPILER = "g++-8";
+    std::vector<std::string> COMPILER_FLAGS {"-Wno-sign-compare"};
+    std::vector<std::string> LIBRARIES {};
+
+    // compile to objects
+    
+    fs::path objDir("./.reeemake/"+configToUse+"/objects/");
+    fs::create_directories(objDir);
+
+    logger.info("Compiling objects");
+
+    for (auto file : cxxSourceFiles)
+    {
+        std::string command = COMPILER+" -c "+(std::string)file+" -I . -Wall -std=c++17 -o "+(std::string)objDir+(std::string)file.stem()+".o";
+        for (auto flag : COMPILER_FLAGS)
+        {
+            command += " " + flag;
+        }
+        verboseSystem(command);
+    }
 
 
+    logger.info("Building");
+    
+
+}
+
+int main(int argc, char *argv[])
+{
+    // init some tings
+    std::string dataFolder = "./.reeemake/";
+
+    bool folderExisted = true;
+    if ( !fs::exists(fs::path(dataFolder)) )
+    {
+        fs::create_directories(fs::path(dataFolder));
+        folderExisted = false;
+    }
+
+    std::string logFolder = dataFolder + "logs/";
+    initLogging(&logFolder);
+
+    Logger logger((std::string)argv[0] + ".main");
+    if (!folderExisted)
+    {
+        logger.warning("./.reeemake folder didn't exist, created it.");
+    }
+
+    logger.debug("Initialized");
+
+
+    Reeemake reeemake(argv);
+    reeemake.build(argc, argv);
+
+    
+
+    
 
 
 }
