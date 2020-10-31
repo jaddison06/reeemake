@@ -1,0 +1,106 @@
+2020-9-31 0:38:34   DEBUG (./reeemake.main) Initialized
+
+2020-9-31 0:38:34   INFO (./reeemake.args) Super-Fast, Cross-Platform Build System For C++! Simple And Exciting! (version 0.1)
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) ArgParser created
+
+2020-9-31 0:38:34   INFO (./reeemake.args) Parsing args
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Checking for duplicate arg names
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Checking optional conf
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Optional conf OK
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Checking optional bonk
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Optional bonk OK
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Checking optional help
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Optional help OK
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Got arg ./reeemake
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Is first arg - program name
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Got arg -b
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) is optional switch
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) is short name
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Is a valid arg
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Arg takes a parameter
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Got arg 420
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) isn't a switch
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) is a value for an optional arg
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Checking type
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Checking if 420 is a number
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Result: 1
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Checking if 420.000000 is an int
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Result: 1
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Type is good
+
+2020-9-31 0:38:34   INFO (./reeemake.args) Adding return arg to output:
+bonk, 420
+0 1
+int
+
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Output doesn't have a ParserOutputItem for this, creating one
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Got arg -b
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) is optional switch
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) is short name
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Is a valid arg
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Arg takes a parameter
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Got arg 69
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) isn't a switch
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) is a value for an optional arg
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Checking type
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Checking if 69 is a number
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Result: 1
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Checking if 69.000000 is an int
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Result: 1
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Type is good
+
+2020-9-31 0:38:34   INFO (./reeemake.args) Adding return arg to output:
+bonk, 69
+0 1
+int
+
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Output already has a ParserOutputItem for this, adding it
+
+2020-9-31 0:38:34   DEBUG (./reeemake.args) Checking for illegal duplicates
+
+2020-9-31 0:38:34   INFO (./reeemake.main) Config arg wasn't supplied
+
+2020-9-31 0:38:34   INFO (./reeemake.main) No conf files in dir, using default config
+
+2020-9-31 0:38:34   WARNING (./reeemake.main) ./.reeemake/default/ didn't exist, created it
+

@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
     };
 
 
-    std::vector<OptionalArg *> allowedOptionals {&conf};
+    std::vector<OptionalArg *> allowedOptionals {&conf, &test1};
     std::vector<PositionalArg *> allowedPositionals {};
 
     std::string description = DESCRIPTION;
@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
     std::vector<ParserOutputItem> parsedArgs;
     argParser.ParseArgs(&parsedArgs);
 
-    
+    /*
     for (auto item : parsedArgs)
     {
         std::cout << item.name << "\n";
@@ -78,6 +78,7 @@ int main(int argc, char *argv[])
         }
         std::cout << "\n\n";
     }
+    */
     
 
     // look for reeemake config files
@@ -140,8 +141,9 @@ int main(int argc, char *argv[])
     fs::path configPath("./.reeemake/" + configToUse + "/");
     if ( !(fs::exists(configPath) && fs::is_directory(configPath)) )
     {
-        logger.warning("");
         fs::create_directories(configPath);
+        logger.warning((std::string)configPath+" didn't exist, created it");
+
     }
 
 

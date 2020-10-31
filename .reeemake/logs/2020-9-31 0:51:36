@@ -1,0 +1,62 @@
+2020-9-31 0:51:36   DEBUG (./reeemake.main) Initialized
+
+2020-9-31 0:51:36   INFO (./reeemake.args) Super-Fast, Cross-Platform Build System For C++! Simple And Exciting! (version 0.1)
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) ArgParser created
+
+2020-9-31 0:51:36   INFO (./reeemake.args) Parsing args
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) Checking for duplicate arg names
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) Checking optional conf
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) Optional conf OK
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) Checking optional bonk
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) Optional bonk OK
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) Checking optional help
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) Optional help OK
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) Got arg ./reeemake
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) Is first arg - program name
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) Got arg -c
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) is optional switch
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) is short name
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) Is a valid arg
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) Arg takes a parameter
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) Got arg yeet
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) isn't a switch
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) is a value for an optional arg
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) Checking type
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) Type is good
+
+2020-9-31 0:51:36   INFO (./reeemake.args) Adding return arg to output:
+conf, yeet
+0 1
+string
+
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) Output doesn't have a ParserOutputItem for this, creating one
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) Checking for illegal duplicates
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) conf isn't allowed duplicates, checking
+
+2020-9-31 0:51:36   DEBUG (./reeemake.args) Argument conf didn't have any illegal duplicates
+
+2020-9-31 0:51:36   INFO (./reeemake.main) Config arg was supplied, using it
+

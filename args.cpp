@@ -98,19 +98,28 @@ void ArgParser::addReturnArgToOutput(std::vector<ParserOutputItem> *output, Retu
     // does the output already have a ParserOutputItem for this?
     ParserOutputItem outputItem;
     bool itemExists = false;
-    for (auto item : *output)
+    int elementToRemove;
+    for (int i=0; i<output->size(); i++)
     {
+        auto item = output->at(i);
         if (item.name == arg->name)
         {
             itemExists = true;
+
+            // create a copy of the element and
+            // prepare to remove the original
             outputItem = item;
+            elementToRemove = i;
         }
     }
 
 
     if (itemExists)
     {
-        logger.debug("Output already has a ParserOutputItem for this, adding it");
+        logger.debug("Output already has a ParserOutputItem for this");
+        // we've got a copy of the element, remove it as
+        // the actual one is read-only fsr
+        output->erase(output->begin() + elementToRemove);
     } else
     {
         logger.debug("Output doesn't have a ParserOutputItem for this, creating one");
@@ -120,7 +129,10 @@ void ArgParser::addReturnArgToOutput(std::vector<ParserOutputItem> *output, Retu
     }
 
     outputItem.argInstances.push_back(*arg);
+
+    // now return the copy of the item to output
     output->push_back(outputItem);
+    
 }
 
 ArgParser::ArgParser(int w, std::vector<std::string> * x, std::vector<OptionalArg *> *y, std::vector<PositionalArg *> *z, std::string u, std::string *v)
