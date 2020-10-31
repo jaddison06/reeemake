@@ -96,15 +96,14 @@ void ArgParser::addReturnArgToOutput(std::vector<ParserOutputItem> *output, Retu
     logger.info("Adding return arg to output:\n"+returnArgToString(*arg));
     
     // does the output already have a ParserOutputItem for this?
-    ParserOutputItem *outputItem;
-    std::cout << "e" << outputItem << std::endl;
+    ParserOutputItem outputItem;
     bool itemExists = false;
     for (auto item : *output)
     {
         if (item.name == arg->name)
         {
             itemExists = true;
-            outputItem = &item;
+            outputItem = item;
         }
     }
 
@@ -117,15 +116,11 @@ void ArgParser::addReturnArgToOutput(std::vector<ParserOutputItem> *output, Retu
         logger.debug("Output doesn't have a ParserOutputItem for this, creating one");
         ParserOutputItem newItem;
         newItem.name = arg->name;
-        outputItem = &newItem;
+        outputItem = newItem;
     }
 
-    // TODO:
-    // SEGFAULTS because outputItem->argInstances is read-only
-    // fix: create copy and then send back?
-    outputItem->argInstances.push_back(*arg);
-    
-    output->push_back(*outputItem);
+    outputItem.argInstances.push_back(*arg);
+    output->push_back(outputItem);
 }
 
 ArgParser::ArgParser(int w, std::vector<std::string> * x, std::vector<OptionalArg *> *y, std::vector<PositionalArg *> *z, std::string u, std::string *v)
