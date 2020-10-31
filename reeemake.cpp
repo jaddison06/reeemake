@@ -3,11 +3,18 @@
 // TODO: optimise this nugget
 std::vector<fs::path> Reeemake::getFilesInDir(fs::path dir)
 {
-    logger.info("Getting all files in dir "+(std::string)dir);
+    bool annoyingDir = isAnnoyingDir(dir);
+    if (!annoyingDir)
+    {
+        logger.info("Getting all files in dir "+(std::string)dir);
+    }
     std::vector<fs::path> output;
     for (auto entry : fs::directory_iterator(dir))
     {
-        logger.info("Got dir entry "+(std::string)(fs::path)entry);
+        if ( !annoyingDir )
+        {
+            logger.info("Got dir entry "+(std::string)(fs::path)entry);
+        }
         output.push_back(entry);
     }
     return output;
@@ -24,6 +31,21 @@ void Reeemake::verboseSystem(std::string cmd)
     std::cout << cmd << std::endl;
     logger.info("Running system command "+cmd);
     system(cmd.c_str());
+}
+
+bool Reeemake::isAnnoyingDir(std::string dirName)
+{
+    std::vector<std::string> annoyingDirs {
+        "./.git",
+        "./.reeemake"
+    };
+
+    for (auto dir : annoyingDirs)
+    {
+        if (dirName.substr(0, dir.length()) == dir) { return true; }
+    }
+
+    return false;
 }
 
 void Reeemake::parseArgs(int argc, char *argv[])
@@ -62,7 +84,7 @@ void Reeemake::parseArgs(int argc, char *argv[])
     };
 
 
-    std::vector<OptionalArg *> allowedOptionals {&conf, &test1};
+    std::vector<OptionalArg *> allowedOptionals {&conf};
     std::vector<PositionalArg *> allowedPositionals {};
 
     std::string description = DESCRIPTION;
@@ -169,7 +191,11 @@ void Reeemake::build(int argc, char *argv[])
         auto entry = allFilesInDir.at(i);
         if (fs::is_directory(entry))
         {
-            logger.debug("Found directory "+(std::string)entry+", searching it");
+            bool annoyingDir = isAnnoyingDir((std::string)entry);
+            if ( !annoyingDir)
+            {
+                logger.debug("Found directory "+(std::string)entry+", searching it");
+            }
             entriesToRemove.push_back(i);
             std::vector<fs::path> newFiles = getFilesInDir(allFilesInDir.at(i));
             allFilesInDir.insert(allFilesInDir.end(), newFiles.begin(), newFiles.end());

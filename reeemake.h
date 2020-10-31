@@ -5,7 +5,7 @@
 #include "logging.h"
 #include "args.h"
 
-#define VERSION "0.1"
+#define VERSION "0.2"
 #define DESCRIPTION "Super-Fast, Cross-Platform Build System For C++! Simple And Exciting!"
 
 namespace fs = std::filesystem;
@@ -20,6 +20,8 @@ class Reeemake
         void parseArgs(int, char *[]);
 
         void verboseSystem(std::string);
+
+        bool isAnnoyingDir(std::string dirName);
 
         std::vector<ParserOutputItem> parsedArgs;
 

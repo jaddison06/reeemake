@@ -1,0 +1,560 @@
+2020-9-31 2:56:29   DEBUG (./reeemake.main) Initialized
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Reeemake initialized
+
+2020-9-31 2:56:29   INFO (./reeemake.ArgParser) Super-Fast, Cross-Platform Build System For C++! Simple And Exciting! (version 0.1)
+
+2020-9-31 2:56:29   DEBUG (./reeemake.ArgParser) ArgParser created
+
+2020-9-31 2:56:29   INFO (./reeemake.ArgParser) Parsing args
+
+2020-9-31 2:56:29   DEBUG (./reeemake.ArgParser) Checking for duplicate arg names
+
+2020-9-31 2:56:29   DEBUG (./reeemake.ArgParser) Checking optional conf
+
+2020-9-31 2:56:29   DEBUG (./reeemake.ArgParser) Optional conf OK
+
+2020-9-31 2:56:29   DEBUG (./reeemake.ArgParser) Checking optional bonk
+
+2020-9-31 2:56:29   DEBUG (./reeemake.ArgParser) Optional bonk OK
+
+2020-9-31 2:56:29   DEBUG (./reeemake.ArgParser) Checking optional help
+
+2020-9-31 2:56:29   DEBUG (./reeemake.ArgParser) Optional help OK
+
+2020-9-31 2:56:29   DEBUG (./reeemake.ArgParser) Got arg ./reeemake
+
+2020-9-31 2:56:29   DEBUG (./reeemake.ArgParser) Is first arg - program name
+
+2020-9-31 2:56:29   DEBUG (./reeemake.ArgParser) Checking for illegal duplicates
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Config arg wasn't supplied
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) No conf files in dir, using default config
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Using config default
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Getting all files in dir .
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.vscode
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./reeemake.cpp
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./logging.h
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./logging.cpp
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./args.h
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./reeemake.h
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./reeemake
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./readme.md
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./args.cpp
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.git
+
+2020-9-31 2:56:29   DEBUG (./reeemake.Reeemake) Found directory ./.vscode, searching it
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Getting all files in dir ./.vscode
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.vscode/tasks.json
+
+2020-9-31 2:56:29   DEBUG (./reeemake.Reeemake) Found directory ./.reeemake, searching it
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Getting all files in dir ./.reeemake
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/default
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs
+
+2020-9-31 2:56:29   DEBUG (./reeemake.Reeemake) Found directory ./.git, searching it
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Getting all files in dir ./.git
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.git/HEAD
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.git/objects
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.git/branches
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.git/description
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.git/FETCH_HEAD
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.git/config
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.git/info
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.git/packed-refs
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.git/ORIG_HEAD
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.git/hooks
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.git/logs
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.git/index
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.git/COMMIT_EDITMSG
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.git/refs
+
+2020-9-31 2:56:29   DEBUG (./reeemake.Reeemake) Found directory ./.reeemake/default, searching it
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Getting all files in dir ./.reeemake/default
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/default/objects
+
+2020-9-31 2:56:29   DEBUG (./reeemake.Reeemake) Found directory ./.reeemake/logs, searching it
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Getting all files in dir ./.reeemake/logs
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:23:26
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 23:16:13
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:20:37
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:51:36
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:5:31
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:31:39
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:38:11
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 19:56:4
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 23:35:54
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:46:25
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:29:9
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 13:56:7
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 23:35:20
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 13:51:57
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 0:30:49
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:40:7
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 0:29:13
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:38:34
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 14:3:59
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:23:49
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 14:6:21
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:29:18
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 23:41:55
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 14:1:12
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 23:43:32
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:14:26
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:55:19
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 23:45:23
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 2:56:29
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 13:50:10
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:15:31
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 23:36:17
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:20:30
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:45:48
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:34:7
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:25:2
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:16:55
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 2:41:31
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 23:17:30
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:29:25
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:15:6
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 14:12:55
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 19:55:37
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 19:58:5
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:24:10
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:15:8
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:35:17
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 23:37:12
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 14:1:15
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 0:32:41
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 0:30:37
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 14:0:51
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:39:13
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 0:40:45
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 13:51:54
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 19:55:55
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:28:57
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 12:34:55
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 19:57:22
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 0:40:51
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 14:4:29
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:43:10
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:5:27
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:9:10
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:29:42
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 2:10:52
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 2:11:27
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:39:32
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 23:19:47
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 23:38:39
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 2:8:56
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 0:40:38
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 0:30:35
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 2:54:5
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:43:26
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 0:30:15
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:6:2
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 0:41:32
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 14:2:57
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:5:59
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:24:19
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:29:48
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 12:34:48
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 23:46:43
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:5:24
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 23:39:45
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:7:17
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 13:24:45
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 2:41:43
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 2:42:3
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 0:32:45
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:42:26
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 14:1:55
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 19:55:7
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:7:19
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 19:50:26
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 19:57:41
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:31:41
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 23:38:42
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:20:32
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:20:2
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 0:41:47
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 12:42:1
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 2:12:45
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:24:50
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 12:41:59
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:41:53
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:55:53
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:38:30
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:22:8
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 14:4:9
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:3:45
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:20:34
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 13:50:30
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 13:51:51
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 14:2:2
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:23:12
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 2:44:11
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 23:46:43
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 2:43:37
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 19:55:40
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:41:34
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 14:0:12
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 13:56:56
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 12:31:56
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:7:54
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:22:17
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 13:19:40
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 19:57:38
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 19:52:51
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 13:25:30
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 23:47:0
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:19:26
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 14:1:2
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:26:42
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:29:45
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:39:44
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:14:29
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:34:20
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 0:40:49
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 23:18:22
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 2:54:15
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:25:7
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 14:1:18
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 13:19:10
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 23:19:43
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 19:52:1
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 13:49:54
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 2:43:12
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 0:53:35
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 19:57:26
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 12:32:1
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 1:36:32
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:7:27
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 19:55:1
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:9:14
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:25:11
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 2:44:4
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 23:47:16
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 2:6:40
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:25:18
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 14:7:44
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 13:21:4
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:17:29
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 23:16:16
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 13:49:51
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 14:4:6
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 19:56:1
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 19:58:11
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:38:27
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:43:47
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 23:34:13
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 19:57:29
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 2:43:51
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:15:35
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:47:12
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 23:44:11
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 14:1:58
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:41:48
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:51:5
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 0:30:22
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:8:40
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:17:25
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 20:18:13
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:24:15
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:5:19
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 0:30:40
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 14:13:24
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 14:4:31
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 0:23:50
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 21:21:44
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 14:1:49
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 14:0:9
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:55:49
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:40:7
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 14:6:53
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 2:42:12
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 23:42:59
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:19:58
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-31 2:56:23
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 0:41:21
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 12:34:53
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 20:34:9
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 14:13:14
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 0:29:24
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 13:57:22
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-30 12:31:50
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/logs/2020-9-29 19:40:41
+
+2020-9-31 2:56:29   DEBUG (./reeemake.Reeemake) Found directory ./.reeemake/default/objects, searching it
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Getting all files in dir ./.reeemake/default/objects
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/default/objects/logging.o
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/default/objects/args.o
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Got dir entry ./.reeemake/default/objects/reeemake.o
+
+2020-9-31 2:56:29   DEBUG (./reeemake.Reeemake) Found c++ source file ./reeemake.cpp
+
+2020-9-31 2:56:29   DEBUG (./reeemake.Reeemake) Found c++ source file ./logging.cpp
+
+2020-9-31 2:56:29   DEBUG (./reeemake.Reeemake) Found c++ source file ./args.cpp
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Compiling objects
+
+2020-9-31 2:56:29   INFO (./reeemake.Reeemake) Running system command g++-8 -c ./reeemake.cpp -I . -Wall -std=c++17 -o ./.reeemake/default/objects/reeemake.o -Wno-sign-compare
+
+2020-9-31 2:56:30   INFO (./reeemake.Reeemake) Running system command g++-8 -c ./logging.cpp -I . -Wall -std=c++17 -o ./.reeemake/default/objects/logging.o -Wno-sign-compare
+
+2020-9-31 2:56:31   INFO (./reeemake.Reeemake) Running system command g++-8 -c ./args.cpp -I . -Wall -std=c++17 -o ./.reeemake/default/objects/args.o -Wno-sign-compare
+
+2020-9-31 2:56:32   INFO (./reeemake.Reeemake) Building
+
+2020-9-31 2:56:32   INFO (./reeemake.Reeemake) Running system command g++-8 ./.reeemake/default/objects/reeemake.o ./.reeemake/default/objects/logging.o ./.reeemake/default/objects/args.o -o ./reeemake -lstdc++fs
+
