@@ -1,6 +1,7 @@
 #pragma once
 
 #include <filesystem>
+#include <fstream>
 #include <time.h>
 #include "Logging.h"
 
@@ -10,13 +11,13 @@ struct SourceFile
 {
     fs::path path;
     std::time_t lastBuildTime;
-    std::vector<SourceFile> dependencies;
+    std::vector<fs::path> dependencies;
 };
 
 class SourceFileSerializationUtil
 {
     public:
-        void SerializeSourceFile(SourceFile *, fs::path *);
+        void SerializeSourceFile(SourceFile *, fs::path);
         SourceFile DeserializeSourceFile(fs::directory_entry *);
 
     private:

@@ -2,6 +2,7 @@
 
 # config files have the extension .reee
 # every line is a command
+# commands are parsed LTP
 
 
 # simple dependencies like this are tracked automatically
@@ -9,6 +10,9 @@ depend SourceFile1.cpp SourceFile1.h
 
 # more complex dependencies can be added manually
 depend SourceFile2.cpp SourceFile4.h
+
+# or removed
+no-depend SourceFile2.cpp SourceFile2.h
 
 
 # set dependency tracking to fully manual

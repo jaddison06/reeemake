@@ -2,6 +2,8 @@
 
 // file paths should not be having a trailing / please
 
+// general TODO: add lots of logging
+
 // TODO: optimise this nugget
 std::vector<fs::path> Reeemake::getFilesInDir(fs::path dir)
 {
@@ -53,6 +55,11 @@ bool Reeemake::isAnnoyingDir(std::string dirName)
 std::string Reeemake::time_t_to_string(time_t *time)
 {
     return std::asctime(std::localtime(time));
+}
+
+std::vector<fs::path> Reeemake::getDependencies(fs::path *file, std::vector<fs::path> *filesInDir)
+{
+    
 }
 
 bool Reeemake::fileDataExists(fs::path *path, std::vector<SourceFile> *fileData, int *fileDataIndex)
@@ -203,7 +210,6 @@ void Reeemake::build(int argc, char *argv[])
 
     std::vector<fs::path> allFilesInDir;
     std::vector<fs::path> cxxSourceFiles;
-    std::vector<fs::path> cxxHeaderFiles;
 
     allFilesInDir = getFilesInDir(".");
     std::vector<int> entriesToRemove;
@@ -228,10 +234,6 @@ void Reeemake::build(int argc, char *argv[])
         {
             logger.debug("Found c++ source file "+(std::string)file);
             cxxSourceFiles.push_back(file);
-        } else if (file.extension() == ".h" || file.extension() == ".hpp")
-        {
-            logger.debug("Found c++ header file "+(std::string)file);
-            cxxHeaderFiles.push_back(file);
         }
     }
 
@@ -283,9 +285,6 @@ void Reeemake::build(int argc, char *argv[])
             filesToBuild.push_back(fileData.at(fileDataIndex).path);
         }
     }
-
-    //DEBUG
-    filesToBuild = cxxSourceFiles;
     
 
     // actual build
@@ -332,7 +331,16 @@ void Reeemake::build(int argc, char *argv[])
     for (auto file : cxxSourceFiles)
     {
         logger.debug("Updating fileData for file "+(std::string)file);
+        
+        SourceFile newFileData
+        {
+            file,
+            time(0),
+            getDependencies(&file, &allFilesInDir)
+        };
 
+        
+        serializationUtil.SerializeSourceFile(&newFileData, fs::path((std::string)fileDataPath + "/"+(std::string)file+".dat"));
     }
 
 }
