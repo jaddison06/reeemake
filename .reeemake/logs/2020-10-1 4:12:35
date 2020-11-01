@@ -1,0 +1,48 @@
+2020-10-1 4:12:35   DEBUG (./reeemake.main) Initialized
+
+2020-10-1 4:12:35   INFO (./reeemake.Reeemake) Reeemake initialized
+
+2020-10-1 4:12:35   INFO (./reeemake.ArgParser) Super-Fast, Cross-Platform Build System For C++! Simple And Exciting! (version 0.25)
+
+2020-10-1 4:12:35   DEBUG (./reeemake.ArgParser) ArgParser created
+
+2020-10-1 4:12:35   INFO (./reeemake.ArgParser) Parsing args
+
+2020-10-1 4:12:35   DEBUG (./reeemake.ArgParser) Checking for duplicate arg names
+
+2020-10-1 4:12:35   DEBUG (./reeemake.ArgParser) Checking optional conf
+
+2020-10-1 4:12:35   DEBUG (./reeemake.ArgParser) Optional conf OK
+
+2020-10-1 4:12:35   DEBUG (./reeemake.ArgParser) Checking optional help
+
+2020-10-1 4:12:35   DEBUG (./reeemake.ArgParser) Optional help OK
+
+2020-10-1 4:12:35   DEBUG (./reeemake.ArgParser) Got arg ./reeemake
+
+2020-10-1 4:12:35   DEBUG (./reeemake.ArgParser) Is first arg - program name
+
+2020-10-1 4:12:35   DEBUG (./reeemake.ArgParser) Got arg -h
+
+2020-10-1 4:12:35   DEBUG (./reeemake.ArgParser) is optional switch
+
+2020-10-1 4:12:35   DEBUG (./reeemake.ArgParser) is short name
+
+2020-10-1 4:12:35   DEBUG (./reeemake.ArgParser) Is a valid arg
+
+2020-10-1 4:12:35   INFO (./reeemake.ArgParser) Generating help
+
+2020-10-1 4:12:35   DEBUG (./reeemake.ArgParser) Help text generated:
+./reeemake (version 0.25)
+Super-Fast, Cross-Platform Build System For C++! Simple And Exciting!
+
+Optional args:
+
+     -c, --conf : Configuration file to read from (string)
+
+     -h, --help : Show help and exit
+
+
+
+2020-10-1 4:12:35   INFO (./reeemake.ArgParser) Exiting
+

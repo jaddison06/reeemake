@@ -11,7 +11,7 @@
 #include "SourceFile.h"
 #include "ConfigFile.h"
 
-#define VERSION "0.2"
+#define VERSION "0.25"
 #define DESCRIPTION "Super-Fast, Cross-Platform Build System For C++! Simple And Exciting!"
 
 namespace fs = std::filesystem;
