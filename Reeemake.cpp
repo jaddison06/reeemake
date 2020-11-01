@@ -311,8 +311,8 @@ void Reeemake::build(int argc, char *argv[])
 
     std::string COMPILER = "g++-8";
     std::string BIN_NAME = "reeemake";
-    //DEBUG TODO: get rid of -Wno-return-type once the spicy functions exist
-    std::vector<std::string> COMPILER_FLAGS {"-Wno-sign-compare", "-Wno-return-type"};
+    
+    std::vector<std::string> COMPILER_FLAGS {"-Wno-sign-compare"};
     std::vector<std::string> LIBRARIES {"stdc++fs"};
 
     // compile to objects

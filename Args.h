@@ -30,8 +30,13 @@ struct ReturnArg
 {
     std::string name;
     std::string val;
+
+    // unreliable, used internally but
+    // please don't trust these from the caller
     bool needsParameter = false;
     bool receivedParameter = true;
+
+
     ArgType type;
     ArgFmt fmt;
 };
