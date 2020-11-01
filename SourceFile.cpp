@@ -56,6 +56,7 @@ SourceFile SourceFileSerializationUtil::DeserializeSourceFile(fs::directory_entr
             if (i==0)
             {
                 output.path = fs::path(line);
+                i++;
             } else if (i==1)
             {
                 time_t lastBuildTime(stoi(line));

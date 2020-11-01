@@ -17,7 +17,7 @@ std::vector<fs::path> Reeemake::getFilesInDir(fs::path dir)
     {
         if ( !annoyingDir )
         {
-            logger.info("Got dir entry "+(std::string)(fs::path)entry);
+            logger.debug("Got dir entry "+(std::string)(fs::path)entry);
         }
         output.push_back(entry);
     }
@@ -59,13 +59,19 @@ std::string Reeemake::time_t_to_string(time_t *time)
 
 bool Reeemake::fileDataExists(fs::path *path, std::vector<SourceFile> *fileData, int *fileDataIndex)
 {
+    //logger.debug("Checking if file data exists for "+(std::string)*path);
     for (int i=0; i<fileData->size(); i++)
     {
         auto file = fileData->at(i);
+        //logger.debug("Got item "+std::to_string(i)+" from fileData, path "+(std::string)file.path);
         if (file.path == *path)
         {
+            //logger.debug("It's A Match!");
             *fileDataIndex = i;
             return true;
+        } else
+        {
+            //logger.debug("no match ):");
         }
     }
     return false;
@@ -325,35 +331,37 @@ void Reeemake::build(int argc, char *argv[])
         verboseSystem(command);
     }
 
-
-    logger.info("Building");
-    std::string buildCommand = COMPILER + " ";
-    for (auto file : filesToBuild)
+    if (!filesToBuild.size() == 0)
     {
-        buildCommand += (std::string)objDir + "/" + (std::string)file.stem() + ".o ";
-    }
-    buildCommand += "-o ./" + BIN_NAME;
-    for (auto lib : LIBRARIES)
-    {
-        buildCommand += " -l" + lib;
-    }
-    verboseSystem(buildCommand);
-
-    // cleanup
-    logger.info("Updating fileData");
-    for (auto file : cxxSourceFiles)
-    {
-        logger.debug("Updating fileData for file "+(std::string)file);
-        
-        SourceFile newFileData
+        logger.info("Building");
+        std::string buildCommand = COMPILER + " ";
+        for (auto file : cxxSourceFiles)
         {
-            file,
-            time(0),
-            getDependencies(&file, &allFilesInDir)
-        };
+            buildCommand += (std::string)objDir + "/" + (std::string)file.stem() + ".o ";
+        }
+        buildCommand += "-o ./" + BIN_NAME;
+        for (auto lib : LIBRARIES)
+        {
+            buildCommand += " -l" + lib;
+        }
+        verboseSystem(buildCommand);
 
-        
-        serializationUtil.SerializeSourceFile(&newFileData, fs::path((std::string)fileDataPath + "/"+(std::string)file+".dat"));
+        // cleanup
+        logger.info("Updating fileData");
+        for (auto file : cxxSourceFiles)
+        {
+            logger.debug("Updating fileData for file "+(std::string)file);
+            
+            SourceFile newFileData
+            {
+                file,
+                time(0),
+                getDependencies(&file, &allFilesInDir)
+            };
+
+            
+            serializationUtil.SerializeSourceFile(&newFileData, fs::path((std::string)fileDataPath + "/"+(std::string)file+".dat"));
+        }
     }
 
 }
