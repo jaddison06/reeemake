@@ -156,10 +156,14 @@ bool Reeemake::needToBuild(fs::path *sourceFile, std::vector<SourceFile> *fileDa
             int modifiedDependencyCount = 0;
             for (auto dependency : fileData->at(fileDataIndex).dependencies)
             {
+                logger.debug("Got dependency "+(std::string)dependency.path);
                 if (needToBuild(&dependency.path, fileData))
                 {
                     modifiedDependencyCount++;
                     logger.debug("Dependency "+(std::string)dependency.path+" has changed");
+                } else
+                {
+                    logger.debug("No change to dependency");
                 }
             }
             if (modifiedDependencyCount > 0)
@@ -186,7 +190,7 @@ std::vector<fs::path> Reeemake::getDependencies(fs::path *sourceFile, std::vecto
     std::vector<fs::path> dependencies;
     for (auto file : *allFilesInDir)
     {
-        if (!isAnnoyingDir((std::string)file)) { logger.debug("Got possible dependency "+(std::string)file); }
+        //if (!isAnnoyingDir((std::string)file)) { logger.debug("Got possible dependency "+(std::string)file); }
 
         // they have the same stem, dependency is a header file, and they _aren't_the_same_file_
         if ( (file.stem() == sourceFile->stem()) && (file.extension() == ".h" || file.extension() == ".hpp") && (file != *sourceFile) )
@@ -350,10 +354,12 @@ void Reeemake::build(int argc, char *argv[])
     if (!fs::exists(fileDataPath)) { fs::create_directories(fileDataPath); }
     for (auto sourceFile : fs::directory_iterator(fileDataPath))
     {
-        std::string fileString;
+        // read entire file into a stringstream
+        std::stringstream buffer;
         std::ifstream fh(sourceFile.path());
-        fh >> fileString;
+        buffer << fh.rdbuf();
         fh.close();
+        std::string fileString = buffer.str();
 
         fileData.push_back(serializationUtil.DeserializeSourceFile(&fileString));
     }
@@ -405,30 +411,31 @@ void Reeemake::build(int argc, char *argv[])
         }
         verboseSystem(buildCommand);
 
-        // cleanup
-        logger.info("Updating fileData");
-        for (auto file : cxxSourceFiles)
-        {
-            logger.debug("Updating fileData for file "+(std::string)file);
-            
-            
-            SourceFile newFileData = genSourceFile(&file, &allFilesInDir);
-
-            fs::path sourceFilePath((std::string)fileDataPath + "/"+(std::string)file+".dat");
-
-            logger.info("Serializing source file "+(std::string)sourceFilePath);
-            // if the file already exists, delete it and start afresh
-            if (fs::exists(sourceFilePath))
-            {
-                fs::remove(sourceFilePath);
-                logger.debug("The .dat file already existed, removed it");
-            }
-
-            logger.debug("Opening file handle");
-            std::ofstream fh(sourceFilePath);
-            fh << serializationUtil.SerializeSourceFile(&newFileData);
-            fh.close();
         }
+    
+    // cleanup
+    logger.info("Updating fileData");
+    for (auto file : cxxSourceFiles)
+    {
+        logger.debug("Updating fileData for file "+(std::string)file);
+        
+        
+        SourceFile newFileData = genSourceFile(&file, &allFilesInDir);
+
+        fs::path sourceFilePath((std::string)fileDataPath + "/"+(std::string)file+".dat");
+
+        logger.info("Serializing source file "+(std::string)sourceFilePath);
+        // if the file already exists, delete it and start afresh
+        if (fs::exists(sourceFilePath))
+        {
+            fs::remove(sourceFilePath);
+            logger.debug("The .dat file already existed, removed it");
+        }
+
+        logger.debug("Opening file handle");
+        std::ofstream fh(sourceFilePath);
+        fh << serializationUtil.SerializeSourceFile(&newFileData);
+        fh.close();
     }
 
 }

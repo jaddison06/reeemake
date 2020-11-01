@@ -4,6 +4,7 @@
 #include <vector>
 #include <ctime>
 #include <fstream>
+#include <sstream>
 #include "Logging.h"
 #include "Args.h"
 #include "SourceFile.h"
@@ -36,5 +37,6 @@ class Reeemake
         std::vector<ParserOutputItem> parsedArgs;
 
         Logger logger;
+        
         
 };

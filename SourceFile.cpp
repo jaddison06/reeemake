@@ -14,23 +14,25 @@ std::string SourceFileSerializationUtil::SerializeSourceFile(SourceFile *sourceF
     logger.debug("Getting lastBuildTime");
     int lastBuildTime = sourceFile->lastBuildTime;
     logger.debug("Adding lastBuildTime");
-    output += lastBuildTime + "\n";
+    output += std::to_string(lastBuildTime) + "\n";
 
     logger.debug("Adding dependencies");
     output += "DEPENDS START\n";
     for (auto dependency : sourceFile->dependencies)
     {
         logger.debug("Adding dependency "+(std::string)dependency.path);
-        output += SerializeSourceFile(&dependency) + "\n";
+        output += SerializeSourceFile(&dependency);
     }
 
     output += "DEPENDS END\n";
 
+    return output;
+
 }
 
-SourceFile SourceFileSerializationUtil::DeserializeSourceFile(std::string *file)
+SourceFile SourceFileSerializationUtil::DeserializeSourceFile(std::string *file, int level)
 {
-    logger.info("Deserializing source file "+*file);
+    logger.info("Deserializing source file:\n"+*file+"\n(at level "+std::to_string(level)+")");
     std::istringstream stream(*file);
     SourceFile output;
     std::string line;
@@ -42,50 +44,115 @@ SourceFile SourceFileSerializationUtil::DeserializeSourceFile(std::string *file)
     {
         logger.debug("Got line "+line);
         
+        /*
         if (line == "DEPENDS START")
         {
-            // line is start of dependencies
+            logger.debug("At start of dependencies");
             insideDependencies = true;
         } else if (!insideDependencies)
         {
+            logger.debug("Outside of dependencies");
             if (i==0)
             {
-                // line is path
+                logger.debug("Line is path");
                 output.path = fs::path(line);
             } else if (i==1)
             {
-                // line is lastBuildTime
+                logger.debug("Line is lastBuildTime");
                 time_t lastBuildTime(stoi(line));
                 output.lastBuildTime = lastBuildTime;
             }
             i++;
         } else
         {
+            logger.debug("Currently inside dependencies");
             if (line == "DEPENDS END")
             {
-                // line is end of dependencies
-                insideDependencies = false;
+                if (insideADependency)
+                {
+                    logger.debug("At end of current dependency");
+                    logger.debug("Previous dependency should be intact:\n"+currentDependency+"\nDeserializing it");
+                    output.dependencies.push_back(DeserializeSourceFile(&currentDependency, level+1));
+                    insideADependency = false;
+                } else
+                {
+                    logger.debug("At end of dependencies");
+                    insideDependencies = false;
+                }
             } else {
                 if (!insideADependency)
                 {
                     // we just got to the end of a dependency,
-                    // write it and start a new one
-                    output.dependencies.push_back(DeserializeSourceFile(&currentDependency));
+                    // start a new one
+                    logger.debug("At start of next dependency");
                     currentDependency = "";
                     insideADependency = true;
                 } else {
-                    // we're inside a dependency
+                    logger.debug("Inside a dependency");
                     currentDependency += line + "\n";
-                    if (line == "END DEPENDS")
-                    {
-                        // end of the dependency
-                        insideADependency = false;
-                    }
                 }
                 
             }
         }
+        */
+
+       // updated logic since SourceFile.dependencies is now std::vector<SourceFile>
+       // so we get nesting
+       if (!insideDependencies)
+       {
+           logger.debug("Not inside dependencies");
+           if (line == "DEPENDS START")
+            {
+                logger.debug("At start of dependencies");
+                insideDependencies = true;
+            } else
+            {
+                logger.debug("Outside of dependencies");
+                if (i==0)
+                {
+                    logger.debug("Line is path");
+                    output.path = fs::path(line);
+                } else if (i==1)
+                {
+                    logger.debug("Line is lastBuildTime");
+                    time_t lastBuildTime(stoi(line));
+                    output.lastBuildTime = lastBuildTime;
+                }
+                i++;
+            }
+        } else
+        {
+            logger.debug("Currently inside dependencies");
+            if (!insideADependency)
+            {
+                logger.debug("Not inside a dependency");
+                if (line == "DEPENDS END")
+                {
+                    logger.debug("At end of dependencies");
+                    insideDependencies = false;
+                } else
+                {
+                    logger.debug("At start of next dependency");
+                    currentDependency = "";
+                    insideADependency = true;
+                }
+            } else
+            {
+                logger.debug("Inside a dependency");
+                if (line == "DEPENDS END")
+                {
+                    logger.debug("At end of dependency, whole thing:\n"+currentDependency+"\nDeserializing it");
+                    output.dependencies.push_back(DeserializeSourceFile(&currentDependency, level+1));
+                    insideADependency = false;
+                } else
+                {
+                    logger.debug("Dependency line");
+                    currentDependency += line + "\n";
+                }
+            }
+        }
     }
+    logger.info("Finished deserializing (level "+std::to_string(level)+")");
 
     return output;
 }

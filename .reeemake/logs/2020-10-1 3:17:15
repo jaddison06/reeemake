@@ -1,0 +1,726 @@
+2020-10-1 3:17:15   DEBUG (./reeemake.main) Initialized
+
+2020-10-1 3:17:15   INFO (./reeemake.Reeemake) Reeemake initialized
+
+2020-10-1 3:17:15   INFO (./reeemake.ArgParser) Super-Fast, Cross-Platform Build System For C++! Simple And Exciting! (version 0.2)
+
+2020-10-1 3:17:15   DEBUG (./reeemake.ArgParser) ArgParser created
+
+2020-10-1 3:17:15   INFO (./reeemake.ArgParser) Parsing args
+
+2020-10-1 3:17:15   DEBUG (./reeemake.ArgParser) Checking for duplicate arg names
+
+2020-10-1 3:17:15   DEBUG (./reeemake.ArgParser) Checking optional conf
+
+2020-10-1 3:17:15   DEBUG (./reeemake.ArgParser) Optional conf OK
+
+2020-10-1 3:17:15   DEBUG (./reeemake.ArgParser) Checking optional help
+
+2020-10-1 3:17:15   DEBUG (./reeemake.ArgParser) Optional help OK
+
+2020-10-1 3:17:15   DEBUG (./reeemake.ArgParser) Got arg ./reeemake
+
+2020-10-1 3:17:15   DEBUG (./reeemake.ArgParser) Is first arg - program name
+
+2020-10-1 3:17:15   DEBUG (./reeemake.ArgParser) Checking for illegal duplicates
+
+2020-10-1 3:17:15   INFO (./reeemake.Reeemake) Config arg wasn't supplied
+
+2020-10-1 3:17:15   INFO (./reeemake.Reeemake) No conf files in dir, using default config
+
+2020-10-1 3:17:15   INFO (./reeemake.Reeemake) Using config default
+
+2020-10-1 3:17:15   INFO (./reeemake.Reeemake) Getting all files in dir .
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Got dir entry ./.vscode
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Got dir entry ./Reeemake.h
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Got dir entry ./config.txt
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Got dir entry ./Logging.h
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Got dir entry ./SourceFile.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Got dir entry ./Args.h
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Got dir entry ./main.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Got dir entry ./Args.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Got dir entry ./ConfigFile.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Got dir entry ./ConfigFile.h
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Got dir entry ./.reeemake
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Got dir entry ./Logging.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Got dir entry ./Reeemake.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Got dir entry ./reeemake
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Got dir entry ./readme.md
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Got dir entry ./SourceFile.h
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Got dir entry ./.git
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Found directory ./.vscode, searching it
+
+2020-10-1 3:17:15   INFO (./reeemake.Reeemake) Getting all files in dir ./.vscode
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Got dir entry ./.vscode/tasks.json
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Found c++ source file ./SourceFile.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Found c++ source file ./main.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Found c++ source file ./Args.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Found c++ source file ./ConfigFile.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Found c++ source file ./Logging.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Found c++ source file ./Reeemake.cpp
+
+2020-10-1 3:17:15   INFO (Reeemake/SourceFile) Deserializing source file:
+./Reeemake.cpp
+1604200532
+DEPENDS START
+./Reeemake.h
+1604200532
+DEPENDS START
+DEPENDS END
+DEPENDS END
+
+(at level 1)
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line ./Reeemake.cpp
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Outside of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Line is path
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line 1604200532
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Outside of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Line is lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line DEPENDS START
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) At start of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line ./Reeemake.h
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Currently inside dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) At start of next dependency
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) This is our first dependency, not gonna try to deserialize the previous one
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line 1604200532
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Currently inside dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Inside a dependency
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line DEPENDS START
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) At start of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line DEPENDS END
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Currently inside dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) At end of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line DEPENDS END
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Outside of dependencies
+
+2020-10-1 3:17:15   INFO (Reeemake/SourceFile) Finished deserializing (level 1)
+
+2020-10-1 3:17:15   INFO (Reeemake/SourceFile) Deserializing source file:
+./Logging.cpp
+1604200532
+DEPENDS START
+./Logging.h
+1604200532
+DEPENDS START
+DEPENDS END
+DEPENDS END
+
+(at level 1)
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line ./Logging.cpp
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Outside of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Line is path
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line 1604200532
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Outside of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Line is lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line DEPENDS START
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) At start of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line ./Logging.h
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Currently inside dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) At start of next dependency
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) This is our first dependency, not gonna try to deserialize the previous one
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line 1604200532
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Currently inside dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Inside a dependency
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line DEPENDS START
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) At start of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line DEPENDS END
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Currently inside dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) At end of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line DEPENDS END
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Outside of dependencies
+
+2020-10-1 3:17:15   INFO (Reeemake/SourceFile) Finished deserializing (level 1)
+
+2020-10-1 3:17:15   INFO (Reeemake/SourceFile) Deserializing source file:
+./ConfigFile.cpp
+1604200532
+DEPENDS START
+./ConfigFile.h
+1604200532
+DEPENDS START
+DEPENDS END
+DEPENDS END
+
+(at level 1)
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line ./ConfigFile.cpp
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Outside of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Line is path
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line 1604200532
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Outside of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Line is lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line DEPENDS START
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) At start of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line ./ConfigFile.h
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Currently inside dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) At start of next dependency
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) This is our first dependency, not gonna try to deserialize the previous one
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line 1604200532
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Currently inside dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Inside a dependency
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line DEPENDS START
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) At start of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line DEPENDS END
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Currently inside dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) At end of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line DEPENDS END
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Outside of dependencies
+
+2020-10-1 3:17:15   INFO (Reeemake/SourceFile) Finished deserializing (level 1)
+
+2020-10-1 3:17:15   INFO (Reeemake/SourceFile) Deserializing source file:
+./main.cpp
+1604200532
+DEPENDS START
+DEPENDS END
+
+(at level 1)
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line ./main.cpp
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Outside of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Line is path
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line 1604200532
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Outside of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Line is lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line DEPENDS START
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) At start of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line DEPENDS END
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Currently inside dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) At end of dependencies
+
+2020-10-1 3:17:15   INFO (Reeemake/SourceFile) Finished deserializing (level 1)
+
+2020-10-1 3:17:15   INFO (Reeemake/SourceFile) Deserializing source file:
+./SourceFile.cpp
+1604200532
+DEPENDS START
+./SourceFile.h
+1604200532
+DEPENDS START
+DEPENDS END
+DEPENDS END
+
+(at level 1)
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line ./SourceFile.cpp
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Outside of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Line is path
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line 1604200532
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Outside of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Line is lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line DEPENDS START
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) At start of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line ./SourceFile.h
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Currently inside dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) At start of next dependency
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) This is our first dependency, not gonna try to deserialize the previous one
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line 1604200532
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Currently inside dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Inside a dependency
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line DEPENDS START
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) At start of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line DEPENDS END
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Currently inside dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) At end of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line DEPENDS END
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Outside of dependencies
+
+2020-10-1 3:17:15   INFO (Reeemake/SourceFile) Finished deserializing (level 1)
+
+2020-10-1 3:17:15   INFO (Reeemake/SourceFile) Deserializing source file:
+./Args.cpp
+1604200532
+DEPENDS START
+./Args.h
+1604200532
+DEPENDS START
+DEPENDS END
+DEPENDS END
+
+(at level 1)
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line ./Args.cpp
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Outside of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Line is path
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line 1604200532
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Outside of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Line is lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line DEPENDS START
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) At start of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line ./Args.h
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Currently inside dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) At start of next dependency
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) This is our first dependency, not gonna try to deserialize the previous one
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line 1604200532
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Currently inside dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Inside a dependency
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line DEPENDS START
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) At start of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line DEPENDS END
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Currently inside dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) At end of dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Got line DEPENDS END
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Outside of dependencies
+
+2020-10-1 3:17:15   INFO (Reeemake/SourceFile) Finished deserializing (level 1)
+
+2020-10-1 3:17:15   INFO (./reeemake.Reeemake) Checking whether to build ./SourceFile.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Found file data
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Last write time Sun Nov  1 03:17:10 2020
+
+Last build time Sun Nov  1 03:15:32 2020
+
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) File change detected, adding it to the build list
+
+2020-10-1 3:17:15   INFO (./reeemake.Reeemake) Checking whether to build ./main.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Found file data
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Last write time Sat Oct 31 17:37:08 2020
+
+Last build time Sun Nov  1 03:15:32 2020
+
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) No file change, checking dependencies
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) File hasn't been modified
+
+2020-10-1 3:17:15   INFO (./reeemake.Reeemake) Checking whether to build ./Args.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Found file data
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Last write time Sat Oct 31 12:59:02 2020
+
+Last build time Sun Nov  1 03:15:32 2020
+
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) No file change, checking dependencies
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) File hasn't been modified
+
+2020-10-1 3:17:15   INFO (./reeemake.Reeemake) Checking whether to build ./ConfigFile.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Found file data
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Last write time Sat Oct 31 13:45:34 2020
+
+Last build time Sun Nov  1 03:15:32 2020
+
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) No file change, checking dependencies
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) File hasn't been modified
+
+2020-10-1 3:17:15   INFO (./reeemake.Reeemake) Checking whether to build ./Logging.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Found file data
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Last write time Sat Oct 31 12:59:15 2020
+
+Last build time Sun Nov  1 03:15:32 2020
+
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) No file change, checking dependencies
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) File hasn't been modified
+
+2020-10-1 3:17:15   INFO (./reeemake.Reeemake) Checking whether to build ./Reeemake.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Found file data
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Last write time Sun Nov  1 03:07:55 2020
+
+Last build time Sun Nov  1 03:15:32 2020
+
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) No file change, checking dependencies
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) File hasn't been modified
+
+2020-10-1 3:17:15   INFO (./reeemake.Reeemake) Compiling objects
+
+2020-10-1 3:17:15   INFO (./reeemake.Reeemake) Running system command g++-8 -c ./SourceFile.cpp -I . -Wall -std=c++17 -o ./.reeemake/default/build/SourceFile.o -Wno-sign-compare
+
+2020-10-1 3:17:15   INFO (./reeemake.Reeemake) Building
+
+2020-10-1 3:17:15   INFO (./reeemake.Reeemake) Running system command g++-8 ./.reeemake/default/build/SourceFile.o ./.reeemake/default/build/main.o ./.reeemake/default/build/Args.o ./.reeemake/default/build/ConfigFile.o ./.reeemake/default/build/Logging.o ./.reeemake/default/build/Reeemake.o -o ./reeemake -lstdc++fs
+
+2020-10-1 3:17:15   INFO (./reeemake.Reeemake) Updating fileData
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Updating fileData for file ./SourceFile.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Generating a SourceFile for ./SourceFile.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Getting dependencies for file ./SourceFile.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Was a dependency
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Got dependency ./SourceFile.h
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Generating a SourceFile for ./SourceFile.h
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Getting dependencies for file ./SourceFile.h
+
+2020-10-1 3:17:15   INFO (./reeemake.Reeemake) Serializing source file ./.reeemake/default/fileData/./SourceFile.cpp.dat
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) The .dat file already existed, removed it
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Opening file handle
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Generating serialized text
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding path
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Getting lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding dependency ./SourceFile.h
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Generating serialized text
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding path
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Getting lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding dependencies
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Updating fileData for file ./main.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Generating a SourceFile for ./main.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Getting dependencies for file ./main.cpp
+
+2020-10-1 3:17:15   INFO (./reeemake.Reeemake) Serializing source file ./.reeemake/default/fileData/./main.cpp.dat
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) The .dat file already existed, removed it
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Opening file handle
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Generating serialized text
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding path
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Getting lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding dependencies
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Updating fileData for file ./Args.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Generating a SourceFile for ./Args.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Getting dependencies for file ./Args.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Was a dependency
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Got dependency ./Args.h
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Generating a SourceFile for ./Args.h
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Getting dependencies for file ./Args.h
+
+2020-10-1 3:17:15   INFO (./reeemake.Reeemake) Serializing source file ./.reeemake/default/fileData/./Args.cpp.dat
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) The .dat file already existed, removed it
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Opening file handle
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Generating serialized text
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding path
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Getting lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding dependency ./Args.h
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Generating serialized text
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding path
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Getting lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding dependencies
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Updating fileData for file ./ConfigFile.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Generating a SourceFile for ./ConfigFile.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Getting dependencies for file ./ConfigFile.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Was a dependency
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Got dependency ./ConfigFile.h
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Generating a SourceFile for ./ConfigFile.h
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Getting dependencies for file ./ConfigFile.h
+
+2020-10-1 3:17:15   INFO (./reeemake.Reeemake) Serializing source file ./.reeemake/default/fileData/./ConfigFile.cpp.dat
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) The .dat file already existed, removed it
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Opening file handle
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Generating serialized text
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding path
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Getting lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding dependency ./ConfigFile.h
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Generating serialized text
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding path
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Getting lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding dependencies
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Updating fileData for file ./Logging.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Generating a SourceFile for ./Logging.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Getting dependencies for file ./Logging.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Was a dependency
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Got dependency ./Logging.h
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Generating a SourceFile for ./Logging.h
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Getting dependencies for file ./Logging.h
+
+2020-10-1 3:17:15   INFO (./reeemake.Reeemake) Serializing source file ./.reeemake/default/fileData/./Logging.cpp.dat
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) The .dat file already existed, removed it
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Opening file handle
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Generating serialized text
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding path
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Getting lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding dependency ./Logging.h
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Generating serialized text
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding path
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Getting lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding dependencies
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Updating fileData for file ./Reeemake.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Generating a SourceFile for ./Reeemake.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Getting dependencies for file ./Reeemake.cpp
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Was a dependency
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Got dependency ./Reeemake.h
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Generating a SourceFile for ./Reeemake.h
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Getting dependencies for file ./Reeemake.h
+
+2020-10-1 3:17:15   INFO (./reeemake.Reeemake) Serializing source file ./.reeemake/default/fileData/./Reeemake.cpp.dat
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) The .dat file already existed, removed it
+
+2020-10-1 3:17:15   DEBUG (./reeemake.Reeemake) Opening file handle
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Generating serialized text
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding path
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Getting lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding dependencies
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding dependency ./Reeemake.h
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Generating serialized text
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding path
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Getting lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding lastBuildTime
+
+2020-10-1 3:17:15   DEBUG (Reeemake/SourceFile) Adding dependencies
+
