@@ -36,6 +36,7 @@ void initLogging(std::string *logFolder)
 
     fname = *logFolder + formatTime(startTime);
 
+    // is this necessary?
     logfile.open(fname, std::ios::app);
 }
 

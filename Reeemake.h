@@ -10,6 +10,7 @@
 #include "Args.h"
 #include "SourceFile.h"
 #include "ConfigFile.h"
+#include "VectorThings.h"
 
 #define VERSION "0.25"
 #define DESCRIPTION "Super-Fast, Cross-Platform Build System For C++! Simple And Exciting!"

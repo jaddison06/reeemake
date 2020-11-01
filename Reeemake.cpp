@@ -44,12 +44,7 @@ bool Reeemake::isAnnoyingDir(std::string dirName)
         "./.reeemake"
     };
 
-    for (auto dir : annoyingDirs)
-    {
-        if (dirName.substr(0, dir.length()) == dir) { return true; }
-    }
-
-    return false;
+    return itemInVector(dirName, &annoyingDirs);
 }
 
 std::string Reeemake::time_t_to_string(time_t *time)
@@ -57,6 +52,7 @@ std::string Reeemake::time_t_to_string(time_t *time)
     return std::asctime(std::localtime(time));
 }
 
+// spicy itemInVector
 bool Reeemake::fileDataExists(fs::path *path, std::vector<SourceFile> *fileData, int *fileDataIndex)
 {
     //logger.debug("Checking if file data exists for "+path->string());
@@ -334,6 +330,8 @@ void Reeemake::build(int argc, char *argv[])
 
     allFilesInDir = getFilesInDir(".");
     std::vector<int> entriesToRemove;
+
+    // spicy removeItemFromVector
     for (int i=0; i<allFilesInDir.size(); i++)
     {
         auto entry = allFilesInDir.at(i);

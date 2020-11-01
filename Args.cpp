@@ -99,6 +99,7 @@ void ArgParser::addReturnArgToOutput(std::vector<ParserOutputItem> *output, Retu
     ParserOutputItem outputItem;
     bool itemExists = false;
     int elementToRemove;
+    // spicy removeItemFromVector
     for (int i=0; i<output->size(); i++)
     {
         auto item = output->at(i);
@@ -112,6 +113,8 @@ void ArgParser::addReturnArgToOutput(std::vector<ParserOutputItem> *output, Retu
             elementToRemove = i;
         }
     }
+
+    
 
 
     if (itemExists)

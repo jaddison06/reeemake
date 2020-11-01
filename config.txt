@@ -59,7 +59,12 @@ bin-name notAVirus
 install Not A Virus
 
 # run system command (why would you though?)
+# these get run AFTER the build completes,
+# in the order that they appeared in the config
 system echo "You Have Not Installed A Virus On Your System!"
+
+# run system command NOW you needy lil bitch
+system-now echo "You Are Not About To Install A Virus On Your System!"
 
 
 # run this command _only_ on a specific OS
@@ -68,3 +73,21 @@ mac comp gnat
 linux install Open-Source Virus
 cygwin manual-depends enable
 
+
+# #define this in all source files
+define VERSION 69
+
+
+# Some additional markup is required in source files
+#
+# These all have the syntax //REEEMAKE <command> <options>
+# and must be located on their own line, with no whitespace before (or after?)
+#
+# for a Reeemake #define, put the comment
+# //REEMAKE defines
+# wherever you want the #defines to be located.
+# (this is really annoying and will be done automatically soon, i promise)
+#
+# To add a source file to a group, use
+# //REEEMAKE group <group-name>
+# Source files can be in multiple groups
