@@ -175,12 +175,13 @@ bool Reeemake::needToBuild(fs::path *sourceFile, std::vector<SourceFile> *fileDa
 
 std::vector<fs::path> Reeemake::getDependencies(fs::path *sourceFile, std::vector<fs::path> *allFilesInDir)
 {
-
+    std::vector<fs::path> dependencies {};
+    return dependencies;
 }
 
 bool Reeemake::hasBeenModified(SourceFile *sourceFile)
 {
-
+    return true;
 }
 
 void Reeemake::build(int argc, char *argv[])
@@ -352,6 +353,7 @@ void Reeemake::build(int argc, char *argv[])
         {
             logger.debug("Updating fileData for file "+(std::string)file);
             
+            
             SourceFile newFileData
             {
                 file,
@@ -359,7 +361,6 @@ void Reeemake::build(int argc, char *argv[])
                 getDependencies(&file, &allFilesInDir)
             };
 
-            
             serializationUtil.SerializeSourceFile(&newFileData, fs::path((std::string)fileDataPath + "/"+(std::string)file+".dat"));
         }
     }
