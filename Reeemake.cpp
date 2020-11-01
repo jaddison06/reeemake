@@ -152,13 +152,20 @@ bool Reeemake::needToBuild(fs::path *sourceFile, std::vector<SourceFile> *fileDa
             return true;
         } else
         {
-            bool dependencyModified = false;
+            logger.debug("No file change, checking dependencies");
+            int modifiedDependencyCount = 0;
             for (auto dependency : fileData->at(fileDataIndex).dependencies)
             {
-                if (hasBeenModified(&dependency))
+                if (needToBuild(&dependency.path, fileData))
                 {
-
+                    modifiedDependencyCount++;
+                    logger.debug("Dependency "+(std::string)dependency.path+" has changed");
                 }
+            }
+            if (modifiedDependencyCount > 0)
+            {
+                logger.debug(std::to_string(modifiedDependencyCount)+" modified dependencies found, adding this source file to the build list");
+                return true;
             }
             logger.debug("File hasn't been modified");
             return false;
@@ -173,13 +180,18 @@ bool Reeemake::needToBuild(fs::path *sourceFile, std::vector<SourceFile> *fileDa
 
 std::vector<fs::path> Reeemake::getDependencies(fs::path *sourceFile, std::vector<fs::path> *allFilesInDir)
 {
+    logger.debug("Getting dependencies for file "+(std::string)*sourceFile);
     // atm this just does headers,
     // will spice it up in v1.1
     std::vector<fs::path> dependencies;
     for (auto file : *allFilesInDir)
     {
-        if ( (file.stem() == sourceFile->stem()) && (file.extension() == ".h" || file.extension() == ".hpp") )
+        if (!isAnnoyingDir((std::string)file)) { logger.debug("Got possible dependency "+(std::string)file); }
+
+        // they have the same stem, dependency is a header file, and they _aren't_the_same_file_
+        if ( (file.stem() == sourceFile->stem()) && (file.extension() == ".h" || file.extension() == ".hpp") && (file != *sourceFile) )
         {
+            logger.debug("Was a dependency");
             dependencies.push_back(file);
         }
     }
@@ -202,6 +214,27 @@ bool Reeemake::hasBeenModified(SourceFile *sourceFile)
     logger.debug("Last write time "+time_t_to_string(&lastWriteTime)+"\nLast build time "+time_t_to_string(&lastBuildTime));
 
     return ( difftime(lastWriteTime, lastBuildTime) > 0 );
+}
+
+SourceFile Reeemake::genSourceFile(fs::path *file, std::vector<fs::path> *allFilesInDir)
+{
+    logger.debug("Generating a SourceFile for "+(std::string)*file);
+
+    SourceFile newSourceFile
+    {
+        *file,
+        time(0),
+        {}
+    };
+
+    for (auto dependency : getDependencies(file, allFilesInDir))
+    {
+        logger.debug("Got dependency "+(std::string)dependency);
+        SourceFile dependencyData = genSourceFile(&dependency, allFilesInDir);
+        newSourceFile.dependencies.push_back(dependencyData);
+    }
+
+    return newSourceFile;
 }
 
 void Reeemake::build(int argc, char *argv[])
@@ -379,12 +412,7 @@ void Reeemake::build(int argc, char *argv[])
             logger.debug("Updating fileData for file "+(std::string)file);
             
             
-            SourceFile newFileData
-            {
-                file,
-                time(0),
-                getDependencies(&file, &allFilesInDir)
-            };
+            SourceFile newFileData = genSourceFile(&file, &allFilesInDir);
 
             fs::path sourceFilePath((std::string)fileDataPath + "/"+(std::string)file+".dat");
 

@@ -31,6 +31,7 @@ class Reeemake
         bool needToBuild(fs::path *, std::vector<SourceFile> *);
         std::vector<fs::path> getDependencies(fs::path *, std::vector<fs::path> *);
         bool hasBeenModified(SourceFile *);
+        SourceFile genSourceFile(fs::path *, std::vector<fs::path> *);
 
         std::vector<ParserOutputItem> parsedArgs;
 

@@ -1,0 +1,192 @@
+2020-10-1 2:21:51   DEBUG (./reeemake.main) Initialized
+
+2020-10-1 2:21:51   INFO (./reeemake.Reeemake) Reeemake initialized
+
+2020-10-1 2:21:51   INFO (./reeemake.ArgParser) Super-Fast, Cross-Platform Build System For C++! Simple And Exciting! (version 0.2)
+
+2020-10-1 2:21:51   DEBUG (./reeemake.ArgParser) ArgParser created
+
+2020-10-1 2:21:51   INFO (./reeemake.ArgParser) Parsing args
+
+2020-10-1 2:21:51   DEBUG (./reeemake.ArgParser) Checking for duplicate arg names
+
+2020-10-1 2:21:51   DEBUG (./reeemake.ArgParser) Checking optional conf
+
+2020-10-1 2:21:51   DEBUG (./reeemake.ArgParser) Optional conf OK
+
+2020-10-1 2:21:51   DEBUG (./reeemake.ArgParser) Checking optional help
+
+2020-10-1 2:21:51   DEBUG (./reeemake.ArgParser) Optional help OK
+
+2020-10-1 2:21:51   DEBUG (./reeemake.ArgParser) Got arg ./reeemake
+
+2020-10-1 2:21:51   DEBUG (./reeemake.ArgParser) Is first arg - program name
+
+2020-10-1 2:21:51   DEBUG (./reeemake.ArgParser) Checking for illegal duplicates
+
+2020-10-1 2:21:51   INFO (./reeemake.Reeemake) Config arg wasn't supplied
+
+2020-10-1 2:21:51   INFO (./reeemake.Reeemake) No conf files in dir, using default config
+
+2020-10-1 2:21:51   INFO (./reeemake.Reeemake) Using config default
+
+2020-10-1 2:21:51   INFO (./reeemake.Reeemake) Getting all files in dir .
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Got dir entry ./.vscode
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Got dir entry ./Reeemake.h
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Got dir entry ./config.txt
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Got dir entry ./Logging.h
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Got dir entry ./SourceFile.cpp
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Got dir entry ./Args.h
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Got dir entry ./main.cpp
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Got dir entry ./Args.cpp
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Got dir entry ./ConfigFile.cpp
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Got dir entry ./ConfigFile.h
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Got dir entry ./.reeemake
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Got dir entry ./Logging.cpp
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Got dir entry ./Reeemake.cpp
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Got dir entry ./reeemake
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Got dir entry ./readme.md
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Got dir entry ./SourceFile.h
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Got dir entry ./reeemake_copy
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Got dir entry ./.git
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Found directory ./.vscode, searching it
+
+2020-10-1 2:21:51   INFO (./reeemake.Reeemake) Getting all files in dir ./.vscode
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Got dir entry ./.vscode/tasks.json
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Found c++ source file ./SourceFile.cpp
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Found c++ source file ./main.cpp
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Found c++ source file ./Args.cpp
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Found c++ source file ./ConfigFile.cpp
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Found c++ source file ./Logging.cpp
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Found c++ source file ./Reeemake.cpp
+
+2020-10-1 2:21:51   INFO (Reeemake/SourceFile) Deserializing source file ./Reeemake.cpp
+
+2020-10-1 2:21:51   DEBUG (Reeemake/SourceFile) Got line ./Reeemake.cpp
+
+2020-10-1 2:21:51   INFO (Reeemake/SourceFile) Deserializing source file ./Logging.cpp
+
+2020-10-1 2:21:51   DEBUG (Reeemake/SourceFile) Got line ./Logging.cpp
+
+2020-10-1 2:21:51   INFO (Reeemake/SourceFile) Deserializing source file ./ConfigFile.cpp
+
+2020-10-1 2:21:51   DEBUG (Reeemake/SourceFile) Got line ./ConfigFile.cpp
+
+2020-10-1 2:21:51   INFO (Reeemake/SourceFile) Deserializing source file ./main.cpp
+
+2020-10-1 2:21:51   DEBUG (Reeemake/SourceFile) Got line ./main.cpp
+
+2020-10-1 2:21:51   INFO (Reeemake/SourceFile) Deserializing source file ./SourceFile.cpp
+
+2020-10-1 2:21:51   DEBUG (Reeemake/SourceFile) Got line ./SourceFile.cpp
+
+2020-10-1 2:21:51   INFO (Reeemake/SourceFile) Deserializing source file ./Args.cpp
+
+2020-10-1 2:21:51   DEBUG (Reeemake/SourceFile) Got line ./Args.cpp
+
+2020-10-1 2:21:51   INFO (./reeemake.Reeemake) Checking whether to build ./SourceFile.cpp
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Found file data
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Last write time Sun Nov  1 02:07:01 2020
+
+Last build time Tue Nov  6 02:14:40 4461714
+
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) No file change, checking dependencies
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) File hasn't been modified
+
+2020-10-1 2:21:51   INFO (./reeemake.Reeemake) Checking whether to build ./main.cpp
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Found file data
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Last write time Sat Oct 31 17:37:08 2020
+
+Last build time Tue Nov  6 02:14:40 4461714
+
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) No file change, checking dependencies
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) File hasn't been modified
+
+2020-10-1 2:21:51   INFO (./reeemake.Reeemake) Checking whether to build ./Args.cpp
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Found file data
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Last write time Sat Oct 31 12:59:02 2020
+
+Last build time Tue Nov  6 02:14:40 4461714
+
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) No file change, checking dependencies
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) File hasn't been modified
+
+2020-10-1 2:21:51   INFO (./reeemake.Reeemake) Checking whether to build ./ConfigFile.cpp
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Found file data
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Last write time Sat Oct 31 13:45:34 2020
+
+Last build time Tue Nov  6 02:14:40 4461714
+
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) No file change, checking dependencies
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) File hasn't been modified
+
+2020-10-1 2:21:51   INFO (./reeemake.Reeemake) Checking whether to build ./Logging.cpp
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Found file data
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Last write time Sat Oct 31 12:59:15 2020
+
+Last build time Tue Nov  6 02:14:40 4461714
+
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) No file change, checking dependencies
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) File hasn't been modified
+
+2020-10-1 2:21:51   INFO (./reeemake.Reeemake) Checking whether to build ./Reeemake.cpp
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Found file data
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) Last write time Sun Nov  1 02:21:43 2020
+
+Last build time Tue Nov  6 02:14:40 4461714
+
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) No file change, checking dependencies
+
+2020-10-1 2:21:51   DEBUG (./reeemake.Reeemake) File hasn't been modified
+
+2020-10-1 2:21:51   INFO (./reeemake.Reeemake) Compiling objects
+
