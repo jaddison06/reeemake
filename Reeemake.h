@@ -3,6 +3,7 @@
 #include <filesystem>
 #include <vector>
 #include <ctime>
+#include <fstream>
 #include "Logging.h"
 #include "Args.h"
 #include "SourceFile.h"

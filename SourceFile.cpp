@@ -1,70 +1,89 @@
 #include "SourceFile.h"
 
-void SourceFileSerializationUtil::SerializeSourceFile(SourceFile *sourceFile, fs::path path)
+std::string SourceFileSerializationUtil::SerializeSourceFile(SourceFile *sourceFile)
 {
-    logger.info("Serializing source file "+(std::string)path);
-    // if the file already exists, delete it and start afresh
-    if (fs::exists(path))
-    {
-        fs::remove(path);
-        logger.debug("The .dat file already existed, removed it");
-    }
+    logger.debug("Generating serialized text");
 
-    logger.debug("Opening file handle");
-    std::ofstream fh(path);
+    std::string output;
 
     logger.debug("Adding path");
-    fh << (std::string)sourceFile->path+"\n";
-
+    output += (std::string)sourceFile->path+"\n";
 
     // fsr this segfaults if you do it inline,
     // you have to get the val first and then stream it in
     logger.debug("Getting lastBuildTime");
     int lastBuildTime = sourceFile->lastBuildTime;
     logger.debug("Adding lastBuildTime");
-    fh << lastBuildTime << "\n";
+    output += lastBuildTime + "\n";
 
     logger.debug("Adding dependencies");
-    fh << "DEPENDS START\n";
+    output += "DEPENDS START\n";
     for (auto dependency : sourceFile->dependencies)
     {
-        logger.debug("Adding dependency "+(std::string)dependency);
-        fh << (std::string)dependency + "\n";
+        logger.debug("Adding dependency "+(std::string)dependency.path);
+        output += SerializeSourceFile(&dependency) + "\n";
     }
-    //fh << "DEPENDS END\n";
 
-    fh.close();
+    output += "DEPENDS END\n";
 
 }
 
-SourceFile SourceFileSerializationUtil::DeserializeSourceFile(fs::directory_entry *entry)
+SourceFile SourceFileSerializationUtil::DeserializeSourceFile(std::string *file)
 {
-    logger.info("Deserializing source file "+(std::string)entry->path());
-    std::ifstream fh(entry->path());
+    logger.info("Deserializing source file "+*file);
+    std::istringstream stream(*file);
     SourceFile output;
     std::string line;
     int i=0;
     bool insideDependencies = false;
-    while (std::getline(fh, line))
+    bool insideADependency = false;
+    std::string currentDependency;
+    while (std::getline(stream, line))
     {
         logger.debug("Got line "+line);
+        
         if (line == "DEPENDS START")
         {
+            // line is start of dependencies
             insideDependencies = true;
         } else if (!insideDependencies)
         {
             if (i==0)
             {
+                // line is path
                 output.path = fs::path(line);
-                i++;
             } else if (i==1)
             {
+                // line is lastBuildTime
                 time_t lastBuildTime(stoi(line));
                 output.lastBuildTime = lastBuildTime;
             }
+            i++;
         } else
         {
-            output.dependencies.push_back(fs::path(line));
+            if (line == "DEPENDS END")
+            {
+                // line is end of dependencies
+                insideDependencies = false;
+            } else {
+                if (!insideADependency)
+                {
+                    // we just got to the end of a dependency,
+                    // write it and start a new one
+                    output.dependencies.push_back(DeserializeSourceFile(&currentDependency));
+                    currentDependency = "";
+                    insideADependency = true;
+                } else {
+                    // we're inside a dependency
+                    currentDependency += line + "\n";
+                    if (line == "END DEPENDS")
+                    {
+                        // end of the dependency
+                        insideADependency = false;
+                    }
+                }
+                
+            }
         }
     }
 

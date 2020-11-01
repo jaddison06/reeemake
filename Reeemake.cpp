@@ -152,6 +152,14 @@ bool Reeemake::needToBuild(fs::path *sourceFile, std::vector<SourceFile> *fileDa
             return true;
         } else
         {
+            bool dependencyModified = false;
+            for (auto dependency : fileData->at(fileDataIndex).dependencies)
+            {
+                if (hasBeenModified(&dependency))
+                {
+
+                }
+            }
             logger.debug("File hasn't been modified");
             return false;
         }
@@ -165,7 +173,17 @@ bool Reeemake::needToBuild(fs::path *sourceFile, std::vector<SourceFile> *fileDa
 
 std::vector<fs::path> Reeemake::getDependencies(fs::path *sourceFile, std::vector<fs::path> *allFilesInDir)
 {
-    std::vector<fs::path> dependencies {};
+    // atm this just does headers,
+    // will spice it up in v1.1
+    std::vector<fs::path> dependencies;
+    for (auto file : *allFilesInDir)
+    {
+        if ( (file.stem() == sourceFile->stem()) && (file.extension() == ".h" || file.extension() == ".hpp") )
+        {
+            dependencies.push_back(file);
+        }
+    }
+
     return dependencies;
 }
 
@@ -299,7 +317,12 @@ void Reeemake::build(int argc, char *argv[])
     if (!fs::exists(fileDataPath)) { fs::create_directories(fileDataPath); }
     for (auto sourceFile : fs::directory_iterator(fileDataPath))
     {
-        fileData.push_back(serializationUtil.DeserializeSourceFile(&sourceFile));
+        std::string fileString;
+        std::ifstream fh(sourceFile.path());
+        fh >> fileString;
+        fh.close();
+
+        fileData.push_back(serializationUtil.DeserializeSourceFile(&fileString));
     }
 
     for (auto sourceFile : cxxSourceFiles)
@@ -363,7 +386,20 @@ void Reeemake::build(int argc, char *argv[])
                 getDependencies(&file, &allFilesInDir)
             };
 
-            serializationUtil.SerializeSourceFile(&newFileData, fs::path((std::string)fileDataPath + "/"+(std::string)file+".dat"));
+            fs::path sourceFilePath((std::string)fileDataPath + "/"+(std::string)file+".dat");
+
+            logger.info("Serializing source file "+(std::string)sourceFilePath);
+            // if the file already exists, delete it and start afresh
+            if (fs::exists(sourceFilePath))
+            {
+                fs::remove(sourceFilePath);
+                logger.debug("The .dat file already existed, removed it");
+            }
+
+            logger.debug("Opening file handle");
+            std::ofstream fh(sourceFilePath);
+            fh << serializationUtil.SerializeSourceFile(&newFileData);
+            fh.close();
         }
     }
 
