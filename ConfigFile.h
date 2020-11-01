@@ -11,9 +11,11 @@ struct PlatformOptions
     std::string cygwin;
 };
 
+// initialize w/ defaults
 struct ConfigOptions
 {
-    
+    PlatformOptions compiler
+    {};
 };
 
 class ConfigFileParser

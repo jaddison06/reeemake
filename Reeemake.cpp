@@ -7,17 +7,17 @@
 // TODO: optimise this nugget
 std::vector<fs::path> Reeemake::getFilesInDir(fs::path dir)
 {
-    bool annoyingDir = isAnnoyingDir(dir);
+    bool annoyingDir = isAnnoyingDir(dir.string());
     if (!annoyingDir)
     {
-        logger.info("Getting all files in dir "+(std::string)dir);
+        logger.info("Getting all files in dir "+dir.string());
     }
     std::vector<fs::path> output;
     for (auto entry : fs::directory_iterator(dir))
     {
         if ( !annoyingDir )
         {
-            logger.debug("Got dir entry "+(std::string)(fs::path)entry);
+            logger.debug("Got dir entry "+entry.path().string());
         }
         output.push_back(entry);
     }
@@ -59,11 +59,11 @@ std::string Reeemake::time_t_to_string(time_t *time)
 
 bool Reeemake::fileDataExists(fs::path *path, std::vector<SourceFile> *fileData, int *fileDataIndex)
 {
-    //logger.debug("Checking if file data exists for "+(std::string)*path);
+    //logger.debug("Checking if file data exists for "+path->string());
     for (int i=0; i<fileData->size(); i++)
     {
         auto file = fileData->at(i);
-        //logger.debug("Got item "+std::to_string(i)+" from fileData, path "+(std::string)file.path);
+        //logger.debug("Got item "+std::to_string(i)+" from fileData, path "+file.path.string());
         if (file.path == *path)
         {
             //logger.debug("It's A Match!");
@@ -137,7 +137,7 @@ void Reeemake::parseArgs(int argc, char *argv[])
 
 bool Reeemake::needToBuild(fs::path *path, std::vector<SourceFile> *fileData, std::optional<SourceFile> sourceFile)
 {
-    logger.info("Checking whether to build "+(std::string)*path);
+    logger.info("Checking whether to build "+path->string());
     int fileDataIndex;
 
     if ( fileDataExists(path, fileData, &fileDataIndex) || sourceFile )
@@ -148,8 +148,14 @@ bool Reeemake::needToBuild(fs::path *path, std::vector<SourceFile> *fileData, st
         {
             sourceFile = fileData->at(fileDataIndex);
         }
+        // sourceFile is guaranteed to be
+        // an initialized std::optional of
+        // the correct source file
+        //
+        // access its contents with the * operator
 
-        if ( hasBeenModified(&*sourceFile) )
+
+        if ( hasBeenModified(&(*sourceFile)) )
         {
             // file has changed since it was last built, build it now
             logger.debug("File change detected, adding it to the build list");
@@ -160,11 +166,11 @@ bool Reeemake::needToBuild(fs::path *path, std::vector<SourceFile> *fileData, st
             int modifiedDependencyCount = 0;
             for (auto dependency : (*sourceFile).dependencies)
             {
-                logger.debug("Got dependency "+(std::string)dependency.path);
+                logger.debug("Got dependency "+dependency.path.string());
                 if (needToBuild(&dependency.path, fileData, dependency))
                 {
                     modifiedDependencyCount++;
-                    logger.debug("Dependency "+(std::string)dependency.path+" has changed");
+                    logger.debug("Dependency "+dependency.path.string()+" has changed");
                 } else
                 {
                     logger.debug("No change to dependency");
@@ -188,13 +194,13 @@ bool Reeemake::needToBuild(fs::path *path, std::vector<SourceFile> *fileData, st
 
 std::vector<fs::path> Reeemake::getDependencies(fs::path *sourceFile, std::vector<fs::path> *allFilesInDir)
 {
-    logger.debug("Getting dependencies for file "+(std::string)*sourceFile);
+    logger.debug("Getting dependencies for file "+sourceFile->string());
     // atm this just does headers,
     // will spice it up in v1.1
     std::vector<fs::path> dependencies;
     for (auto file : *allFilesInDir)
     {
-        //if (!isAnnoyingDir((std::string)file)) { logger.debug("Got possible dependency "+(std::string)file); }
+        //if (!isAnnoyingDir(file.string())) { logger.debug("Got possible dependency "+file.string()); }
 
         // they have the same stem, dependency is a header file, and they _aren't_the_same_file_
         if ( (file.stem() == sourceFile->stem()) && (file.extension() == ".h" || file.extension() == ".hpp") && (file != *sourceFile) )
@@ -217,7 +223,10 @@ bool Reeemake::hasBeenModified(SourceFile *sourceFile)
     // until then it won't work on g++>=9 or MSVC
     //
     // see https://en.cppreference.com/w/cpp/filesystem/file_time_type
+    //
+    // if using g++>=9, don't <3
     time_t lastWriteTime = decltype(lastWriteTimeRaw)::clock::to_time_t(lastWriteTimeRaw);
+    
     time_t lastBuildTime = sourceFile->lastBuildTime;
 
     logger.debug("Last write time "+time_t_to_string(&lastWriteTime)+"\nLast build time "+time_t_to_string(&lastBuildTime));
@@ -227,7 +236,7 @@ bool Reeemake::hasBeenModified(SourceFile *sourceFile)
 
 SourceFile Reeemake::genSourceFile(fs::path *file, std::vector<fs::path> *allFilesInDir)
 {
-    logger.debug("Generating a SourceFile for "+(std::string)*file);
+    logger.debug("Generating a SourceFile for "+file->string());
 
     SourceFile newSourceFile
     {
@@ -238,7 +247,7 @@ SourceFile Reeemake::genSourceFile(fs::path *file, std::vector<fs::path> *allFil
 
     for (auto dependency : getDependencies(file, allFilesInDir))
     {
-        logger.debug("Got dependency "+(std::string)dependency);
+        logger.debug("Got dependency "+dependency.string());
         SourceFile dependencyData = genSourceFile(&dependency, allFilesInDir);
         newSourceFile.dependencies.push_back(dependencyData);
     }
@@ -299,7 +308,7 @@ void Reeemake::build(int argc, char *argv[])
             logger.info("No conf files in dir, using default config");
         } else if ( configFiles.size() == 1 )
         {
-            configToUse = configFiles.at(0);
+            configToUse = configFiles.at(0).string();
             logger.info("Only 1 conf file in the dir ("+configToUse+"), using it");
         } else
         {
@@ -316,7 +325,7 @@ void Reeemake::build(int argc, char *argv[])
     if ( !(fs::exists(configPath) && fs::is_directory(configPath)) )
     {
         fs::create_directories(configPath);
-        logger.warning((std::string)configPath+" didn't exist, created it");
+        logger.warning(configPath.string()+" didn't exist, created it");
 
     }
 
@@ -330,10 +339,10 @@ void Reeemake::build(int argc, char *argv[])
         auto entry = allFilesInDir.at(i);
         if (fs::is_directory(entry))
         {
-            bool annoyingDir = isAnnoyingDir((std::string)entry);
+            bool annoyingDir = isAnnoyingDir(entry.string());
             if ( !annoyingDir)
             {
-                logger.debug("Found directory "+(std::string)entry+", searching it");
+                logger.debug("Found directory "+entry.string()+", searching it");
             }
             entriesToRemove.push_back(i);
             std::vector<fs::path> newFiles = getFilesInDir(allFilesInDir.at(i));
@@ -344,7 +353,7 @@ void Reeemake::build(int argc, char *argv[])
     for (auto file: allFilesInDir) {
         if (file.extension() == ".cpp")
         {
-            logger.debug("Found c++ source file "+(std::string)file);
+            logger.debug("Found c++ source file "+file.string());
             cxxSourceFiles.push_back(file);
         }
     }
@@ -355,7 +364,7 @@ void Reeemake::build(int argc, char *argv[])
 
     SourceFileSerializationUtil serializationUtil;
     std::vector<SourceFile> fileData;
-    fs::path fileDataPath((std::string)configPath+"/fileData");
+    fs::path fileDataPath(configPath.string()+"/fileData");
     if (!fs::exists(fileDataPath)) { fs::create_directories(fileDataPath); }
     for (auto sourceFile : fs::directory_iterator(fileDataPath))
     {
@@ -386,14 +395,14 @@ void Reeemake::build(int argc, char *argv[])
 
     // compile to objects
     
-    fs::path objDir((std::string)configPath+"/build");
+    fs::path objDir(configPath.string()+"/build");
     fs::create_directories(objDir);
 
     logger.info("Compiling objects");
 
     for (auto file : filesToBuild)
     {
-        std::string command = COMPILER+" -c "+(std::string)file+" -I . -Wall -std=c++17 -o "+(std::string)objDir+"/"+(std::string)file.stem()+".o";
+        std::string command = COMPILER+" -c "+file.string()+" -I . -Wall -std=c++17 -o "+objDir.string()+"/"+file.stem().string()+".o";
         for (auto flag : COMPILER_FLAGS)
         {
             command += " " + flag;
@@ -407,7 +416,7 @@ void Reeemake::build(int argc, char *argv[])
         std::string buildCommand = COMPILER + " ";
         for (auto file : cxxSourceFiles)
         {
-            buildCommand += (std::string)objDir + "/" + (std::string)file.stem() + ".o ";
+            buildCommand += objDir.string() + "/" + file.stem().string() + ".o ";
         }
         buildCommand += "-o ./" + BIN_NAME;
         for (auto lib : LIBRARIES)
@@ -422,14 +431,14 @@ void Reeemake::build(int argc, char *argv[])
     logger.info("Updating fileData");
     for (auto file : cxxSourceFiles)
     {
-        logger.debug("Updating fileData for file "+(std::string)file);
+        logger.debug("Updating fileData for file "+file.string());
         
         
         SourceFile newFileData = genSourceFile(&file, &allFilesInDir);
 
-        fs::path sourceFilePath((std::string)fileDataPath + "/"+(std::string)file+".dat");
+        fs::path sourceFilePath(fileDataPath.string() + "/"+file.string()+".dat");
 
-        logger.info("Serializing source file "+(std::string)sourceFilePath);
+        logger.info("Serializing source file "+sourceFilePath.string());
         // if the file already exists, delete it and start afresh
         if (fs::exists(sourceFilePath))
         {

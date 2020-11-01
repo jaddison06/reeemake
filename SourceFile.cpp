@@ -7,7 +7,7 @@ std::string SourceFileSerializationUtil::SerializeSourceFile(SourceFile *sourceF
     std::string output;
 
     logger.debug("Adding path");
-    output += (std::string)sourceFile->path+"\n";
+    output += sourceFile->path.string()+"\n";
 
     // fsr this segfaults if you do it inline,
     // you have to get the val first and then stream it in
@@ -20,7 +20,7 @@ std::string SourceFileSerializationUtil::SerializeSourceFile(SourceFile *sourceF
     output += "DEPENDS START\n";
     for (auto dependency : sourceFile->dependencies)
     {
-        logger.debug("Adding dependency "+(std::string)dependency.path);
+        logger.debug("Adding dependency "+dependency.path.string());
         output += SerializeSourceFile(&dependency);
     }
 
