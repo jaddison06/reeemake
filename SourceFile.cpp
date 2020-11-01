@@ -133,12 +133,13 @@ SourceFile SourceFileSerializationUtil::DeserializeSourceFile(std::string *file,
                 } else
                 {
                     logger.debug("At start of next dependency");
-                    currentDependency = "";
+                    currentDependency = line + "\n";
                     insideADependency = true;
                 }
             } else
             {
                 logger.debug("Inside a dependency");
+                currentDependency += line;
                 if (line == "DEPENDS END")
                 {
                     logger.debug("At end of dependency, whole thing:\n"+currentDependency+"\nDeserializing it");
@@ -147,7 +148,7 @@ SourceFile SourceFileSerializationUtil::DeserializeSourceFile(std::string *file,
                 } else
                 {
                     logger.debug("Dependency line");
-                    currentDependency += line + "\n";
+                    currentDependency += "\n";
                 }
             }
         }

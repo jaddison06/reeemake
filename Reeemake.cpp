@@ -135,17 +135,21 @@ void Reeemake::parseArgs(int argc, char *argv[])
 
 }
 
-bool Reeemake::needToBuild(fs::path *sourceFile, std::vector<SourceFile> *fileData)
+bool Reeemake::needToBuild(fs::path *path, std::vector<SourceFile> *fileData, std::optional<SourceFile> sourceFile)
 {
-    logger.info("Checking whether to build "+(std::string)*sourceFile);
+    logger.info("Checking whether to build "+(std::string)*path);
     int fileDataIndex;
 
-    if ( fileDataExists(sourceFile, fileData, &fileDataIndex) )
+    if ( fileDataExists(path, fileData, &fileDataIndex) || sourceFile )
     {
-        logger.debug("Found file data");
+        logger.debug("Found file data or SourceFile");
         
+        if (!sourceFile)
+        {
+            sourceFile = fileData->at(fileDataIndex);
+        }
 
-        if (hasBeenModified(&fileData->at(fileDataIndex)))
+        if ( hasBeenModified(&*sourceFile) )
         {
             // file has changed since it was last built, build it now
             logger.debug("File change detected, adding it to the build list");
@@ -154,10 +158,10 @@ bool Reeemake::needToBuild(fs::path *sourceFile, std::vector<SourceFile> *fileDa
         {
             logger.debug("No file change, checking dependencies");
             int modifiedDependencyCount = 0;
-            for (auto dependency : fileData->at(fileDataIndex).dependencies)
+            for (auto dependency : (*sourceFile).dependencies)
             {
                 logger.debug("Got dependency "+(std::string)dependency.path);
-                if (needToBuild(&dependency.path, fileData))
+                if (needToBuild(&dependency.path, fileData, dependency))
                 {
                     modifiedDependencyCount++;
                     logger.debug("Dependency "+(std::string)dependency.path+" has changed");
@@ -202,6 +206,7 @@ std::vector<fs::path> Reeemake::getDependencies(fs::path *sourceFile, std::vecto
 
     return dependencies;
 }
+
 
 bool Reeemake::hasBeenModified(SourceFile *sourceFile)
 {

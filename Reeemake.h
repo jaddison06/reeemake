@@ -5,6 +5,7 @@
 #include <ctime>
 #include <fstream>
 #include <sstream>
+#include <optional>
 #include "Logging.h"
 #include "Args.h"
 #include "SourceFile.h"
@@ -29,7 +30,7 @@ class Reeemake
         bool fileDataExists(fs::path *, std::vector<SourceFile> *, int *);
         std::string time_t_to_string(time_t *);
         
-        bool needToBuild(fs::path *, std::vector<SourceFile> *);
+        bool needToBuild(fs::path *, std::vector<SourceFile> *, std::optional<SourceFile> = std::nullopt);
         std::vector<fs::path> getDependencies(fs::path *, std::vector<fs::path> *);
         bool hasBeenModified(SourceFile *);
         SourceFile genSourceFile(fs::path *, std::vector<fs::path> *);
@@ -37,6 +38,5 @@ class Reeemake
         std::vector<ParserOutputItem> parsedArgs;
 
         Logger logger;
-        
-        
+              
 };
