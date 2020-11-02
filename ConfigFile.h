@@ -4,6 +4,7 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include "VectorThings.h"
 
 namespace fs = std::filesystem;
 
@@ -64,4 +65,6 @@ class ConfigFileParser
         bool systemCommandAvailable(std::string *);
         bool isCommand(std::string *);
         bool isWhitespace(std::string *);
+
+        Logger logger{"Reeemake.ConfigFileParser"};
 };

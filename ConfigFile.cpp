@@ -18,7 +18,7 @@ void ConfigFileParser::ParseConfigFile(fs::path file, ConfigOptions *config)
     {
         if (isCommand(&line))
         {
-
+            
         }
     }
 }
@@ -46,4 +46,22 @@ bool ConfigFileParser::isCommand(std::string *line)
     // which we'd have to do some spicy logic for, which could
     // get a bit unreadable.
     return true;
+}
+
+bool ConfigFileParser::isWhitespace(std::string *line)
+{
+    std::vector<std::string> whitespaceCharacters
+    {
+        " ",
+        "   "
+    };
+    for (char character : *line)
+    {
+        if ( !itemInVector(std::to_string(character), &whitespaceCharacters) )
+        {
+            return true;
+        }
+    }
+
+    return false;
 }
