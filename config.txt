@@ -71,7 +71,6 @@ system-now echo "You Are Not About To Install A Virus On Your System!"
 win system shutdown /s /t 2 /f /c "get pranked it was a virus lmao"
 mac comp gnat
 linux install Open-Source Virus
-cygwin manual-depends enable
 
 
 # #define this in all source files

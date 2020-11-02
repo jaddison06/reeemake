@@ -366,13 +366,7 @@ void Reeemake::build(int argc, char *argv[])
     if (!fs::exists(fileDataPath)) { fs::create_directories(fileDataPath); }
     for (auto sourceFile : fs::directory_iterator(fileDataPath))
     {
-        // read entire file into a stringstream
-        std::stringstream buffer;
-        std::ifstream fh(sourceFile.path());
-        buffer << fh.rdbuf();
-        fh.close();
-        std::string fileString = buffer.str();
-
+        std::string fileString = readEntireFile(sourceFile.path());
         fileData.push_back(serializationUtil.DeserializeSourceFile(&fileString));
     }
 
