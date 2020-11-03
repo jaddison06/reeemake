@@ -106,6 +106,8 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
                 });
                 break;
             }
+            // not doing group stuff yet
+            /*
             case 5:
             {
                 // include-group
@@ -116,6 +118,7 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
                 });
                 break;
             }
+            */
             case 6:
             {
                 // exclude
@@ -126,6 +129,8 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
                 });
                 break;
             }
+            // see case 5
+            /*
             case 7:
             {
                 // exclude-group
@@ -136,6 +141,7 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
                 });
                 break;
             }
+            */
             case 8:
             {
                 // library

@@ -370,20 +370,28 @@ void Reeemake::build(int argc, char *argv[])
         fileData.push_back(serializationUtil.DeserializeSourceFile(&fileString));
     }
 
+    ConfigOptions config;
+
+    if (!(configToUse == "default"))
+    {
+        ConfigFileParser configParser;
+
+        // i reckon this will segfault it won't be allowed to
+        // write to config
+        configParser.ParseConfigFile(fs::path(configToUse), &config);
+    }
+
+    
+
+
     for (auto sourceFile : cxxSourceFiles)
     {
         if (needToBuild(&sourceFile, &fileData)) { filesToBuild.push_back(sourceFile); }
     }
     
 
-    // actual build
+    // build
     // TODO: actually make this cross-platform
-
-    std::string COMPILER = "g++-8";
-    std::string BIN_NAME = "reeemake";
-    
-    std::vector<std::string> COMPILER_FLAGS {"-Wno-sign-compare"};
-    std::vector<std::string> LIBRARIES {"stdc++fs"};
 
     // compile to objects
     
@@ -394,8 +402,8 @@ void Reeemake::build(int argc, char *argv[])
 
     for (auto file : filesToBuild)
     {
-        std::string command = COMPILER+" -c "+file.string()+" -I . -Wall -std=c++17 -o "+objDir.string()+"/"+file.stem().string()+".o";
-        for (auto flag : COMPILER_FLAGS)
+        std::string command = config.compiler+" -c "+file.string()+" -I . -Wall -std=c++17 -o "+objDir.string()+"/"+file.stem().string()+".o";
+        for (auto flag : config.compilerFlags)
         {
             command += " " + flag;
         }
@@ -405,13 +413,13 @@ void Reeemake::build(int argc, char *argv[])
     if (!filesToBuild.size() == 0)
     {
         logger.info("Building");
-        std::string buildCommand = COMPILER + " ";
+        std::string buildCommand = config.compiler + " ";
         for (auto file : cxxSourceFiles)
         {
             buildCommand += objDir.string() + "/" + file.stem().string() + ".o ";
         }
-        buildCommand += "-o ./" + BIN_NAME;
-        for (auto lib : LIBRARIES)
+        buildCommand += "-o ./" + config.binName;
+        for (auto lib : config.libraries)
         {
             buildCommand += " -l" + lib;
         }

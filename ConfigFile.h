@@ -73,7 +73,12 @@ struct commandTemplate
     std::optional<int> argCount;
 };
 
-const std::vector<commandTemplate> allowedCommands
+class ConfigFileParser
+{
+    public:
+        void ParseConfigFile(fs::path, ConfigOptions *);
+
+        const std::vector<commandTemplate> allowedCommands
         {
             // 0
             {
@@ -170,14 +175,7 @@ const std::vector<commandTemplate> allowedCommands
                 "comp-flag",
                 1
             }
-};
-
-
-class ConfigFileParser
-{
-    public:
-        void ParseConfigFile(fs::path, ConfigOptions *);
-
+        };
 
     private:
         bool lineToCommand(std::string *);
