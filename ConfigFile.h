@@ -4,7 +4,10 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include <iostream>
+#include <unordered_map>
 #include "VectorThings.h"
+#include "Logging.h"
 
 namespace fs = std::filesystem;
 
@@ -50,8 +53,32 @@ struct ConfigOptions
 struct command
 {
     std::string command;
-    std::vector<std::string> options;
+    std::string options;
 };
+
+const std::vector<std::string> allowedCommands
+        {
+            "depend",
+            "no-depend",
+            "manual-depends",
+            "source-files",
+            "include",
+            "include-group",
+            "exclude",
+            "exclude-group",
+            "library",
+            "std",
+            "comp",
+            "bin-name",
+            "install",
+            "system",
+            "system-now",
+            "define",
+            "win",
+            "mac",
+            "linux"
+};
+
 
 class ConfigFileParser
 {
