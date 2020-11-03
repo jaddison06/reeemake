@@ -54,9 +54,9 @@ struct ConfigOptions
         "g++",
     };
     std::vector<Source> sources;
-    std::vector<Dependency> dependOptions;
-    bool manualDepends = false;
+    std::vector<Dependency> depends;
     bool manualIncludes = false;
+    bool manualDepends = false;
     std::vector<std::string> postBuildCommands;
     std::vector<std::string> defines;
     std::string binName;
@@ -83,74 +83,93 @@ struct commandTemplate
 
 const std::vector<commandTemplate> allowedCommands
         {
+            // 0
             {
                 "depend",
                 2
             },
+            // 1
             {
                 "no-depend",
                 2
             },
+            // 2
             {
                 "manual-depends",
                 1
             },
+            // 3
             {
                 "manual-includes",
                 1
             },
+            // 4
             {
                 "include",
                 1
             },
+            // 5
             {
                 "include-group",
                 1
             },
+            // 6
             {
                 "exclude",
                 1
             },
+            // 7
             {
                 "exclude-group",
                 1
             },
+            // 8
             {
                 "library",
                 1
             },
+            // 9
             {
                 "std",
                 1
             },
+            // 10
             {
                 "comp",
                 1
             },
+            // 11
             {
                 "bin-name",
                 1
             },
+            // 12
             {
                 "install",
                 1
             },
+            // 13
             {
                 "system"
             },
+            // 14
             {
                 "system-now"
             },
+            // 15
             {
                 "define",
                 2
             },
+            // 16
             {
                 "win"
             },
+            // 17
             {
                 "mac"
             },
+            // 18
             {
                 "linux"
             }

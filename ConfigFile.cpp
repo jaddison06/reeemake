@@ -46,7 +46,35 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
             case 0:
             {
                 // depend
-                
+                config->depends.push_back({
+                    cmd->options.at(0),
+                    cmd->options.at(1),
+                    true
+                });
+            }
+            case 1:
+            {
+                // no-depend
+                config->depends.push_back({
+                    cmd->options.at(0),
+                    cmd->options.at(1),
+                    false
+                });
+            }
+            case 2:
+            {
+                // manual-depends
+                std::string val = cmd->options.at(0);
+                if (val == "enable")
+                {
+                    config->manualDepends = true;
+                } else if (val == "disable")
+                {
+                    config->manualDepends = false;
+                } else
+                {
+                    logger.error("Command manual-depends needs an argument of \"enable\" or \"disable\"");
+                }
             }
 
             default:
