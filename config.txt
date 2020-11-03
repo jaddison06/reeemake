@@ -21,18 +21,14 @@ manual-depends enable
 # ew no
 manual-depends disable
 
-
-# set included source files to a passlist
-source-files passlist
+# set includes to fully manual (instead of automatically tracking all .cpp files in dir)
+manual-includes enable
 
 # compile this one
 include SourceFile3.cpp
 
 # or compile these ones
 include-group SourceFiles
-
-# set it back to the default (resets the list)
-source-files blocklist
 
 # don't compile this one
 exclude SourceFile4.cpp
