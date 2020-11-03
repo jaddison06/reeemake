@@ -32,38 +32,30 @@ struct Dependency
     bool doesDepend;
 };
 
-// store different values for one option
-struct PlatformOptions
-{
-    std::string win;
-    std::string mac;
-    std::string linux;
-};
-
-
 // initialize w/ defaults
 struct ConfigOptions
 {
     // my way or the highway
-    PlatformOptions compiler
-    {
-        // for minGW; cygwin would use C:\cygwin64\bin\g++.exe
-        "g++",
+    //
+    // for minGW; cygwin would use C:\cygwin64\bin\g++.exe
+    std::string compiler = "g++";
+    std::vector<std::string> libraries;
+    int cxxStandard = 17;
+    std::vector<std::string> compilerFlags;
 
-        "g++",
-        "g++",
-    };
     std::vector<Source> sources;
     std::vector<Dependency> depends;
     bool manualIncludes = false;
     bool manualDepends = false;
+
     std::vector<std::string> postBuildCommands;
     std::vector<std::string> defines;
     std::string binName;
+
     bool isInstalling;
     std::string installName;
-    std::vector<std::string> libraries;
-    int cxxStandard = 17;
+
+    
 
 };
 
@@ -172,6 +164,11 @@ const std::vector<commandTemplate> allowedCommands
             // 18
             {
                 "linux"
+            },
+            // 19
+            {
+                "comp-flag",
+                1
             }
 };
 

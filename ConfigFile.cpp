@@ -41,6 +41,7 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
                 }
             }
         }
+        // TODO: add breaks
         switch ( map->at(cmd->command) )
         {
             case 0:
@@ -51,6 +52,7 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
                     cmd->options.at(1),
                     true
                 });
+                break;
             }
             case 1:
             {
@@ -60,6 +62,7 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
                     cmd->options.at(1),
                     false
                 });
+                break;
             }
             case 2:
             {
@@ -75,6 +78,129 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
                 {
                     logger.error("Command manual-depends needs an argument of \"enable\" or \"disable\"");
                 }
+                break;
+            }
+            case 3:
+            {
+                // manual-includes
+                std::string val = cmd->options.at(0);
+                if (val == "enable")
+                {
+                    config->manualIncludes = true;
+                } else if (val == "disable")
+                {
+                    config->manualIncludes = false;
+                } else
+                {
+                    logger.error("Command manual-includes needs an argument of \"enable\" or \"disable\"");
+                }
+                break;
+            }
+            case 4:
+            {
+                // include
+                config->sources.push_back({
+                    cmd->options.at(0),
+                    true,
+                    file
+                });
+                break;
+            }
+            case 5:
+            {
+                // include-group
+                config->sources.push_back({
+                    cmd->options.at(0),
+                    true,
+                    group
+                });
+                break;
+            }
+            case 6:
+            {
+                // exclude
+                config->sources.push_back({
+                    cmd->options.at(0),
+                    false,
+                    file
+                });
+                break;
+            }
+            case 7:
+            {
+                // exclude-group
+                config->sources.push_back({
+                    cmd->options.at(0),
+                    false,
+                    group
+                });
+                break;
+            }
+            case 8:
+            {
+                // library
+                config->libraries.push_back(cmd->options.at(0));
+                break;
+            }
+            case 9:
+            {
+                // std
+                int standard;
+                try
+                {
+                    standard = stoi(cmd->options.at(0));
+                }
+                catch (std::invalid_argument &ia)
+                {
+                    logger.error("Argument of std must be a valid int");
+                }
+                config->cxxStandard = standard;
+                break;
+            }
+            case 10:
+            {
+                // comp
+                config->compiler = cmd->options.at(0);
+                break;
+            }
+            case 11:
+            {
+                // bin-name
+                config->binName = cmd->options.at(0);
+                break;
+            }
+            
+            // not doing 12-15 yet
+
+            case 16:
+            {
+                // win
+                #ifdef _WIN32
+                ParseCommand(cmd, map, config);
+                #endif
+                break;
+            }
+            case 17:
+            {
+                // mac
+                #ifdef __APPLE__
+                ParseCommand(cmd, map, config);
+                #endif
+                break;
+            }
+            case 18:
+            {
+                // linux
+                #ifdef __linux__
+                ParseCommand(cmd, map, config);
+                #endif
+                break;
+            }
+            case 19:
+            {
+                // comp-flag
+                config->compilerFlags.push_back(cmd->options.at(0));
+                break;
             }
 
             default:

@@ -46,6 +46,11 @@ standard 03
 # use this compiler
 comp gfortran
 
+# use this compiler flag (use at your own discretion - these don't get sanitized)
+# if it's a library or standard do it with those specific commands aas they're portable
+# between compilers
+comp-flag -Wpedantic
+
 # compile to this binary (file extensions added
 # automatically per-platform)
 bin-name notAVirus
