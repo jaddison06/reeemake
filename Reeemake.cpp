@@ -381,7 +381,29 @@ void Reeemake::build(int argc, char *argv[])
         configParser.ParseConfigFile(fs::path(configToUse), &config);
     }
 
-    
+    for (auto sourceFile : config.sources)
+    {
+        if (sourceFile.type == file)
+        {
+            if (sourceFile.include)
+            {
+                if (!itemInVector(fs::path(sourceFile.name), &cxxSourceFiles))
+                {
+                    cxxSourceFiles.push_back(fs::path(sourceFile.name));
+                }
+            } else
+            {
+                if (itemInVector(fs::path(sourceFile.name), &cxxSourceFiles));
+                {
+                    removeItemFromVector(fs::path(sourceFile.name), &cxxSourceFiles);
+                }
+            }
+        } else if (sourceFile.type == group)
+        {
+            logger.error("Source file groups aren't supported yet, sorry :)");
+        }
+    }
+
 
 
     for (auto sourceFile : cxxSourceFiles)
@@ -402,7 +424,7 @@ void Reeemake::build(int argc, char *argv[])
 
     for (auto file : filesToBuild)
     {
-        std::string command = config.compiler+" -c "+file.string()+" -I . -Wall -std=c++17 -o "+objDir.string()+"/"+file.stem().string()+".o";
+        std::string command = config.compiler+" -c "+file.string()+" -I . -Wall -std=c++"+std::to_string(config.cxxStandard)+" -o "+objDir.string()+"/"+file.stem().string()+".o";
         for (auto flag : config.compilerFlags)
         {
             command += " " + flag;

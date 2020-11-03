@@ -55,7 +55,6 @@ struct ConfigOptions
     bool isInstalling;
     std::string installName;
 
-    
 
 };
 
