@@ -3,30 +3,33 @@
 	"name": "Reeemake",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"name": "keyword.other.reeemake",
+			"match": "(depend|no-depend|manual-depends|manual-includes|include|include-group|exclude|exclude-group|library|std|comp|output|install|system|system-now|define|win|mac|linux|comp-flag|import|build)"
 		},
 		{
-			"include": "#strings"
-		}
-	],
-	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.reeemake",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
-		"strings": {
 			"name": "string.quoted.double.reeemake",
 			"begin": "\"",
 			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.reeemake",
-					"match": "\\\\."
-				}
+			"patterns": [ 
+              {  "name": "constant.character.escape.untitled",
+                 "match": "\\."
+              }
 			]
+		},
+		{
+			"name": "string.quoted.single.reeemake",
+			"begin": "'",
+			"end": "'",
+			"patterns": [ 
+              {  "name": "constant.character.escape.untitled",
+                 "match": "\\."
+              }
+			]
+		},
+		{
+			"name": "comment.line.double-slash.reeemake",
+			"match": "(//)*"
 		}
-	},
+	],
 	"scopeName": "source.reeemake"
 }

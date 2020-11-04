@@ -1,7 +1,12 @@
 {
 	"folders": [
 		{
+			"name": "reeemake",
 			"path": "."
+		},
+		{
+			"name": "extension",
+			"path": "extension"
 		},
 		{
 			"name": "physics-model",

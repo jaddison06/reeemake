@@ -398,7 +398,7 @@ void Reeemake::build(int argc, char *argv[])
                 }
             } else
             {
-                if (itemInVector(fs::path(sourceFile.name), &sourceFilesCopy));
+                if (itemInVector(fs::path(sourceFile.name), &sourceFilesCopy))
                 {
                     removeItemFromVector(fs::path(sourceFile.name), &cxxSourceFiles);
                 }
