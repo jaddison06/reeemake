@@ -39,7 +39,7 @@ void Reeemake::verboseSystem(std::string cmd)
 
 bool Reeemake::isAnnoyingDir(std::string dirName)
 {
-    std::vector<std::string> annoyingDirs {
+    const std::vector<std::string> annoyingDirs {
         "./.git",
         "./.reeemake"
     };
@@ -389,15 +389,16 @@ void Reeemake::build(int argc, char *argv[])
     {
         if (sourceFile.type == file)
         {
+            const std::vector<fs::path> sourceFilesCopy = cxxSourceFiles;
             if (sourceFile.include)
             {
-                if (!itemInVector(fs::path(sourceFile.name), &cxxSourceFiles))
+                if (!itemInVector(fs::path(sourceFile.name), &sourceFilesCopy))
                 {
                     cxxSourceFiles.push_back(fs::path(sourceFile.name));
                 }
             } else
             {
-                if (itemInVector(fs::path(sourceFile.name), &cxxSourceFiles));
+                if (itemInVector(fs::path(sourceFile.name), &sourceFilesCopy));
                 {
                     removeItemFromVector(fs::path(sourceFile.name), &cxxSourceFiles);
                 }
