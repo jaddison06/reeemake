@@ -1,6 +1,6 @@
 linux comp g++-8
 
-bin-name reeemake
+output reeemake
 std 17
 linux library stdc++fs
 linux comp-flag -Wno-sign-compare

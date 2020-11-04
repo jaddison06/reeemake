@@ -444,7 +444,7 @@ void Reeemake::build(int argc, char *argv[])
         {
             buildCommand += objDir.string() + "/" + file.stem().string() + ".o ";
         }
-        buildCommand += "-o ./" + config.binName;
+        buildCommand += "-o ./" + config.output;
         for (auto lib : config.libraries)
         {
             buildCommand += " -l" + lib;

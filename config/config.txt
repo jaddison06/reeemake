@@ -51,9 +51,20 @@ comp gfortran
 # between compilers
 comp-flag -Wpedantic
 
-# compile to this binary (file extensions added
+# what to output
+# options:
+#   - binary
+#   - ninja
+#   - makefile
+#   - cmake
+#   - script
+#   - xcode
+#   - msvc
+build makefile
+
+# output to this file (extensions added
 # automatically per-platform)
-bin-name notAVirus
+output notAVirus
 
 # install the binary to an application
 # with this name
@@ -72,6 +83,10 @@ system-now echo "You Are Not About To Install A Virus On Your System!"
 win system shutdown /s /t 2 /f /c "get pranked it was a virus lmao"
 mac comp gnat
 linux install Open-Source Virus
+
+
+# import another config file - useful if there's stuff you want to always do
+import otherConfig.reee
 
 
 # #define this in all source files

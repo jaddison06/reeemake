@@ -1,7 +1,7 @@
 #include "VectorThings.h"
 
 template <class T>
-bool itemInVector(T item, std::vector<T> *vec)
+bool itemInVector(T item, const std::vector<T> *vec)
 {
     for ( T element : *vec )
     {

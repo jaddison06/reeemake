@@ -43,6 +43,8 @@ struct ConfigOptions
     int cxxStandard = 17;
     std::vector<std::string> compilerFlags;
 
+    std::string build = "binary";
+
     std::vector<Source> sources;
     bool manualIncludes = false;
 
@@ -52,7 +54,7 @@ struct ConfigOptions
 
     std::vector<std::string> postBuildCommands;
     std::vector<std::string> defines;
-    std::string binName;
+    std::string output;
 
     bool isInstalling;
     std::string installName;
@@ -138,7 +140,7 @@ class ConfigFileParser
             },
             // 11
             {
-                "bin-name",
+                "output",
                 1
             },
             // 12
@@ -175,7 +177,28 @@ class ConfigFileParser
             {
                 "comp-flag",
                 1
+            },
+            // 20
+            {
+                "import",
+                1
+            },
+            // 21
+            {
+                "build",
+                1
             }
+        };
+
+        const std::vector<std::string> outputOptions
+        {
+            "binary",
+            "ninja",
+            "makefile",
+            "cmake",
+            "script",
+            "xcode",
+            "msvc"
         };
 
     private:

@@ -171,8 +171,8 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
             }
             case 11:
             {
-                // bin-name
-                config->binName = cmd->options.at(0);
+                // output
+                config->output = cmd->options.at(0);
                 break;
             }
             
@@ -230,6 +230,29 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
                 // comp-flag
                 config->compilerFlags.push_back(cmd->options.at(0));
                 break;
+            }
+            case 20:
+            {
+                // import
+                //
+                // this can infinite loop so don't be a lil bitch
+                ParseConfigFile(fs::path(cmd->options.at(0)), config);
+            }
+            case 21:
+            {
+                // build
+                std::string buildType = cmd->options.at(0);
+                if (!itemInVector(buildType, &outputOptions))
+                {
+                    std::string error_msg = "Argument of command \"output\" must be one of:\n";
+                    for (auto option : outputOptions)
+                    {
+                        error_msg += option + "\n";
+                    }
+
+                    logger.error(error_msg);
+                };
+
             }
 
             default:
