@@ -27,8 +27,8 @@
 			]
 		},
 		{
-			"name": "comment.line.double-slash.reeemake",
-			"match": "(//)*"
+			"name": "comment.line.number-sign.reeemake",
+			"match": "#*"
 		}
 	],
 	"scopeName": "source.reeemake"
