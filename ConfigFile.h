@@ -44,8 +44,10 @@ struct ConfigOptions
     std::vector<std::string> compilerFlags;
 
     std::vector<Source> sources;
-    std::vector<Dependency> depends;
     bool manualIncludes = false;
+
+    // not implemented yet
+    std::vector<Dependency> depends;
     bool manualDepends = false;
 
     std::vector<std::string> postBuildCommands;

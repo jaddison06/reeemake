@@ -59,6 +59,11 @@ Logger::Logger()
     setup("");
 }
 
+Logger::~Logger()
+{
+    //logfile.close();
+}
+
 // set the sender of the logs
 //
 // you can also do this via the constructor, I recommend
@@ -75,12 +80,6 @@ void Logger::setSender(std::string someApplication)
 void Logger::setID(std::string someID)
 {
     ID = someID;
-}
-
-// called by someone, hopefully, when they're finished with the logger
-void Logger::destroy()
-{
-    //logfile.close();
 }
 
 // wrappers for various log levels

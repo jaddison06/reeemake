@@ -381,6 +381,10 @@ void Reeemake::build(int argc, char *argv[])
         configParser.ParseConfigFile(fs::path(configToUse), &config);
     }
 
+    // TODO: depends from config
+
+    if (config.manualIncludes) { cxxSourceFiles.clear(); }
+
     for (auto sourceFile : config.sources)
     {
         if (sourceFile.type == file)
@@ -445,11 +449,24 @@ void Reeemake::build(int argc, char *argv[])
         {
             buildCommand += " -l" + lib;
         }
+        for (auto flag : config.compilerFlags)
+        {
+            buildCommand += flag;
+        }
+
         verboseSystem(buildCommand);
 
         }
     
-    // cleanup
+    // post-build stuff
+
+
+    for (auto cmd : config.postBuildCommands)
+    {
+        system(cmd.c_str());
+    }
+
+
     logger.info("Updating fileData");
     for (auto file : cxxSourceFiles)
     {

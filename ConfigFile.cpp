@@ -176,7 +176,30 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
                 break;
             }
             
-            // not doing 12-15 yet
+            // not doing 12 yet
+
+            case 13:
+            {
+                // system
+                std::string systemCommand;
+                for (auto segment : cmd->options)
+                {
+                    systemCommand += segment + " ";
+                }
+                config->postBuildCommands.push_back(systemCommand);
+            }
+            case 14:
+            {
+                // system-now
+                std::string systemCommand;
+                for (auto segment : cmd->options)
+                {
+                    systemCommand += segment + " ";
+                }
+                system(systemCommand.c_str());
+            }
+
+            // not doing 15 yet
 
             case 16:
             {

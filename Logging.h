@@ -13,11 +13,10 @@ class Logger
     public:
         Logger(std::string);
         Logger();
+        ~Logger();
 
         void setSender(std::string);
         void setID(std::string);
-
-        void destroy();
 
         void debug(std::string);
         void info(std::string);
