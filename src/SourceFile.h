@@ -21,5 +21,5 @@ class SourceFileSerializationUtil
         SourceFile DeserializeSourceFile(std::string *, int = 1);
 
     private:
-        Logger logger{"Reeemake/SourceFile"};
+        Logger logger{"SourceFile"};
 };

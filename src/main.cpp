@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     logger.debug("Initialized");
 
 
-    Reeemake reeemake(argv);
+    Reeemake reeemake;
     reeemake.build(argc, argv);
 
 }

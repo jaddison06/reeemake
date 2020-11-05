@@ -20,7 +20,6 @@ namespace fs = std::filesystem;
 class Reeemake
 {
     public:
-        Reeemake(char *[]);
         void build(int, char *[]);
     private:
         std::vector<fs::path> getFilesInDir(fs::path);
@@ -38,6 +37,6 @@ class Reeemake
 
         std::vector<ParserOutputItem> parsedArgs;
 
-        Logger logger;
+        Logger logger{"Reeemake"};
               
 };

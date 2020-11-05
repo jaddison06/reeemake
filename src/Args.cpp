@@ -150,7 +150,8 @@ ArgParser::ArgParser(int w, std::vector<std::string> * x, std::vector<OptionalAr
 
     allowedOptionals->push_back(&helpArg);
 
-    logger.setSender(argv->at(0)+".ArgParser");
+    //logger.setSender(argv->at(0)+".ArgParser");
+    logger.setSender("ArgParser");
     logger.info(*description + " (version "+version+")");
 
     logger.debug("ArgParser created");

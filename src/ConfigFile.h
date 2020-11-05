@@ -212,5 +212,5 @@ class ConfigFileParser
 
         std::vector<std::string> splitString(std::string *, char = *" ");
 
-        Logger logger{"Reeemake.ConfigFileParser"};
+        Logger logger{"ConfigFileParser"};
 };

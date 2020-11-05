@@ -24,12 +24,6 @@ std::vector<fs::path> Reeemake::getFilesInDir(fs::path dir)
     return output;
 }
 
-Reeemake::Reeemake(char *argv[])
-{
-    logger.setSender((std::string)argv[0] + ".Reeemake");
-    logger.info("Reeemake initialized");
-}
-
 void Reeemake::verboseSystem(std::string cmd)
 {
     std::cout << cmd << std::endl;
