@@ -2,7 +2,7 @@
     "name": "reeemake",
     "displayName": "Reeemake",
     "description": "Syntax highlighting for Reeemake config files",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "engines": {
         "vscode": "^1.50.0"
     },
@@ -10,16 +10,26 @@
         "Programming Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "reeemake",
-            "aliases": ["Reeemake", "reeemake"],
-            "extensions": [".reee"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "reeemake",
-            "scopeName": "source.reeemake",
-            "path": "./syntaxes/reeemake.tmLanguage.json"
-        }]
-    }
+        "languages": [
+            {
+                "id": "reeemake",
+                "aliases": [
+                    "Reeemake",
+                    "reeemake"
+                ],
+                "extensions": [
+                    ".reee"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "reeemake",
+                "scopeName": "source.reeemake",
+                "path": "./syntaxes/reeemake.tmLanguage.json"
+            }
+        ]
+    },
+    "publisher": "jaddison"
 }
