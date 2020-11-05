@@ -242,7 +242,7 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
             {
                 // build
                 std::string buildType = cmd->options.at(0);
-                if (!itemInVector(buildType, &outputOptions))
+                if (!itemInVector<std::string>(buildType, &outputOptions))
                 {
                     std::string error_msg = "Argument of command \"output\" must be one of:\n";
                     for (auto option : outputOptions)
@@ -337,14 +337,14 @@ bool ConfigFileParser::isCommand(std::string *line)
 
 bool ConfigFileParser::isWhitespace(std::string *line)
 {
-    std::vector<std::string> whitespaceCharacters
+    const std::vector<std::string> whitespaceCharacters
     {
         " ",
         "   "
     };
     for (char character : *line)
     {
-        if ( !itemInVector(std::to_string(character), &whitespaceCharacters) )
+        if ( !itemInVector<std::string>(std::to_string(character), &whitespaceCharacters) )
         {
             return true;
         }

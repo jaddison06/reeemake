@@ -37,14 +37,24 @@ void Reeemake::verboseSystem(std::string cmd)
     system(cmd.c_str());
 }
 
+// TODO: how the hell does this work on ./extension/.git ??
+// blind luck
+// something in the implementation probably
 bool Reeemake::isAnnoyingDir(std::string dirName)
 {
+    //logger.debug("Checking if "+dirName+" is an annoying dir");
     const std::vector<std::string> annoyingDirs {
         "./.git",
         "./.reeemake"
     };
 
-    return itemInVector(dirName, &annoyingDirs);
+    bool output = false;
+    for (auto item : annoyingDirs)
+    {
+        if (dirName.substr(0, item.length()) == item) { output = true; }
+    }
+    //if (output) { logger.debug("yes"); } else { logger.debug("no"); }
+    return output;
 }
 
 std::string Reeemake::time_t_to_string(time_t *time)
@@ -392,13 +402,13 @@ void Reeemake::build(int argc, char *argv[])
             const std::vector<fs::path> sourceFilesCopy = cxxSourceFiles;
             if (sourceFile.include)
             {
-                if (!itemInVector(fs::path(sourceFile.name), &sourceFilesCopy))
+                if (!itemInVector<fs::path>(fs::path(sourceFile.name), &sourceFilesCopy))
                 {
                     cxxSourceFiles.push_back(fs::path(sourceFile.name));
                 }
             } else
             {
-                if (itemInVector(fs::path(sourceFile.name), &sourceFilesCopy))
+                if (itemInVector<fs::path>(fs::path(sourceFile.name), &sourceFilesCopy))
                 {
                     removeItemFromVector(fs::path(sourceFile.name), &cxxSourceFiles);
                 }
