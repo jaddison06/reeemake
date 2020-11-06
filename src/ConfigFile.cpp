@@ -18,7 +18,7 @@ std::vector<std::string> ConfigFileParser::splitString(std::string *string, std:
     std::stringstream stream;
     while (std::getline(stream, token, *delimiter.c_str()))
     {
-        //logger.debug("Got token \""+token+"\"");
+        logger.debug("Got token \""+token+"\"");
         tokensRaw.push_back(token);
     };
     if (tokensRaw.size() == 0) { tokensRaw.push_back(*string); }
@@ -286,10 +286,17 @@ void ConfigFileParser::osSpecificCommand(command *cmd, std::unordered_map<std::s
 {
     logger.debug(cmd->command);
     for(auto opt:cmd->options){logger.debug(opt);}
+    // why won't this work?
+    std::string newCommand = cmd->options.at(0);
+    std::vector<std::string> newOpts { cmd->options.begin() + 1, cmd->options.end() };
+
+    logger.debug(newCommand);
+    for (auto opt:newOpts) {logger.debug(opt);}
+
     command newCmd
     {
-        cmd->options.at(0),
-        std::vector<std::string> { cmd->options.begin()+1, cmd->options.end() }
+        newCommand,
+        newOpts
     };
 
     ParseCommand(&newCmd, map, config, level + 1);
@@ -333,11 +340,12 @@ void ConfigFileParser::ParseConfigFile(fs::path file, ConfigOptions *config, int
     logger.debug("all commands & options:");
     for (auto cmd:commands)
     {
-        logger.debug("\n"+cmd.command);
+        logger.debug(cmd.command);
         for (auto opt:cmd.options)
         {
             logger.debug(opt);
         }
+        logger.debug("\n");
     }
 
 
