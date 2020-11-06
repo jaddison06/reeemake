@@ -18,7 +18,7 @@ std::vector<std::string> ConfigFileParser::splitString(std::string *string, std:
     std::stringstream stream;
     while (std::getline(stream, token, *delimiter.c_str()))
     {
-        logger.debug("Got token \""+token+"\"");
+        //logger.debug("Got token \""+token+"\"");
         tokensRaw.push_back(token);
     };
     if (tokensRaw.size() == 0) { tokensRaw.push_back(*string); }
@@ -26,9 +26,9 @@ std::vector<std::string> ConfigFileParser::splitString(std::string *string, std:
     std::vector<std::string> tokens;
     for (auto token : tokensRaw)
     {
-        logger.debug("Removing preceding delimiter from token "+token);
+        //logger.debug("Removing preceding delimiter from token "+token);
         token = token.substr(delimiter.length(), token.length()-delimiter.length());
-        logger.debug("New token: \""+token+"\"");
+        //logger.debug("New token: \""+token+"\"");
         tokens.push_back(token);
     }
 
@@ -222,7 +222,7 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
             {
                 // win
                 #ifdef _WIN32
-                ParseCommand(cmd, map, config);
+                osSpecificCommand(cmd, map, config, level);
                 #endif
                 break;
             }
@@ -230,7 +230,7 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
             {
                 // mac
                 #ifdef __APPLE__
-                ParseCommand(cmd, map, config);
+                osSpecificCommand(cmd, map, config, level);
                 #endif
                 break;
             }
@@ -238,7 +238,7 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
             {
                 // linux
                 #ifdef __linux__
-                ParseCommand(cmd, map, config);
+                osSpecificCommand(cmd, map, config, level);
                 #endif
                 break;
             }
@@ -282,10 +282,28 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
         }
 }
 
+void ConfigFileParser::osSpecificCommand(command *cmd, std::unordered_map<std::string, int> *map, ConfigOptions *config, int level)
+{
+    logger.debug(cmd->command);
+    for(auto opt:cmd->options){logger.debug(opt);}
+    command newCmd
+    {
+        cmd->options.at(0),
+        std::vector<std::string> { cmd->options.begin()+1, cmd->options.end() }
+    };
+
+    ParseCommand(&newCmd, map, config, level + 1);
+}
+
 void ConfigFileParser::ParseConfigFile(fs::path file, ConfigOptions *config, int level)
 {
     logger.setID(std::to_string(level));
     logger.info("Parsing config file "+file.string()+" at level "+std::to_string(level));
+
+    // we already checked if the root config file exists, but this might
+    // be getting called from an import
+    if (!fs::exists(file)) { logger.error("Cannot find config file "+file.string()); }
+
     std::string entireFile = readEntireFile(file);
     logger.debug("got file:\n"+entireFile);
     std::istringstream stream(entireFile);

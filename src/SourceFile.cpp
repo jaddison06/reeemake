@@ -32,6 +32,7 @@ std::string SourceFileSerializationUtil::SerializeSourceFile(SourceFile *sourceF
 
 SourceFile SourceFileSerializationUtil::DeserializeSourceFile(std::string *file, int level)
 {
+    logger.setSender(std::to_string(level));
     logger.info("Deserializing source file:\n"+*file+"\n(at level "+std::to_string(level)+")");
     std::istringstream stream(*file);
     SourceFile output;
@@ -144,6 +145,7 @@ SourceFile SourceFileSerializationUtil::DeserializeSourceFile(std::string *file,
                 {
                     logger.debug("At end of dependency, whole thing:\n"+currentDependency+"\nDeserializing it");
                     output.dependencies.push_back(DeserializeSourceFile(&currentDependency, level+1));
+                    logger.setSender(std::to_string(level));
                     insideADependency = false;
                 } else
                 {

@@ -1,0 +1,472 @@
+2020-10-6 15:55:8   DEBUG (./reeemake.main) Initialized
+
+2020-10-6 15:55:8   INFO (ArgParser) Super-Fast, Cross-Platform Build System For C++! Simple And Exciting! (version 0.25)
+
+2020-10-6 15:55:8   DEBUG (ArgParser) ArgParser created
+
+2020-10-6 15:55:8   INFO (ArgParser) Parsing args
+
+2020-10-6 15:55:8   DEBUG (ArgParser) Checking for duplicate arg names
+
+2020-10-6 15:55:8   DEBUG (ArgParser) Checking optional conf
+
+2020-10-6 15:55:8   DEBUG (ArgParser) Optional conf OK
+
+2020-10-6 15:55:8   DEBUG (ArgParser) Checking optional help
+
+2020-10-6 15:55:8   DEBUG (ArgParser) Optional help OK
+
+2020-10-6 15:55:8   DEBUG (ArgParser) Got arg ./reeemake
+
+2020-10-6 15:55:8   DEBUG (ArgParser) Is first arg - program name
+
+2020-10-6 15:55:8   DEBUG (ArgParser) Got arg -c
+
+2020-10-6 15:55:8   DEBUG (ArgParser) is optional switch
+
+2020-10-6 15:55:8   DEBUG (ArgParser) is short name
+
+2020-10-6 15:55:8   DEBUG (ArgParser) Is a valid arg
+
+2020-10-6 15:55:8   DEBUG (ArgParser) Arg takes a parameter
+
+2020-10-6 15:55:8   DEBUG (ArgParser) Got arg ./config/binary.reee
+
+2020-10-6 15:55:8   DEBUG (ArgParser) isn't a switch
+
+2020-10-6 15:55:8   DEBUG (ArgParser) is a value for an optional arg
+
+2020-10-6 15:55:8   DEBUG (ArgParser) Checking type
+
+2020-10-6 15:55:8   DEBUG (ArgParser) Type is good
+
+2020-10-6 15:55:8   INFO (ArgParser) Adding return arg to output:
+conf, ./config/binary.reee
+0 1
+string
+
+
+2020-10-6 15:55:8   DEBUG (ArgParser) Output doesn't have a ParserOutputItem for this, creating one
+
+2020-10-6 15:55:8   DEBUG (ArgParser) Checking for illegal duplicates
+
+2020-10-6 15:55:8   DEBUG (ArgParser) conf isn't allowed duplicates, checking
+
+2020-10-6 15:55:8   DEBUG (ArgParser) Argument conf didn't have any illegal duplicates
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Looking for config arg
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got arg conf
+
+2020-10-6 15:55:8   INFO (Reeemake) Config arg was supplied, using it
+
+2020-10-6 15:55:8   INFO (Reeemake) Using config ./config/binary.reee
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir .
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./reeemake.code-workspace
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./.vscode
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./.github
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./config
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./src
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./.reeemake
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./reeemake
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./readme.md
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./reeemake_copy
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./.git
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found directory ./.vscode, searching it
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir ./.vscode
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./.vscode/tasks.json
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found directory ./extension, searching it
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir ./extension
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.vscode
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/syntaxes
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.vscodeignore
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/vsc-extension-quickstart.md
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/CHANGELOG.md
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/package.json
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.gitignore
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.gitattributes
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/README.md
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/language-configuration.json
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found directory ./config, searching it
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir ./config
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./config/binary.reee
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./config/config.txt
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./config/buildScript.reee
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./config/main.reee
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found directory ./src, searching it
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir ./src
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./src/Reeemake.h
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./src/Logging.h
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./src/SourceFile.cpp
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./src/Args.h
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./src/main.cpp
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./src/Args.cpp
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./src/ConfigFile.cpp
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./src/ConfigFile.h
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./src/Logging.cpp
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./src/Reeemake.cpp
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./src/SourceFile.h
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./src/VectorThings.h
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found directory ./extension/.vscode, searching it
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir ./extension/.vscode
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.vscode/launch.json
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found directory ./extension/syntaxes, searching it
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir ./extension/syntaxes
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/syntaxes/reeemake.tmLanguage.json
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found directory ./extension/.git, searching it
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir ./extension/.git
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/HEAD
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/objects
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/branches
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/description
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/config
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/info
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/hooks
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/logs
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/index
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/COMMIT_EDITMSG
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/refs
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found directory ./extension/.git/objects, searching it
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir ./extension/.git/objects
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/objects/info
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/objects/f2
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/objects/37
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/objects/8a
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/objects/8b
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/objects/pack
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found directory ./extension/.git/branches, searching it
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir ./extension/.git/branches
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found directory ./extension/.git/info, searching it
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir ./extension/.git/info
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/info/exclude
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found directory ./extension/.git/hooks, searching it
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir ./extension/.git/hooks
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/hooks/pre-applypatch.sample
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/hooks/commit-msg.sample
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/hooks/post-update.sample
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/hooks/applypatch-msg.sample
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/hooks/pre-push.sample
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/hooks/pre-rebase.sample
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/hooks/prepare-commit-msg.sample
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/hooks/fsmonitor-watchman.sample
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/hooks/pre-commit.sample
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/hooks/pre-receive.sample
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/hooks/update.sample
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found directory ./extension/.git/logs, searching it
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir ./extension/.git/logs
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/logs/HEAD
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/logs/refs
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found directory ./extension/.git/refs, searching it
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir ./extension/.git/refs
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/refs/heads
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/refs/tags
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found directory ./extension/.git/objects/info, searching it
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir ./extension/.git/objects/info
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found directory ./extension/.git/objects/f2, searching it
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir ./extension/.git/objects/f2
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/objects/f2/5989588fe90adb22db8e1b178b63822bbb1a89
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found directory ./extension/.git/objects/37, searching it
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir ./extension/.git/objects/37
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/objects/37/9500995a842b41ef38521fb8b2702cec17209d
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found directory ./extension/.git/objects/8a, searching it
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir ./extension/.git/objects/8a
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/objects/8a/6c8788f54ec451ee7c30fbf495db902e548d2e
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found directory ./extension/.git/objects/8b, searching it
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir ./extension/.git/objects/8b
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/objects/8b/18ef24a65a4a453a7e125ebf4cc64fd0c74c16
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found directory ./extension/.git/objects/pack, searching it
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir ./extension/.git/objects/pack
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found directory ./extension/.git/logs/refs, searching it
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir ./extension/.git/logs/refs
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/logs/refs/heads
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found directory ./extension/.git/refs/heads, searching it
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir ./extension/.git/refs/heads
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/refs/heads/master
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found directory ./extension/.git/refs/tags, searching it
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir ./extension/.git/refs/tags
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/refs/tags/v1.0.0
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found directory ./extension/.git/logs/refs/heads, searching it
+
+2020-10-6 15:55:8   INFO (Reeemake) Getting all files in dir ./extension/.git/logs/refs/heads
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Got dir entry ./extension/.git/logs/refs/heads/master
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found c++ source file ./src/SourceFile.cpp
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found c++ source file ./src/main.cpp
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found c++ source file ./src/Args.cpp
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found c++ source file ./src/ConfigFile.cpp
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found c++ source file ./src/Logging.cpp
+
+2020-10-6 15:55:8   DEBUG (Reeemake) Found c++ source file ./src/Reeemake.cpp
+
+2020-10-6 15:55:8   INFO (Reeemake) configToUse is ./config/binary.reee
+
+2020-10-6 15:55:8   INFO (ConfigFileParser 1) Parsing config file ./config/binary.reee at level 1
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 1) got file:
+import config/main.reee
+
+build binary
+output reeemake
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 1) Checking if import config/main.reee is a command
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 1) Is a command
+
+2020-10-6 15:55:8   INFO (ConfigFileParser 1) Splitting string  config/main.reee by delimiter " "
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 1) Checking if  is a command
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 1) Is a command
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 1) Checking if build binary is a command
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 1) Is a command
+
+2020-10-6 15:55:8   INFO (ConfigFileParser 1) Splitting string  binary by delimiter " "
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 1) Checking if output reeemake is a command
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 1) Is a command
+
+2020-10-6 15:55:8   INFO (ConfigFileParser 1) Splitting string  reeemake by delimiter " "
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 1) all commands & options:
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 1) 
+import
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 1) config/main.reee
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 1) 
+
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 1) 
+build
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 1) binary
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 1) 
+output
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 1) reeemake
+
+2020-10-6 15:55:8   INFO (ConfigFileParser 1) Parsing command import at level 1 with 1 options
+
+2020-10-6 15:55:8   INFO (ConfigFileParser 2) Parsing config file config/main.reee at level 2
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) got file:
+linux comp g++-8
+
+output reeemake
+std 17
+linux library stdc++fs
+linux comp-flag -Wno-sign-compare
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) Checking if linux comp g++-8 is a command
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) Is a command
+
+2020-10-6 15:55:8   INFO (ConfigFileParser 2) Splitting string  comp g++-8 by delimiter " "
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) Checking if  is a command
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) Is a command
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) Checking if output reeemake is a command
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) Is a command
+
+2020-10-6 15:55:8   INFO (ConfigFileParser 2) Splitting string  reeemake by delimiter " "
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) Checking if std 17 is a command
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) Is a command
+
+2020-10-6 15:55:8   INFO (ConfigFileParser 2) Splitting string  17 by delimiter " "
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) Checking if linux library stdc++fs is a command
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) Is a command
+
+2020-10-6 15:55:8   INFO (ConfigFileParser 2) Splitting string  library stdc++fs by delimiter " "
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) Checking if linux comp-flag -Wno-sign-compare is a command
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) Is a command
+
+2020-10-6 15:55:8   INFO (ConfigFileParser 2) Splitting string  comp-flag -Wno-sign-compare by delimiter " "
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) all commands & options:
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) 
+linux
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) comp g++-8
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) 
+
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) 
+output
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) reeemake
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) 
+std
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) 17
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) 
+linux
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) library stdc++fs
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) 
+linux
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) comp-flag -Wno-sign-compare
+
+2020-10-6 15:55:8   INFO (ConfigFileParser 2) Parsing command linux at level 2 with 1 options
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) linux
+
+2020-10-6 15:55:8   DEBUG (ConfigFileParser 2) comp g++-8
+
+2020-10-6 15:55:8   INFO (ConfigFileParser 3) Parsing command comp g++-8 at level 3 with 0 options
+
+2020-10-6 15:55:8   WARNING (ConfigFileParser 3) Error - Command comp g++-8 unrecognised
+

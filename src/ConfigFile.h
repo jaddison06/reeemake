@@ -209,6 +209,7 @@ class ConfigFileParser
         bool isWhitespace(std::string *);
 
         void ParseCommand(command *, std::unordered_map<std::string, int> *, ConfigOptions *, int = 1);
+        void osSpecificCommand(command *, std::unordered_map<std::string, int> *, ConfigOptions *, int);
 
         std::vector<std::string> splitString(std::string *, std::string = " ");
 

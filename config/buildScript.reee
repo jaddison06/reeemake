@@ -1,4 +1,4 @@
-import main.reee
+import config/main.reee
 
 build script
 output build.sh
