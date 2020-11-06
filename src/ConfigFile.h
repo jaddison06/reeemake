@@ -79,7 +79,7 @@ struct commandTemplate
 class ConfigFileParser
 {
     public:
-        void ParseConfigFile(fs::path, ConfigOptions *);
+        void ParseConfigFile(fs::path, ConfigOptions *, int level = 1);
 
         const std::vector<commandTemplate> allowedCommands
         {
@@ -208,7 +208,7 @@ class ConfigFileParser
         bool isCommand(std::string *);
         bool isWhitespace(std::string *);
 
-        void ParseCommand(command *, std::unordered_map<std::string, int> *, ConfigOptions *);
+        void ParseCommand(command *, std::unordered_map<std::string, int> *, ConfigOptions *, int = 1);
 
         std::vector<std::string> splitString(std::string *, char = *" ");
 

@@ -10,12 +10,17 @@ std::string readEntireFile(fs::path file)
     return buf.str();
 }
 
-std::vector<std::string> ConfigFileParser::splitString(std::string * string, char delimiter)
+std::vector<std::string> ConfigFileParser::splitString(std::string *string, char delimiter)
 {
+    logger.info("Spkitting string "+*string+" by delimiter \""+std::to_string(delimiter)+"\"");
     std::vector<std::string> tokens;
     std::string token;
     std::stringstream stream;
-    while (std::getline(stream, token, delimiter)) { tokens.push_back(token); };
+    while (std::getline(stream, token, delimiter))
+    {
+        logger.debug("Got token \""+token+"\"");
+        tokens.push_back(token);
+    };
     if (tokens.size() == 0) { tokens.push_back(*string); }
 
     return tokens;
@@ -23,9 +28,9 @@ std::vector<std::string> ConfigFileParser::splitString(std::string * string, cha
 
 // at this point we have a map of allowedCommands,
 // and argument count has already been checked
-void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string, int> *map, ConfigOptions *config)
+void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string, int> *map, ConfigOptions *config, int level)
 {
-
+    logger.info("Parsing command "+cmd->command+" at level "+std::to_string(level)+" with "+std::to_string(cmd->options.size())+" options");
     if (!map->count(cmd->command))
         {
             logger.error("Command "+cmd->command+" unrecognised");
@@ -236,7 +241,7 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
                 // import
                 //
                 // this can infinite loop so don't be a lil bitch
-                ParseConfigFile(fs::path(cmd->options.at(0)), config);
+                ParseConfigFile(fs::path(cmd->options.at(0)), config, level + 1);
             }
             case 21:
             {
@@ -263,8 +268,9 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
         }
 }
 
-void ConfigFileParser::ParseConfigFile(fs::path file, ConfigOptions *config)
+void ConfigFileParser::ParseConfigFile(fs::path file, ConfigOptions *config, int level)
 {
+    logger.info("Parsing config file "+file.string()+" at level "+std::to_string(level));
     std::istringstream stream(file);
     std::string line;
     std::vector<command> commands;
