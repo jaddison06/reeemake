@@ -118,7 +118,6 @@ void Reeemake::parseArgs(int argc, char *argv[])
     std::string description = DESCRIPTION;
     ArgParser argParser(argc, &argvVector, &allowedOptionals, &allowedPositionals, VERSION, &description);
     
-    std::vector<ParserOutputItem> parsedArgs;
     argParser.ParseArgs(&parsedArgs);
 
     /*
@@ -287,14 +286,18 @@ void Reeemake::build(int argc, char *argv[])
     // were we given the conf arg?
     bool confArgSupplied = false;
     ReturnArg confArg;
+    logger.debug("Looking for config arg");
     for ( auto arg : parsedArgs )
     {
+        logger.debug("Got arg "+arg.name);
+        //for (auto inst:arg.argInstances) {logger.debug(inst.name);}
         if ( arg.name == "conf" && arg.argInstances.size() > 0 )
         {
             confArgSupplied = true;
             confArg = arg.argInstances.at(0);
         }
     }
+
 
     if ( confArgSupplied )
     {
@@ -375,6 +378,8 @@ void Reeemake::build(int argc, char *argv[])
     }
 
     ConfigOptions config;
+
+    logger.info("configToUse is "+configToUse);
 
     if (!(configToUse == "default"))
     {
