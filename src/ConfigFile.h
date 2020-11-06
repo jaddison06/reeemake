@@ -210,7 +210,7 @@ class ConfigFileParser
 
         void ParseCommand(command *, std::unordered_map<std::string, int> *, ConfigOptions *, int = 1);
 
-        std::vector<std::string> splitString(std::string *, char = *" ");
+        std::vector<std::string> splitString(std::string *, std::string = " ");
 
         Logger logger{"ConfigFileParser"};
 };

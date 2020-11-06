@@ -324,7 +324,7 @@ void Reeemake::build(int argc, char *argv[])
     // pre-build stuff
 
 
-    fs::path configPath("./.reeemake/" + configToUse);
+    fs::path configPath("./.reeemake/" + fs::path(configToUse).stem().string()+"/");
     if ( !(fs::exists(configPath) && fs::is_directory(configPath)) )
     {
         fs::create_directories(configPath);

@@ -10,19 +10,21 @@ std::string readEntireFile(fs::path file)
     return buf.str();
 }
 
-std::vector<std::string> ConfigFileParser::splitString(std::string *string, char delimiter)
+std::vector<std::string> ConfigFileParser::splitString(std::string *string, std::string delimiter)
 {
-    logger.info("Spkitting string "+*string+" by delimiter \""+std::to_string(delimiter)+"\"");
+    logger.info("Splitting string "+*string+" by delimiter \""+delimiter+"\"");
     std::vector<std::string> tokens;
     std::string token;
     std::stringstream stream;
-    while (std::getline(stream, token, delimiter))
+    while (std::getline(stream, token, *delimiter.c_str()))
     {
         logger.debug("Got token \""+token+"\"");
         tokens.push_back(token);
     };
     if (tokens.size() == 0) { tokens.push_back(*string); }
 
+    logger.debug("Output:");
+    for (auto token : tokens) { logger.debug(token); }
     return tokens;
 }
 
@@ -271,7 +273,7 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
 void ConfigFileParser::ParseConfigFile(fs::path file, ConfigOptions *config, int level)
 {
     logger.info("Parsing config file "+file.string()+" at level "+std::to_string(level));
-    std::istringstream stream(file);
+    std::istringstream stream(readEntireFile(file));
     std::string line;
     std::vector<command> commands;
     while (std::getline(stream, line))
@@ -318,6 +320,8 @@ void ConfigFileParser::ParseConfigFile(fs::path file, ConfigOptions *config, int
 
 bool ConfigFileParser::isCommand(std::string *line)
 {
+    logger.debug("Checking if "+*line+" is a command");
+    bool output;
     if (!isWhitespace(line))
     {
         // substr will crash if the string is too short
@@ -326,19 +330,22 @@ bool ConfigFileParser::isCommand(std::string *line)
             if (line->substr(0, 2) == "//")
             {
                 // is a comment
-                return false;
+                output = false;
             }
         }
     } else
     {
         // is whitespace
-        return false;
+        output =  false;
     }
 
     // we could do all the logic on the return line apart from the substr
     // which we'd have to do some spicy logic for, which could
     // get a bit unreadable.
-    return true;
+    output = true;
+
+    if (output) { logger.debug("Is a command"); } else { logger.debug("Isn't a command"); }
+    return output;
 }
 
 bool ConfigFileParser::isWhitespace(std::string *line)
