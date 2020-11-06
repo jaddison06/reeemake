@@ -1,0 +1,566 @@
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.main) Initialized
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Reeemake initialized
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.ArgParser) Super-Fast, Cross-Platform Build System For C++! Simple And Exciting! (version 0.25)
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.ArgParser) ArgParser created
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.ArgParser) Parsing args
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.ArgParser) Checking for duplicate arg names
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.ArgParser) Checking optional conf
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.ArgParser) Optional conf OK
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.ArgParser) Checking optional help
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.ArgParser) Optional help OK
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.ArgParser) Got arg ./reeemake_copy
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.ArgParser) Is first arg - program name
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.ArgParser) Checking for illegal duplicates
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Config arg wasn't supplied
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) No conf files in dir, using default config
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Using config default
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir .
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./reeemake.code-workspace
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./.vscode
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./.github
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./config
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./src
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./.reeemake
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./reeemake
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./readme.md
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./reeemake_copy
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./.git
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found directory ./.vscode, searching it
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir ./.vscode
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./.vscode/tasks.json
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found directory ./extension, searching it
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir ./extension
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.vscode
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/syntaxes
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.vscodeignore
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/vsc-extension-quickstart.md
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/CHANGELOG.md
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/package.json
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.gitignore
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.gitattributes
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/README.md
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/language-configuration.json
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found directory ./config, searching it
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir ./config
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./config/binary.reee
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./config/config.txt
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./config/buildScript.reee
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./config/main.reee
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found directory ./src, searching it
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir ./src
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./src/Reeemake.h
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./src/Logging.h
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./src/SourceFile.cpp
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./src/Args.h
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./src/main.cpp
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./src/Args.cpp
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./src/ConfigFile.cpp
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./src/ConfigFile.h
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./src/Logging.cpp
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./src/Reeemake.cpp
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./src/SourceFile.h
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./src/VectorThings.h
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found directory ./extension/.vscode, searching it
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir ./extension/.vscode
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.vscode/launch.json
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found directory ./extension/syntaxes, searching it
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir ./extension/syntaxes
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/syntaxes/reeemake.tmLanguage.json
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found directory ./extension/.git, searching it
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir ./extension/.git
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/HEAD
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/objects
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/branches
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/description
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/config
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/info
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/hooks
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/logs
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/index
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/COMMIT_EDITMSG
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/refs
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found directory ./extension/.git/objects, searching it
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir ./extension/.git/objects
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/objects/info
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/objects/f2
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/objects/37
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/objects/8a
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/objects/8b
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/objects/pack
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found directory ./extension/.git/branches, searching it
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir ./extension/.git/branches
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found directory ./extension/.git/info, searching it
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir ./extension/.git/info
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/info/exclude
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found directory ./extension/.git/hooks, searching it
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir ./extension/.git/hooks
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/hooks/pre-applypatch.sample
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/hooks/commit-msg.sample
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/hooks/post-update.sample
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/hooks/applypatch-msg.sample
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/hooks/pre-push.sample
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/hooks/pre-rebase.sample
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/hooks/prepare-commit-msg.sample
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/hooks/fsmonitor-watchman.sample
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/hooks/pre-commit.sample
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/hooks/pre-receive.sample
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/hooks/update.sample
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found directory ./extension/.git/logs, searching it
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir ./extension/.git/logs
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/logs/HEAD
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/logs/refs
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found directory ./extension/.git/refs, searching it
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir ./extension/.git/refs
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/refs/heads
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/refs/tags
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found directory ./extension/.git/objects/info, searching it
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir ./extension/.git/objects/info
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found directory ./extension/.git/objects/f2, searching it
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir ./extension/.git/objects/f2
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/objects/f2/5989588fe90adb22db8e1b178b63822bbb1a89
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found directory ./extension/.git/objects/37, searching it
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir ./extension/.git/objects/37
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/objects/37/9500995a842b41ef38521fb8b2702cec17209d
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found directory ./extension/.git/objects/8a, searching it
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir ./extension/.git/objects/8a
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/objects/8a/6c8788f54ec451ee7c30fbf495db902e548d2e
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found directory ./extension/.git/objects/8b, searching it
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir ./extension/.git/objects/8b
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/objects/8b/18ef24a65a4a453a7e125ebf4cc64fd0c74c16
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found directory ./extension/.git/objects/pack, searching it
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir ./extension/.git/objects/pack
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found directory ./extension/.git/logs/refs, searching it
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir ./extension/.git/logs/refs
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/logs/refs/heads
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found directory ./extension/.git/refs/heads, searching it
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir ./extension/.git/refs/heads
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/refs/heads/master
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found directory ./extension/.git/refs/tags, searching it
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir ./extension/.git/refs/tags
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/refs/tags/v1.0.0
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found directory ./extension/.git/logs/refs/heads, searching it
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Getting all files in dir ./extension/.git/logs/refs/heads
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Got dir entry ./extension/.git/logs/refs/heads/master
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found c++ source file ./src/SourceFile.cpp
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found c++ source file ./src/main.cpp
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found c++ source file ./src/Args.cpp
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found c++ source file ./src/ConfigFile.cpp
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found c++ source file ./src/Logging.cpp
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) Found c++ source file ./src/Reeemake.cpp
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Checking whether to build ./src/SourceFile.cpp
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) This source file is new, adding it to the build list
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Checking whether to build ./src/main.cpp
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) This source file is new, adding it to the build list
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Checking whether to build ./src/Args.cpp
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) This source file is new, adding it to the build list
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Checking whether to build ./src/ConfigFile.cpp
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) This source file is new, adding it to the build list
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Checking whether to build ./src/Logging.cpp
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) This source file is new, adding it to the build list
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Checking whether to build ./src/Reeemake.cpp
+
+2020-10-6 15:3:36   DEBUG (./reeemake_copy.Reeemake) This source file is new, adding it to the build list
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Compiling objects
+
+2020-10-6 15:3:36   INFO (./reeemake_copy.Reeemake) Running system command g++-8 -c ./src/SourceFile.cpp -I . -Wall -std=c++17 -o ./.reeemake/default/build/SourceFile.o -Wno-sign-compare
+
+2020-10-6 15:3:37   INFO (./reeemake_copy.Reeemake) Running system command g++-8 -c ./src/main.cpp -I . -Wall -std=c++17 -o ./.reeemake/default/build/main.o -Wno-sign-compare
+
+2020-10-6 15:3:37   INFO (./reeemake_copy.Reeemake) Running system command g++-8 -c ./src/Args.cpp -I . -Wall -std=c++17 -o ./.reeemake/default/build/Args.o -Wno-sign-compare
+
+2020-10-6 15:3:38   INFO (./reeemake_copy.Reeemake) Running system command g++-8 -c ./src/ConfigFile.cpp -I . -Wall -std=c++17 -o ./.reeemake/default/build/ConfigFile.o -Wno-sign-compare
+
+2020-10-6 15:3:39   INFO (./reeemake_copy.Reeemake) Running system command g++-8 -c ./src/Logging.cpp -I . -Wall -std=c++17 -o ./.reeemake/default/build/Logging.o -Wno-sign-compare
+
+2020-10-6 15:3:39   INFO (./reeemake_copy.Reeemake) Running system command g++-8 -c ./src/Reeemake.cpp -I . -Wall -std=c++17 -o ./.reeemake/default/build/Reeemake.o -Wno-sign-compare
+
+2020-10-6 15:3:40   INFO (./reeemake_copy.Reeemake) Building
+
+2020-10-6 15:3:40   INFO (./reeemake_copy.Reeemake) Running system command g++-8 ./.reeemake/default/build/SourceFile.o ./.reeemake/default/build/main.o ./.reeemake/default/build/Args.o ./.reeemake/default/build/ConfigFile.o ./.reeemake/default/build/Logging.o ./.reeemake/default/build/Reeemake.o -o ./reeemake -lstdc++fs
+
+2020-10-6 15:3:41   INFO (./reeemake_copy.Reeemake) Updating fileData
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Updating fileData for file ./src/SourceFile.cpp
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Generating a SourceFile for ./src/SourceFile.cpp
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Getting dependencies for file ./src/SourceFile.cpp
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Was a dependency
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Got dependency ./src/SourceFile.h
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Generating a SourceFile for ./src/SourceFile.h
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Getting dependencies for file ./src/SourceFile.h
+
+2020-10-6 15:3:41   INFO (./reeemake_copy.Reeemake) Serializing source file ./.reeemake/default/fileData/./src/SourceFile.cpp.dat
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Opening file handle
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Generating serialized text
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding path
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Getting lastBuildTime
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding lastBuildTime
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding dependencies
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding dependency ./src/SourceFile.h
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Generating serialized text
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding path
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Getting lastBuildTime
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding lastBuildTime
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding dependencies
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Updating fileData for file ./src/main.cpp
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Generating a SourceFile for ./src/main.cpp
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Getting dependencies for file ./src/main.cpp
+
+2020-10-6 15:3:41   INFO (./reeemake_copy.Reeemake) Serializing source file ./.reeemake/default/fileData/./src/main.cpp.dat
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Opening file handle
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Generating serialized text
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding path
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Getting lastBuildTime
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding lastBuildTime
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding dependencies
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Updating fileData for file ./src/Args.cpp
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Generating a SourceFile for ./src/Args.cpp
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Getting dependencies for file ./src/Args.cpp
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Was a dependency
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Got dependency ./src/Args.h
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Generating a SourceFile for ./src/Args.h
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Getting dependencies for file ./src/Args.h
+
+2020-10-6 15:3:41   INFO (./reeemake_copy.Reeemake) Serializing source file ./.reeemake/default/fileData/./src/Args.cpp.dat
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Opening file handle
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Generating serialized text
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding path
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Getting lastBuildTime
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding lastBuildTime
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding dependencies
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding dependency ./src/Args.h
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Generating serialized text
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding path
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Getting lastBuildTime
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding lastBuildTime
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding dependencies
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Updating fileData for file ./src/ConfigFile.cpp
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Generating a SourceFile for ./src/ConfigFile.cpp
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Getting dependencies for file ./src/ConfigFile.cpp
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Was a dependency
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Got dependency ./src/ConfigFile.h
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Generating a SourceFile for ./src/ConfigFile.h
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Getting dependencies for file ./src/ConfigFile.h
+
+2020-10-6 15:3:41   INFO (./reeemake_copy.Reeemake) Serializing source file ./.reeemake/default/fileData/./src/ConfigFile.cpp.dat
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Opening file handle
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Generating serialized text
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding path
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Getting lastBuildTime
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding lastBuildTime
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding dependencies
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding dependency ./src/ConfigFile.h
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Generating serialized text
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding path
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Getting lastBuildTime
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding lastBuildTime
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding dependencies
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Updating fileData for file ./src/Logging.cpp
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Generating a SourceFile for ./src/Logging.cpp
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Getting dependencies for file ./src/Logging.cpp
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Was a dependency
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Got dependency ./src/Logging.h
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Generating a SourceFile for ./src/Logging.h
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Getting dependencies for file ./src/Logging.h
+
+2020-10-6 15:3:41   INFO (./reeemake_copy.Reeemake) Serializing source file ./.reeemake/default/fileData/./src/Logging.cpp.dat
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Opening file handle
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Generating serialized text
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding path
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Getting lastBuildTime
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding lastBuildTime
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding dependencies
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding dependency ./src/Logging.h
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Generating serialized text
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding path
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Getting lastBuildTime
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding lastBuildTime
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding dependencies
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Updating fileData for file ./src/Reeemake.cpp
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Generating a SourceFile for ./src/Reeemake.cpp
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Getting dependencies for file ./src/Reeemake.cpp
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Was a dependency
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Got dependency ./src/Reeemake.h
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Generating a SourceFile for ./src/Reeemake.h
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Getting dependencies for file ./src/Reeemake.h
+
+2020-10-6 15:3:41   INFO (./reeemake_copy.Reeemake) Serializing source file ./.reeemake/default/fileData/./src/Reeemake.cpp.dat
+
+2020-10-6 15:3:41   DEBUG (./reeemake_copy.Reeemake) Opening file handle
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Generating serialized text
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding path
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Getting lastBuildTime
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding lastBuildTime
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding dependencies
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding dependency ./src/Reeemake.h
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Generating serialized text
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding path
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Getting lastBuildTime
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding lastBuildTime
+
+2020-10-6 15:3:41   DEBUG (Reeemake/SourceFile) Adding dependencies
+

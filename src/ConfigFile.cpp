@@ -13,15 +13,24 @@ std::string readEntireFile(fs::path file)
 std::vector<std::string> ConfigFileParser::splitString(std::string *string, std::string delimiter)
 {
     logger.info("Splitting string "+*string+" by delimiter \""+delimiter+"\"");
-    std::vector<std::string> tokens;
+    std::vector<std::string> tokensRaw;
     std::string token;
     std::stringstream stream;
     while (std::getline(stream, token, *delimiter.c_str()))
     {
         logger.debug("Got token \""+token+"\"");
-        tokens.push_back(token);
+        tokensRaw.push_back(token);
     };
-    if (tokens.size() == 0) { tokens.push_back(*string); }
+    if (tokensRaw.size() == 0) { tokensRaw.push_back(*string); }
+
+    std::vector<std::string> tokens;
+    for (auto token : tokensRaw)
+    {
+        logger.debug("Removing preceding delimiter from token "+token);
+        token = token.substr(delimiter.length(), token.length()-delimiter.length());
+        logger.debug("New token: \""+token+"\"");
+        tokens.push_back(token);
+    }
 
     logger.debug("Output:");
     for (auto token : tokens) { logger.debug(token); }
@@ -32,6 +41,7 @@ std::vector<std::string> ConfigFileParser::splitString(std::string *string, std:
 // and argument count has already been checked
 void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string, int> *map, ConfigOptions *config, int level)
 {
+    logger.setID(std::to_string(level));
     logger.info("Parsing command "+cmd->command+" at level "+std::to_string(level)+" with "+std::to_string(cmd->options.size())+" options");
     if (!map->count(cmd->command))
         {
@@ -244,6 +254,7 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
                 //
                 // this can infinite loop so don't be a lil bitch
                 ParseConfigFile(fs::path(cmd->options.at(0)), config, level + 1);
+                logger.setID(std::to_string(level));
             }
             case 21:
             {
@@ -251,7 +262,8 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
                 std::string buildType = cmd->options.at(0);
                 if (!itemInVector<std::string>(buildType, &outputOptions))
                 {
-                    std::string error_msg = "Argument of command \"output\" must be one of:\n";
+                    logger.debug("Arg was " + buildType);
+                    std::string error_msg = "Argument of command \"build\" must be one of:\n";
                     for (auto option : outputOptions)
                     {
                         error_msg += option + "\n";
@@ -272,8 +284,11 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
 
 void ConfigFileParser::ParseConfigFile(fs::path file, ConfigOptions *config, int level)
 {
+    logger.setID(std::to_string(level));
     logger.info("Parsing config file "+file.string()+" at level "+std::to_string(level));
-    std::istringstream stream(readEntireFile(file));
+    std::string entireFile = readEntireFile(file);
+    logger.debug("got file:\n"+entireFile);
+    std::istringstream stream(entireFile);
     std::string line;
     std::vector<command> commands;
     while (std::getline(stream, line))
@@ -297,6 +312,16 @@ void ConfigFileParser::ParseConfigFile(fs::path file, ConfigOptions *config, int
         }
     }
 
+    logger.debug("all commands & options:");
+    for (auto cmd:commands)
+    {
+        logger.debug("\n"+cmd.command);
+        for (auto opt:cmd.options)
+        {
+            logger.debug(opt);
+        }
+    }
+
 
     // map allowedCommands so we can switch it
     //
@@ -314,7 +339,8 @@ void ConfigFileParser::ParseConfigFile(fs::path file, ConfigOptions *config, int
     }
     for (auto cmd : commands)
     {
-        ParseCommand(&cmd, &map, config);
+        ParseCommand(&cmd, &map, config, level);
+        logger.setID(std::to_string(level));
     }
 }
 
