@@ -12,28 +12,25 @@ std::string readEntireFile(fs::path file)
 
 std::vector<std::string> ConfigFileParser::splitString(std::string *string, std::string delimiter)
 {
-    logger.info("Splitting string "+*string+" by delimiter \""+delimiter+"\"");
-    std::vector<std::string> tokensRaw;
-    std::string token;
-    std::stringstream stream;
-    while (std::getline(stream, token, *delimiter.c_str()))
-    {
-        logger.debug("Got token \""+token+"\"");
-        tokensRaw.push_back(token);
-    };
-    if (tokensRaw.size() == 0) { tokensRaw.push_back(*string); }
-
+    logger.info("Splitting string \""+*string+"\" by delimiter \""+delimiter+"\"");
     std::vector<std::string> tokens;
-    for (auto token : tokensRaw)
+
+    auto start = 0U;
+    auto end = string->find(delimiter);
+    while (end != std::string::npos)
     {
-        //logger.debug("Removing preceding delimiter from token "+token);
-        token = token.substr(delimiter.length(), token.length()-delimiter.length());
-        //logger.debug("New token: \""+token+"\"");
-        tokens.push_back(token);
+        tokens.push_back(string->substr(start, end - start));
+        start = end + delimiter.length();
+        end = string->find(delimiter, start);
     }
 
+    tokens.push_back(string->substr(start, end));
+
+    // needs explicit type, otherwise "" is interpreted as a char
+    removeItemFromVector<std::string>("", &tokens);
+
     logger.debug("Output:");
-    for (auto token : tokens) { logger.debug(token); }
+    for (auto token : tokens) { logger.debug("e"+token); }
     return tokens;
 }
 
@@ -402,18 +399,25 @@ bool ConfigFileParser::isCommand(std::string *line)
 
 bool ConfigFileParser::isWhitespace(std::string *line)
 {
+    logger.debug("Checking if \""+*line+"\" is whitespace");
+    bool output = false;
+
     const std::vector<std::string> whitespaceCharacters
     {
         " ",
         "   "
     };
+
+    if (*line == "") { output = true; }
+
     for (char character : *line)
     {
-        if ( !itemInVector<std::string>(std::to_string(character), &whitespaceCharacters) )
+        if ( !itemInVector<std::string>(std::string(sizeof(character), character), &whitespaceCharacters) )
         {
-            return true;
+            output = true;
         }
     }
 
-    return false;
+    if (output) {logger.debug("Was whitespace");} else{logger.debug("Wasn't whitespace");}
+    return output;
 }
