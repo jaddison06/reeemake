@@ -1,4 +1,4 @@
-#include "ConfigFile.h"g
+#include "ConfigFile.h"
 
 // get all lines in file
 std::string readEntireFile(fs::path file)
