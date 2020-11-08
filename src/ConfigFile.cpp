@@ -1,8 +1,5 @@
 #include "ConfigFile.h"
 
-// test
-// test again
-
 // get all lines in file
 std::string readEntireFile(fs::path file)
 {
