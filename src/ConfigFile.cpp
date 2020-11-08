@@ -1,5 +1,7 @@
 #include "ConfigFile.h"
 
+// test
+
 // get all lines in file
 std::string readEntireFile(fs::path file)
 {
@@ -55,7 +57,6 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
                 }
             }
         }
-        // TODO: add breaks
         switch ( map->at(cmd->command) )
         {
             case 0:
@@ -398,6 +399,7 @@ bool ConfigFileParser::isCommand(std::string *line)
 }
 
 // what the fuck is this
+// TODO: fix this
 bool ConfigFileParser::isWhitespace(std::string *line)
 {
     logger.debug("Checking if \""+*line+"\" is whitespace");
