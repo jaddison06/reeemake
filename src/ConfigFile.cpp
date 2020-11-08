@@ -30,7 +30,7 @@ std::vector<std::string> ConfigFileParser::splitString(std::string *string, std:
     removeItemFromVector<std::string>("", &tokens);
 
     logger.debug("Output:");
-    for (auto token : tokens) { logger.debug("e"+token); }
+    for (auto token : tokens) { logger.debug(token); }
     return tokens;
 }
 
@@ -298,6 +298,7 @@ void ConfigFileParser::osSpecificCommand(command *cmd, std::unordered_map<std::s
     ParseCommand(&newCmd, map, config, level + 1);
 }
 
+// it's now recognising whitespace but trying to parse it anyway ??
 void ConfigFileParser::ParseConfigFile(fs::path file, ConfigOptions *config, int level)
 {
     logger.setID(std::to_string(level));
