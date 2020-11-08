@@ -401,22 +401,11 @@ bool ConfigFileParser::isCommand(std::string *line)
 bool ConfigFileParser::isWhitespace(std::string *line)
 {
     logger.debug("Checking if \""+*line+"\" is whitespace");
-    bool output = false;
-
-    const std::vector<std::string> whitespaceCharacters
-    {
-        " ",
-        "   "
-    };
-
-    if (*line == "") { output = true; }
+    bool output = true;
 
     for (char character : *line)
     {
-        if ( !itemInVector<std::string>(std::string(sizeof(character), character), &whitespaceCharacters) )
-        {
-            output = true;
-        }
+        if ( !isspace(character)) { output = false; }
     }
 
     if (output) {logger.debug("Was whitespace");} else{logger.debug("Wasn't whitespace");}
