@@ -390,8 +390,7 @@ bool ConfigFileParser::isCommand(std::string *line)
 
     // we could do all the logic on the return line apart from the substr
     // which we'd have to do some spicy logic for, which could
-    // get a bit unreadable.
-    output = true;
+    // get a bit unreadable
 
     if (output) { logger.debug("Is a command"); } else { logger.debug("Isn't a command"); }
     return output;
