@@ -256,6 +256,7 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
                 // this can infinite loop so don't be a lil bitch
                 ParseConfigFile(fs::path(cmd->options.at(0)), config, level + 1);
                 logger.setID(std::to_string(level));
+                break;
             }
             case 21:
             {
@@ -272,6 +273,7 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
 
                     logger.error(error_msg);
                 };
+                break;
 
             }
 

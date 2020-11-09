@@ -3,4 +3,4 @@ linux comp g++-8
 output reeemake
 std 17
 linux library stdc++fs
-# linux comp-flag -Wno-sign-compare
+#linux comp-flag -Wno-sign-compare
