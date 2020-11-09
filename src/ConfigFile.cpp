@@ -44,6 +44,7 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
 {
     logger.setID(std::to_string(level));
     logger.info("Parsing command "+cmd->command+" at level "+std::to_string(level)+" with "+std::to_string(cmd->options.size())+" options");
+    for (auto option : cmd->options) { logger.debug(option); }
     if (!map->count(cmd->command))
         {
             logger.error("Command "+cmd->command+" unrecognised");
@@ -284,13 +285,15 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
 
 void ConfigFileParser::osSpecificCommand(command *cmd, std::unordered_map<std::string, int> *map, ConfigOptions *config, int level)
 {
+    logger.debug("Parsing OS specific command:");
     logger.debug(cmd->command);
     for(auto opt:cmd->options){logger.debug(opt);}
     // why won't this work?
     std::string newCommand = cmd->options.at(0);
     std::vector<std::string> newOpts { cmd->options.begin() + 1, cmd->options.end() };
 
-    logger.debug(newCommand);
+    logger.debug("New command: "+newCommand);
+    logger.debug("Options:");
     for (auto opt:newOpts) {logger.debug(opt);}
 
     command newCmd
@@ -302,7 +305,15 @@ void ConfigFileParser::osSpecificCommand(command *cmd, std::unordered_map<std::s
     ParseCommand(&newCmd, map, config, level + 1);
 }
 
-// it's now recognising whitespace but trying to parse it anyway ??
+// what's happening is it's going down a level then coming back up and not moving on to the next
+// option
+//
+// so from binary.reee it reads import config/main.reee
+// does that
+// then tries build binary
+// but fsr the option is stuck on config/main.reee
+// so it tries to parse like build config/main.reee
+// which obviously doesn't work
 void ConfigFileParser::ParseConfigFile(fs::path file, ConfigOptions *config, int level)
 {
     logger.setID(std::to_string(level));
@@ -378,11 +389,11 @@ bool ConfigFileParser::isCommand(std::string *line)
     if (!isWhitespace(line))
     {
         // substr will crash if the string is too short
-        if (line->length() >= 2)
+        if (line->length() >= CONFIG_COMMENT.length())
         {
-            if (line->substr(0, 2) == "//")
+            if (line->substr(0, CONFIG_COMMENT.length()) == CONFIG_COMMENT)
             {
-                // is a comment
+                logger.debug("Is a comment");
                 output = false;
             }
         }

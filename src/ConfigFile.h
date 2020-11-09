@@ -10,6 +10,9 @@
 #include "VectorThings.h"
 #include "Logging.h"
 
+// a comment in the config file
+#define CONFIG_COMMENT std::string("#")
+
 namespace fs = std::filesystem;
 
 std::string readEntireFile(fs::path);
