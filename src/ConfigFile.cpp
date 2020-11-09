@@ -398,7 +398,6 @@ bool ConfigFileParser::isCommand(std::string *line)
 }
 
 // what the fuck is this
-// TODO: fix this
 bool ConfigFileParser::isWhitespace(std::string *line)
 {
     logger.debug("Checking if \""+*line+"\" is whitespace");
