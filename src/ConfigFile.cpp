@@ -29,6 +29,10 @@ std::vector<std::string> ConfigFileParser::splitString(std::string *string, std:
     // needs explicit type, otherwise "" is interpreted as a char
     removeItemFromVector<std::string>("", &tokens);
 
+    // the last token will have a newline at the end
+    std::string last = tokens.back();
+    last = last.substr(0, last.size() - 1);
+
     logger.debug("Output:");
     for (auto token : tokens) { logger.debug(token); }
     return tokens;
@@ -370,7 +374,7 @@ void ConfigFileParser::ParseConfigFile(fs::path file, ConfigOptions *config, int
 bool ConfigFileParser::isCommand(std::string *line)
 {
     logger.debug("Checking if "+*line+" is a command");
-    bool output;
+    bool output = true;
     if (!isWhitespace(line))
     {
         // substr will crash if the string is too short
