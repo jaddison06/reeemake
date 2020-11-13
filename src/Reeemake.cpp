@@ -6,12 +6,12 @@
 
 // file paths should not be having a trailing / please
 
-// general TODO: add lots of logging
+//! \todo generally add lots of logging
 
-// TODO: optimise this nugget
 /*! Get all files in a directory (non-recursive)
 * \param dir The directory to search 
 * \return A vector of paths to all the files
+* \todo Optimize this nugget
 */
 std::vector<fs::path> Reeemake::getFilesInDir(fs::path dir)
 {
@@ -42,11 +42,11 @@ void Reeemake::verboseSystem(std::string cmd)
     system(cmd.c_str());
 }
 
-// TODO: how the hell does this work on ./extension/.git ??
-// blind luck
 // something in the implementation probably
 /*! Check if a directory is annoying
 * \param dirName the directory to check
+* \todo how the hell does this work on ./extension/.git ??
+*       blind luck apparently
 */
 bool Reeemake::isAnnoyingDir(std::string dirName)
 {
@@ -161,10 +161,10 @@ void Reeemake::parseArgs(int argc, char *argv[])
 
 }
 
-// TODO: this isn't finding stuff in subdirs, but it's so badly writted idk where to even start
 /*! Check if we need to build a particular source file
 * Params similar to Reeemake::fileDataExists()
 * \param sourceFile The SourceFile to check, can be used instead of path (sort of)
+* \todo this isn't finding stuff in subdirs, but it's so badly writted idk where to even start
 */
 bool Reeemake::needToBuild(fs::path *path, std::vector<SourceFile> *fileData, std::optional<SourceFile> sourceFile)
 {
@@ -435,7 +435,7 @@ void Reeemake::build(int argc, char *argv[])
         configParser.ParseConfigFile(fs::path(configToUse), &config);
     }
 
-    // TODO: depends from config
+    //! \todo depends from config
 
     if (config.manualIncludes) { cxxSourceFiles.clear(); }
 
@@ -472,7 +472,7 @@ void Reeemake::build(int argc, char *argv[])
     
 
     // build
-    // TODO: actually make this cross-platform
+    //! \todo actually make build cross-platform
 
     // compile to objects
     

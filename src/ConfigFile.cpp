@@ -386,9 +386,9 @@ void ConfigFileParser::ParseConfigFile(fs::path file, ConfigOptions *config, int
     //
     // this is vv ugly apparently there's a better solution with
     // lambdas or smth
-    // TODO:
-    // https://stackoverflow.com/questions/650162/why-the-switch-statement-cannot-be-applied-on-strings
-    // https://stackoverflow.com/questions/16388510/evaluate-a-string-with-a-switch-in-c/
+    /*! \todo https://stackoverflow.com/questions/650162/why-the-switch-statement-cannot-be-applied-on-strings
+    *         https://stackoverflow.com/questions/16388510/evaluate-a-string-with-a-switch-in-c/
+    */
     std::unordered_map<std::string, int> map;
     for (int i=0; i<allowedCommands.size(); i++)
     {

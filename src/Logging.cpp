@@ -5,7 +5,6 @@
 */
 
 // very very simple logging
-// TODO: use fs::paths so filenames are portable
 
 // global tingz
 //! sorta obsolete but this is the file we write to
