@@ -461,7 +461,7 @@ void Reeemake::build(int argc, char *argv[])
         }
         for (auto flag : config.compilerFlags)
         {
-            buildCommand += flag;
+            buildCommand += " "+flag;
         }
 
         verboseSystem(buildCommand);
@@ -488,6 +488,16 @@ void Reeemake::build(int argc, char *argv[])
         fs::path sourceFilePath(fileDataPath.string() + "/"+file.string()+".dat");
 
         logger.info("Serializing source file "+sourceFilePath.string());
+        
+        logger.debug("Checking directory structure");
+        logger.debug(sourceFilePath.string());
+        logger.debug(sourceFilePath.parent_path().string());
+        if (!fs::exists(sourceFilePath.parent_path()))
+        {
+            logger.debug("Dir didn't exist, created it");
+            fs::create_directories(sourceFilePath.parent_path());
+        }
+
         // if the file already exists, delete it and start afresh
         if (fs::exists(sourceFilePath))
         {
