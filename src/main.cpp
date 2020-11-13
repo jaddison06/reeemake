@@ -1,5 +1,8 @@
 #include "Reeemake.h"
 
+/*! \file
+* Reeemake entrypoint
+*/
 
 int main(int argc, char *argv[])
 {

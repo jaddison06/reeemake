@@ -1,6 +1,12 @@
 #include "ConfigFile.h"
 
-// get all lines in file
+/*! \file
+* Code for config file parsing
+*/
+
+/*! get all lines in file
+* \param file The file to read
+*/
 std::string readEntireFile(fs::path file)
 {
     std::stringstream buf;
@@ -10,6 +16,12 @@ std::string readEntireFile(fs::path file)
     return buf.str();
 }
 
+/*! \brief split a string by a delimiter.
+*          temperamental, don't trust this one
+* \param string string to split
+* \param delimiter delimiter to use.
+* \return Vector of tokens
+*/
 std::vector<std::string> ConfigFileParser::splitString(std::string *string, std::string delimiter)
 {
     logger.info("Splitting string \""+*string+"\" by delimiter \""+delimiter+"\"");
@@ -40,6 +52,12 @@ std::vector<std::string> ConfigFileParser::splitString(std::string *string, std:
 
 // at this point we have a map of allowedCommands,
 // and argument count has already been checked
+/*! Parse a command from the config file
+* \param cmd The command to parse
+* \param map The map of commands to numbers
+* \param config The config to modify
+* \param level Recursion level (internal)
+*/
 void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string, int> *map, ConfigOptions *config, int level)
 {
     logger.setID(std::to_string(level));
@@ -285,6 +303,9 @@ void ConfigFileParser::ParseCommand(command *cmd, std::unordered_map<std::string
         }
 }
 
+/*! \brief Parse a command specific to some OS.
+*          Params same as ConfigFileParser::ParseCommand()
+*/
 void ConfigFileParser::osSpecificCommand(command *cmd, std::unordered_map<std::string, int> *map, ConfigOptions *config, int level)
 {
     logger.debug("Parsing OS specific command:");
@@ -307,15 +328,11 @@ void ConfigFileParser::osSpecificCommand(command *cmd, std::unordered_map<std::s
     ParseCommand(&newCmd, map, config, level + 1);
 }
 
-// what's happening is it's going down a level then coming back up and not moving on to the next
-// option
-//
-// so from binary.reee it reads import config/main.reee
-// does that
-// then tries build binary
-// but fsr the option is stuck on config/main.reee
-// so it tries to parse like build config/main.reee
-// which obviously doesn't work
+/*! Entrypoint to parse a config file
+* \param file The file to parse
+* \param config The config options to modify
+* \param level Recursion level (internal)
+*/
 void ConfigFileParser::ParseConfigFile(fs::path file, ConfigOptions *config, int level)
 {
     logger.setID(std::to_string(level));
@@ -384,6 +401,9 @@ void ConfigFileParser::ParseConfigFile(fs::path file, ConfigOptions *config, int
     }
 }
 
+/*! Check if something is a command
+* \param line The line to check
+*/
 bool ConfigFileParser::isCommand(std::string *line)
 {
     logger.debug("Checking if "+*line+" is a command");
@@ -414,6 +434,9 @@ bool ConfigFileParser::isCommand(std::string *line)
 }
 
 // what the fuck is this
+/*! Check if a string is whitespace
+* \param line The string to check
+*/
 bool ConfigFileParser::isWhitespace(std::string *line)
 {
     logger.debug("Checking if \""+*line+"\" is whitespace");

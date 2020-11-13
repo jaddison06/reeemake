@@ -1,5 +1,13 @@
 #include "SourceFile.h"
 
+/*! \file
+* Code for SourceFiles
+*/
+
+/*! Generate a serialized SourceFile
+* \param sourceFile the SourceFile to serialize
+* \return The string to write (this doesn't actually write to the file)
+*/
 std::string SourceFileSerializationUtil::SerializeSourceFile(SourceFile *sourceFile)
 {
     logger.debug("Generating serialized text");
@@ -30,6 +38,10 @@ std::string SourceFileSerializationUtil::SerializeSourceFile(SourceFile *sourceF
 
 }
 
+/*! Deserialize a SourceFile
+* \param file path to the file to deserialize
+* \param level Recursion level (internal)
+*/
 SourceFile SourceFileSerializationUtil::DeserializeSourceFile(std::string *file, int level)
 {
     logger.setSender(std::to_string(level));

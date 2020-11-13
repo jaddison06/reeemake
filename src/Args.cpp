@@ -1,5 +1,12 @@
 #include "Args.h"
 
+/*! \file
+* Code for argument parsing
+*/
+
+/*! convert a ReturnArg to a string
+* \param returnArg the ReturnArg to convert
+*/
 std::string returnArgToString(ReturnArg returnArg)
 {
     return returnArg.name + ", " + returnArg.val + "\n" +
@@ -8,6 +15,9 @@ std::string returnArgToString(ReturnArg returnArg)
     argTypeToString(returnArg.type) + "\n";
 }
 
+/*! convert an ArgType to a string
+* \param argType the ArgType to convert
+*/
 std::string argTypeToString(ArgType argType)
 {
     switch(argType)
@@ -20,6 +30,9 @@ std::string argTypeToString(ArgType argType)
     }
 }
 
+/*! check if a string is a number
+* \param arg The string to check
+*/
 bool ArgParser::isNumber(std::string arg)
 {
     logger.debug("Checking if "+arg+" is a number");
@@ -30,6 +43,9 @@ bool ArgParser::isNumber(std::string arg)
     return output;
 }
 
+/*! check if a float is a valid int
+* \param num The number to check
+*/
 bool ArgParser::isInt(float num)
 {
     logger.debug("Checking if "+std::to_string(num)+" is an int");
@@ -38,6 +54,11 @@ bool ArgParser::isInt(float num)
     return output;
 }
 
+/*! check if a string arg is of the correct type
+* \param val The string to check
+* \param type The type that the arg should be
+* \return Whether the arg is the correct type
+*/
 bool ArgParser::checkArgType(std::string val, ArgType type)
 {
     bool valid = true;
@@ -91,6 +112,11 @@ bool ArgParser::checkArgType(std::string val, ArgType type)
     return valid;
 }
 
+/*! Add a ReturnArg to an output vector, 
+* checking if the ParserOutputItem already exists
+* \param output The vector
+* \param arg The ReturnArg to add
+*/
 void ArgParser::addReturnArgToOutput(std::vector<ParserOutputItem> *output, ReturnArg *arg)
 {
     logger.info("Adding return arg to output:\n"+returnArgToString(*arg));
@@ -138,15 +164,23 @@ void ArgParser::addReturnArgToOutput(std::vector<ParserOutputItem> *output, Retu
     
 }
 
-ArgParser::ArgParser(int w, std::vector<std::string> * x, std::vector<OptionalArg *> *y, std::vector<PositionalArg *> *z, std::string u, std::string *v)
+/*! constructor
+* \param argc The argc passed to your program
+* \param argv Argv passed to your program as vector of strings
+* \param allowedOptionals Pointer to a vector of optionals you allow
+* \param allowedPositionals Pointer to a vector of positionals you allow
+* \param version The version number of your program, as a string
+* \param description The description of your program
+*/
+ArgParser::ArgParser(int argc, std::vector<std::string> * argv, std::vector<OptionalArg *> *allowedOptionals, std::vector<PositionalArg *> *allowedPositionals, std::string version, std::string *description)
 {
-    argc = w;
-    argv = x;
-    allowedOptionals = y;
-    allowedPositionals = z;
+    this->argc = argc;
+    this->argv = argv;
+    this->allowedOptionals = allowedOptionals;
+    this->allowedPositionals = allowedPositionals;
 
-    version = u;
-    description = v;
+    this->version = version;
+    this->description = description;
 
     allowedOptionals->push_back(&helpArg);
 
@@ -158,6 +192,7 @@ ArgParser::ArgParser(int w, std::vector<std::string> * x, std::vector<OptionalAr
     
 }
 
+//! Print help message and exit
 void ArgParser::printHelp()
 {
     int spacesInTab = 5;
@@ -206,7 +241,9 @@ void ArgParser::printHelp()
     exit(0);
 }
 
-
+/*! Entrypoint
+* \param output The vector to output to
+*/
 void ArgParser::ParseArgs(std::vector<ParserOutputItem> *output)
 {
     logger.info("Parsing args");

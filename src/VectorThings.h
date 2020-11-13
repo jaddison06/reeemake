@@ -2,6 +2,9 @@
 
 #include <vector>
 
+/*! \file
+* Utility functions for vectors
+*/
 
 template <class T>
 bool itemInVector(T item, const std::vector<T> *vec)

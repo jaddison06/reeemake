@@ -1,10 +1,18 @@
 #include "Reeemake.h"
 
+/*! \file
+* Code for main Reeemake stuff
+*/
+
 // file paths should not be having a trailing / please
 
 // general TODO: add lots of logging
 
 // TODO: optimise this nugget
+/*! Get all files in a directory (non-recursive)
+* \param dir The directory to search 
+* \return A vector of paths to all the files
+*/
 std::vector<fs::path> Reeemake::getFilesInDir(fs::path dir)
 {
     bool annoyingDir = isAnnoyingDir(dir.string());
@@ -24,6 +32,9 @@ std::vector<fs::path> Reeemake::getFilesInDir(fs::path dir)
     return output;
 }
 
+/*! Run a system command, also log it and print it to stdout
+* \param cmd Command to run
+*/
 void Reeemake::verboseSystem(std::string cmd)
 {
     std::cout << cmd << std::endl;
@@ -34,6 +45,9 @@ void Reeemake::verboseSystem(std::string cmd)
 // TODO: how the hell does this work on ./extension/.git ??
 // blind luck
 // something in the implementation probably
+/*! Check if a directory is annoying
+* \param dirName the directory to check
+*/
 bool Reeemake::isAnnoyingDir(std::string dirName)
 {
     //logger.debug("Checking if "+dirName+" is an annoying dir");
@@ -51,12 +65,21 @@ bool Reeemake::isAnnoyingDir(std::string dirName)
     return output;
 }
 
+/*! convert a time_t to string
+* \param time The time_t to convert
+*/
 std::string Reeemake::time_t_to_string(time_t *time)
 {
     return std::asctime(std::localtime(time));
 }
 
-// spicy itemInVector
+/*! \brief spicy itemInVector
+* Check if we have data for a particular source file
+* \param path Path to the source file
+* \param fileData Vector of all the SourceFiles we currently have data on
+* \param fileDataIndex If data exists for the file, this will be set to the index of the data in fileData
+* \return Whether the data exists or not
+*/
 bool Reeemake::fileDataExists(fs::path *path, std::vector<SourceFile> *fileData, int *fileDataIndex)
 {
     //logger.debug("Checking if file data exists for "+path->string());
@@ -77,6 +100,10 @@ bool Reeemake::fileDataExists(fs::path *path, std::vector<SourceFile> *fileData,
     return false;
 }
 
+/*! Parse args
+* \param argc The argc given to main()
+* \param argv The argv given to main()
+*/
 void Reeemake::parseArgs(int argc, char *argv[])
 {
     // parse da proverbial args
@@ -134,6 +161,11 @@ void Reeemake::parseArgs(int argc, char *argv[])
 
 }
 
+// TODO: this isn't finding stuff in subdirs, but it's so badly writted idk where to even start
+/*! Check if we need to build a particular source file
+* Params similar to Reeemake::fileDataExists()
+* \param sourceFile The SourceFile to check, can be used instead of path (sort of)
+*/
 bool Reeemake::needToBuild(fs::path *path, std::vector<SourceFile> *fileData, std::optional<SourceFile> sourceFile)
 {
     logger.info("Checking whether to build "+path->string());
@@ -191,6 +223,10 @@ bool Reeemake::needToBuild(fs::path *path, std::vector<SourceFile> *fileData, st
     }
 }
 
+/*! Get dependencies of a file
+* \param sourceFile The file to look for dependencies of
+* \param allFilesInDir All files in the directory
+*/
 std::vector<fs::path> Reeemake::getDependencies(fs::path *sourceFile, std::vector<fs::path> *allFilesInDir)
 {
     logger.debug("Getting dependencies for file "+sourceFile->string());
@@ -212,7 +248,9 @@ std::vector<fs::path> Reeemake::getDependencies(fs::path *sourceFile, std::vecto
     return dependencies;
 }
 
-
+/*! Check if a SourceFile has been modified since the last build
+* \param sourceFile The file to check
+*/
 bool Reeemake::hasBeenModified(SourceFile *sourceFile)
 {
     auto lastWriteTimeRaw = fs::last_write_time(sourceFile->path);
@@ -233,6 +271,10 @@ bool Reeemake::hasBeenModified(SourceFile *sourceFile)
     return ( difftime(lastWriteTime, lastBuildTime) > 0 );
 }
 
+/*! Generate a SourceFile from a path
+* \param file The file to generate a SourceFile of
+* \param allFilesInDir All files in the directory. Used to find dependencies
+*/
 SourceFile Reeemake::genSourceFile(fs::path *file, std::vector<fs::path> *allFilesInDir)
 {
     logger.debug("Generating a SourceFile for "+file->string());
@@ -253,7 +295,10 @@ SourceFile Reeemake::genSourceFile(fs::path *file, std::vector<fs::path> *allFil
 
     return newSourceFile;
 }
-
+/*! Reeemake entrypoint.
+* \param argc The argc passed to your program
+* \param argc The argv passed to your program
+*/
 void Reeemake::build(int argc, char *argv[])
 {
     parseArgs(argc, argv);
@@ -490,8 +535,6 @@ void Reeemake::build(int argc, char *argv[])
         logger.info("Serializing source file "+sourceFilePath.string());
         
         logger.debug("Checking directory structure");
-        logger.debug(sourceFilePath.string());
-        logger.debug(sourceFilePath.parent_path().string());
         if (!fs::exists(sourceFilePath.parent_path()))
         {
             logger.debug("Dir didn't exist, created it");

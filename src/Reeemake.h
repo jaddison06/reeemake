@@ -12,11 +12,20 @@
 #include "ConfigFile.h"
 #include "VectorThings.h"
 
+/*! \file
+* Header for main Reeemake stuff
+*/
+
+//! Reeemake version
 #define VERSION "0.25"
+
+// TODO: make this not dumbass
+//! Reeemake description
 #define DESCRIPTION "Super-Fast, Cross-Platform Build System For C++! Simple And Exciting!"
 
 namespace fs = std::filesystem;
 
+//! Main Reeemake class
 class Reeemake
 {
     public:

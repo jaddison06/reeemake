@@ -5,8 +5,13 @@
 #include <sstream>
 #include "Logging.h"
 
+/*! \file
+* Header for SourceFiles
+*/
+
 namespace fs = std::filesystem;
 
+//! a source file and all the data we need on it
 struct SourceFile
 {
     fs::path path;
@@ -14,6 +19,7 @@ struct SourceFile
     std::vector<SourceFile> dependencies;
 };
 
+//! Utility class to serialize and deserialize SourceFiles
 class SourceFileSerializationUtil
 {
     public:

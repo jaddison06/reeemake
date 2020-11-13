@@ -10,24 +10,28 @@
 #include "VectorThings.h"
 #include "Logging.h"
 
-// a comment in the config file
+/*! \file
+* Header for config file parsing
+*/
+
+//! a comment in the config file
 #define CONFIG_COMMENT std::string("#")
 
 namespace fs = std::filesystem;
 
 std::string readEntireFile(fs::path);
 
-// source file or group
-//
-// include - either include this or exclude it
+//! source file or group
 enum SourceType {file, group};
+
+//! code source(s) to be included/excluded
 struct Source {
     std::string name;
     bool include;
     SourceType type;
 };
 
-// dependency tracking - either add or remove dependency
+//! dependency tracking - either add or remove dependency
 struct Dependency
 {
     fs::path source;
@@ -35,7 +39,9 @@ struct Dependency
     bool doesDepend;
 };
 
-// initialize w/ defaults
+/*! \brief all internal config options.
+*          initialized with defaults.
+*/
 struct ConfigOptions
 {
     // my way or the highway
@@ -65,25 +71,33 @@ struct ConfigOptions
 
 };
 
+//! internal. a line (command) in the config file
 struct command
 {
     std::string command;
     std::vector<std::string> options;
 };
 
+/*! \brief template for a command. (badly named)
+*          used internally to define allowed commands
+*          if argCount is uninitialised, it's treated like infinity
+*/
 struct commandTemplate
 {
     std::string name;
     
-    // if this is uninitialised, treat it like infinity
     std::optional<int> argCount;
 };
 
+//! main parser for config files
 class ConfigFileParser
 {
     public:
         void ParseConfigFile(fs::path, ConfigOptions *, int level = 1);
 
+        /*! \brief commands currently supported
+        *          public for reference only
+        */
         const std::vector<commandTemplate> allowedCommands
         {
             // 0
@@ -193,6 +207,9 @@ class ConfigFileParser
             }
         };
 
+        /*! \brief options to output
+        *          public for reference only
+        */
         const std::vector<std::string> outputOptions
         {
             "binary",
