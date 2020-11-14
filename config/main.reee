@@ -1,3 +1,5 @@
+linux comp g++-8
+
 output reeemake
 std 17
 linux library stdc++fs

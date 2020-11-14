@@ -262,11 +262,6 @@ bool Reeemake::hasBeenModified(SourceFile *sourceFile)
     // see https://en.cppreference.com/w/cpp/filesystem/file_time_type
     //
     // if using g++>=9, don't <3
-    //
-    // FUCK
-    // NEW DISTRO OH YEAH SO COOL UP-TO-DATE PACKAGES
-    // G++ 10 OH SO COOL
-    // FUCK
     time_t lastWriteTime = decltype(lastWriteTimeRaw)::clock::to_time_t(lastWriteTimeRaw);
     
     time_t lastBuildTime = sourceFile->lastBuildTime;
