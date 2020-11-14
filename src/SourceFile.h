@@ -14,8 +14,11 @@ namespace fs = std::filesystem;
 //! a source file and all the data we need on it
 struct SourceFile
 {
+    //! path to the file
     fs::path path;
+    //! when it was last built (according to the current build profile)
     std::time_t lastBuildTime;
+    //! its dependencies. recursive until they're not.
     std::vector<SourceFile> dependencies;
 };
 

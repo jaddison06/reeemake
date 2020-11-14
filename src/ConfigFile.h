@@ -26,16 +26,22 @@ enum SourceType {file, group};
 
 //! code source(s) to be included/excluded
 struct Source {
+    //! the name of the file/group
     std::string name;
+    //! to be included or excluded?
     bool include;
+    //! file or group?
     SourceType type;
 };
 
 //! dependency tracking - either add or remove dependency
 struct Dependency
 {
+    //! the source file
     fs::path source;
+    //! the dependency
     fs::path depend;
+    //! add or remove dependency?
     bool doesDepend;
 };
 
@@ -47,45 +53,75 @@ struct ConfigOptions
     // my way or the highway
     //
     // for minGW; cygwin would use C:\cygwin64\bin\g++.exe
+    //! compiler to use
     std::string compiler = "g++";
+
+    //! libraries to include
+    //! \todo how to make this portable?
     std::vector<std::string> libraries;
+    /*! \brief standard to use. doesn't support compiler standards
+    *          eg gnu++17, only actual c++ standards.
+    */
     int cxxStandard = 17;
+    /*! \brief flags passed to the compiler AND linker. These aren't
+    *          sanitised, we trust the user to make sure they're
+    *          portable (we're probs using g++ anyway so it's fine)
+    */
     std::vector<std::string> compilerFlags;
 
+    //! type of build. See ConfigFileParser::outputOptions
     std::string build = "binary";
 
+    //! sources
     std::vector<Source> sources;
+    //! disable automatic includes?
     bool manualIncludes = false;
 
-    // not implemented yet
+    //! \todo not implemented yet
+    //! dependencies
     std::vector<Dependency> depends;
+    //! disable automatic dependency tracking?
     bool manualDepends = false;
 
+    /*! \brief commands to run after the build.
+    *          not sanitised, we trust the user
+    */
     std::vector<std::string> postBuildCommands;
+    //! stuff to define in every file, before compilation
     std::vector<std::string> defines;
+
+    //! file to output to
     std::string output;
 
+    /*! \brief should we install?
+    *          Configured at the same time as
+    *          installName
+    */
     bool isInstalling;
+    //! Application name to install to.
     std::string installName;
-
 
 };
 
 //! internal. a line (command) in the config file
 struct command
 {
+    //! the command
     std::string command;
+    //! everything on the config line after the command, split by spaces
     std::vector<std::string> options;
 };
 
 /*! \brief template for a command. (badly named)
 *          used internally to define allowed commands
-*          if argCount is uninitialised, it's treated like infinity
 */
 struct commandTemplate
 {
+    //! name of the command
     std::string name;
-    
+    /*! \brief how many args the command must have
+    *          if  uninitialised, it's treated like infinity
+    */
     std::optional<int> argCount;
 };
 

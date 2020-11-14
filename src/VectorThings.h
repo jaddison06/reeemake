@@ -6,6 +6,7 @@
 * Utility functions for vectors
 */
 
+//! Check if an item is in a vector
 template <class T>
 bool itemInVector(T item, const std::vector<T> *vec)
 {
@@ -16,10 +17,10 @@ bool itemInVector(T item, const std::vector<T> *vec)
     return false;
 }
 
-// removes all instances of a specified item from
-// a vector
-//
-// if item(s) were removed, returns true
+/*! \brief removes all instances of a specified item from
+*         a vector
+*         if item(s) were removed, returns true
+*/
 template<class T>
 bool removeItemFromVector(T item, std::vector<T> *vec)
 {

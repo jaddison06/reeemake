@@ -297,7 +297,7 @@ SourceFile Reeemake::genSourceFile(fs::path *file, std::vector<fs::path> *allFil
 }
 /*! Reeemake entrypoint.
 * \param argc The argc passed to your program
-* \param argc The argv passed to your program
+* \param argv The argv passed to your program
 */
 void Reeemake::build(int argc, char *argv[])
 {

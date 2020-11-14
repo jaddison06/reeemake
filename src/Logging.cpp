@@ -100,7 +100,7 @@ void Logger::setID(std::string someID)
 
 // wrappers for various log levels
 
-//! write a message at level debug
+//! write a message at level DEBUG
 void Logger::debug(std::string msg)
 {
     if (enableDebug)
@@ -109,16 +109,21 @@ void Logger::debug(std::string msg)
     }
 }
 
+//! write a message at level INFO
 void Logger::info(std::string msg)
 {
     writeLog("INFO", &msg);
 }
 
+//! write a message at level WARNING
 void Logger::warning(std::string msg)
 {
     writeLog("WARNING", &msg);
 }
 
+/*! \brief write a message at level ERROR,
+*          print it, and exit
+*/
 void Logger::error(std::string msg)
 {
     msg = "Error - " + msg;

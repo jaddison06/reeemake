@@ -4,6 +4,7 @@
 * Reeemake entrypoint
 */
 
+//! main
 int main(int argc, char *argv[])
 {
     // init some tings
