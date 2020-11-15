@@ -2,8 +2,8 @@ PROJECT_NAME           = "Reeemake"
 OUTPUT_DIRECTORY       = .
 
 # spicy
-JAVADOC_AUTOBRIEF      = YES
-QT_AUTOBRIEF           = YES
+JAVADOC_AUTOBRIEF      = NO
+QT_AUTOBRIEF           = NO
 
 USE_MDFILE_AS_MAINPAGE = readme.md
 

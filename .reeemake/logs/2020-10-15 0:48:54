@@ -1,0 +1,806 @@
+2020-10-15 0:48:54   DEBUG (./reeemake.main) Initialized
+
+2020-10-15 0:48:54   INFO (ArgParser) Super-Fast, Cross-Platform Build System For C++! Simple And Exciting! (version 0.25)
+
+2020-10-15 0:48:54   DEBUG (ArgParser) ArgParser created
+
+2020-10-15 0:48:54   INFO (ArgParser) Parsing args
+
+2020-10-15 0:48:54   DEBUG (ArgParser) Checking for duplicate arg names
+
+2020-10-15 0:48:54   DEBUG (ArgParser) Checking optional conf
+
+2020-10-15 0:48:54   DEBUG (ArgParser) Optional conf OK
+
+2020-10-15 0:48:54   DEBUG (ArgParser) Checking optional help
+
+2020-10-15 0:48:54   DEBUG (ArgParser) Optional help OK
+
+2020-10-15 0:48:54   DEBUG (ArgParser) Got arg ./reeemake
+
+2020-10-15 0:48:54   DEBUG (ArgParser) Is first arg - program name
+
+2020-10-15 0:48:54   DEBUG (ArgParser) Got arg -c
+
+2020-10-15 0:48:54   DEBUG (ArgParser) is optional switch
+
+2020-10-15 0:48:54   DEBUG (ArgParser) is short name
+
+2020-10-15 0:48:54   DEBUG (ArgParser) Is a valid arg
+
+2020-10-15 0:48:54   DEBUG (ArgParser) Arg takes a parameter
+
+2020-10-15 0:48:54   DEBUG (ArgParser) Got arg ./config/binary.reee
+
+2020-10-15 0:48:54   DEBUG (ArgParser) isn't a switch
+
+2020-10-15 0:48:54   DEBUG (ArgParser) is a value for an optional arg
+
+2020-10-15 0:48:54   DEBUG (ArgParser) Checking type
+
+2020-10-15 0:48:54   DEBUG (ArgParser) Type is good
+
+2020-10-15 0:48:54   INFO (ArgParser) Adding return arg to output:
+conf, ./config/binary.reee
+0 1
+string
+
+
+2020-10-15 0:48:54   DEBUG (ArgParser) Output doesn't have a ParserOutputItem for this, creating one
+
+2020-10-15 0:48:54   DEBUG (ArgParser) Checking for illegal duplicates
+
+2020-10-15 0:48:54   DEBUG (ArgParser) conf isn't allowed duplicates, checking
+
+2020-10-15 0:48:54   DEBUG (ArgParser) Argument conf didn't have any illegal duplicates
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Looking for config arg
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got arg conf
+
+2020-10-15 0:48:54   INFO (Reeemake) Config arg was supplied, using it
+
+2020-10-15 0:48:54   INFO (Reeemake) Using config ./config/binary.reee
+
+2020-10-15 0:48:54   INFO (Reeemake) Getting all files in dir .
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./reeemake.code-workspace
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./extension
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./reeemake_copy
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./.vscode
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./.git
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./config
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./reeemake
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./docs
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./readme.md
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./.reeemake
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./.github
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./src
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Found directory ./extension, searching it
+
+2020-10-15 0:48:54   INFO (Reeemake) Getting all files in dir ./extension
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./extension/package.json
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./extension/.vscode
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./extension/README.md
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./extension/.vscodeignore
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./extension/vsc-extension-quickstart.md
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./extension/.gitattributes
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./extension/language-configuration.json
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./extension/CHANGELOG.md
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./extension/syntaxes
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./extension/.gitignore
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Found directory ./.vscode, searching it
+
+2020-10-15 0:48:54   INFO (Reeemake) Getting all files in dir ./.vscode
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./.vscode/tasks.json
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./.vscode/settings.json
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Found directory ./config, searching it
+
+2020-10-15 0:48:54   INFO (Reeemake) Getting all files in dir ./config
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./config/binary.reee
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./config/buildScript.reee
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./config/main.reee
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./config/config.txt
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Found directory ./docs, searching it
+
+2020-10-15 0:48:54   INFO (Reeemake) Getting all files in dir ./docs
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./docs/conf.py
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./docs/index.rst
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./docs/Doxyfile
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./docs/clean.sh
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./docs/make.sh
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Found directory ./src, searching it
+
+2020-10-15 0:48:54   INFO (Reeemake) Getting all files in dir ./src
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./src/SourceFile.h
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./src/ConfigFile.cpp
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./src/Logging.cpp
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./src/VectorThings.h
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./src/Args.h
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./src/main.cpp
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./src/Logging.h
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./src/Reeemake.cpp
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./src/ConfigFile.h
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./src/SourceFile.cpp
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./src/Reeemake.h
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./src/Args.cpp
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Found directory ./extension/.vscode, searching it
+
+2020-10-15 0:48:54   INFO (Reeemake) Getting all files in dir ./extension/.vscode
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./extension/.vscode/launch.json
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Found directory ./extension/syntaxes, searching it
+
+2020-10-15 0:48:54   INFO (Reeemake) Getting all files in dir ./extension/syntaxes
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Got dir entry ./extension/syntaxes/reeemake.tmLanguage.json
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Found c++ source file ./src/ConfigFile.cpp
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Found c++ source file ./src/Logging.cpp
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Found c++ source file ./src/main.cpp
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Found c++ source file ./src/Reeemake.cpp
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Found c++ source file ./src/SourceFile.cpp
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Found c++ source file ./src/Args.cpp
+
+2020-10-15 0:48:54   INFO (1) Deserializing source file:
+
+(at level 1)
+
+2020-10-15 0:48:54   INFO (1) Finished deserializing (level 1)
+
+2020-10-15 0:48:54   INFO (Reeemake) configToUse is ./config/binary.reee
+
+2020-10-15 0:48:54   INFO (ConfigFileParser 1) Parsing config file ./config/binary.reee at level 1
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) got file:
+import config/main.reee
+
+build binary
+
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) Checking if import config/main.reee is a command
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) Checking if "import config/main.reee" is whitespace
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) Wasn't whitespace
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) Is a command
+
+2020-10-15 0:48:54   INFO (ConfigFileParser 1) Splitting string " config/main.reee" by delimiter " "
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) Output:
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) config/main.reee
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) Checking if  is a command
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) Checking if "" is whitespace
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) Was whitespace
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) Isn't a command
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) Checking if build binary is a command
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) Checking if "build binary" is whitespace
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) Wasn't whitespace
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) Is a command
+
+2020-10-15 0:48:54   INFO (ConfigFileParser 1) Splitting string " binary" by delimiter " "
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) Output:
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) binary
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) all commands & options:
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) import
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) config/main.reee
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) 
+
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) build
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) binary
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) 
+
+
+2020-10-15 0:48:54   INFO (ConfigFileParser 1) Parsing command import at level 1 with 1 options
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) config/main.reee
+
+2020-10-15 0:48:54   INFO (ConfigFileParser 2) Parsing config file config/main.reee at level 2
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) got file:
+linux comp g++-8
+
+output reeemake
+std 17
+linux library stdc++fs
+linux comp-flag -Wno-sign-compare
+
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Checking if linux comp g++-8 is a command
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Checking if "linux comp g++-8" is whitespace
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Wasn't whitespace
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Is a command
+
+2020-10-15 0:48:54   INFO (ConfigFileParser 2) Splitting string " comp g++-8" by delimiter " "
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Output:
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) comp
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) g++-8
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Checking if  is a command
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Checking if "" is whitespace
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Was whitespace
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Isn't a command
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Checking if output reeemake is a command
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Checking if "output reeemake" is whitespace
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Wasn't whitespace
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Is a command
+
+2020-10-15 0:48:54   INFO (ConfigFileParser 2) Splitting string " reeemake" by delimiter " "
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Output:
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) reeemake
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Checking if std 17 is a command
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Checking if "std 17" is whitespace
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Wasn't whitespace
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Is a command
+
+2020-10-15 0:48:54   INFO (ConfigFileParser 2) Splitting string " 17" by delimiter " "
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Output:
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) 17
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Checking if linux library stdc++fs is a command
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Checking if "linux library stdc++fs" is whitespace
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Wasn't whitespace
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Is a command
+
+2020-10-15 0:48:54   INFO (ConfigFileParser 2) Splitting string " library stdc++fs" by delimiter " "
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Output:
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) library
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) stdc++fs
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Checking if linux comp-flag -Wno-sign-compare is a command
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Checking if "linux comp-flag -Wno-sign-compare" is whitespace
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Wasn't whitespace
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Is a command
+
+2020-10-15 0:48:54   INFO (ConfigFileParser 2) Splitting string " comp-flag -Wno-sign-compare" by delimiter " "
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Output:
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) comp-flag
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) -Wno-sign-compare
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) all commands & options:
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) linux
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) comp
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) g++-8
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) 
+
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) output
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) reeemake
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) 
+
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) std
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) 17
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) 
+
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) linux
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) library
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) stdc++fs
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) 
+
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) linux
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) comp-flag
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) -Wno-sign-compare
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) 
+
+
+2020-10-15 0:48:54   INFO (ConfigFileParser 2) Parsing command linux at level 2 with 2 options
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) comp
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) g++-8
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Parsing OS specific command:
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) linux
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) comp
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) g++-8
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) New command: comp
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Options:
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) g++-8
+
+2020-10-15 0:48:54   INFO (ConfigFileParser 3) Parsing command comp at level 3 with 1 options
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 3) g++-8
+
+2020-10-15 0:48:54   INFO (ConfigFileParser 2) Parsing command output at level 2 with 1 options
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) reeemake
+
+2020-10-15 0:48:54   INFO (ConfigFileParser 2) Parsing command std at level 2 with 1 options
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) 17
+
+2020-10-15 0:48:54   INFO (ConfigFileParser 2) Parsing command linux at level 2 with 2 options
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) library
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) stdc++fs
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Parsing OS specific command:
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) linux
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) library
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) stdc++fs
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) New command: library
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Options:
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) stdc++fs
+
+2020-10-15 0:48:54   INFO (ConfigFileParser 3) Parsing command library at level 3 with 1 options
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 3) stdc++fs
+
+2020-10-15 0:48:54   INFO (ConfigFileParser 2) Parsing command linux at level 2 with 2 options
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) comp-flag
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) -Wno-sign-compare
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Parsing OS specific command:
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) linux
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) comp-flag
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) -Wno-sign-compare
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) New command: comp-flag
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) Options:
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 2) -Wno-sign-compare
+
+2020-10-15 0:48:54   INFO (ConfigFileParser 3) Parsing command comp-flag at level 3 with 1 options
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 3) -Wno-sign-compare
+
+2020-10-15 0:48:54   INFO (ConfigFileParser 1) Parsing command build at level 1 with 1 options
+
+2020-10-15 0:48:54   DEBUG (ConfigFileParser 1) binary
+
+2020-10-15 0:48:54   INFO (Reeemake) Checking whether to build ./src/ConfigFile.cpp
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Checking if file data exists for ./src/ConfigFile.cpp
+
+2020-10-15 0:48:54   DEBUG (Reeemake) 
+
+2020-10-15 0:48:54   DEBUG (Reeemake) This source file is new, adding it to the build list
+
+2020-10-15 0:48:54   INFO (Reeemake) Checking whether to build ./src/Logging.cpp
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Checking if file data exists for ./src/Logging.cpp
+
+2020-10-15 0:48:54   DEBUG (Reeemake) 
+
+2020-10-15 0:48:54   DEBUG (Reeemake) This source file is new, adding it to the build list
+
+2020-10-15 0:48:54   INFO (Reeemake) Checking whether to build ./src/main.cpp
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Checking if file data exists for ./src/main.cpp
+
+2020-10-15 0:48:54   DEBUG (Reeemake) 
+
+2020-10-15 0:48:54   DEBUG (Reeemake) This source file is new, adding it to the build list
+
+2020-10-15 0:48:54   INFO (Reeemake) Checking whether to build ./src/Reeemake.cpp
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Checking if file data exists for ./src/Reeemake.cpp
+
+2020-10-15 0:48:54   DEBUG (Reeemake) 
+
+2020-10-15 0:48:54   DEBUG (Reeemake) This source file is new, adding it to the build list
+
+2020-10-15 0:48:54   INFO (Reeemake) Checking whether to build ./src/SourceFile.cpp
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Checking if file data exists for ./src/SourceFile.cpp
+
+2020-10-15 0:48:54   DEBUG (Reeemake) 
+
+2020-10-15 0:48:54   DEBUG (Reeemake) This source file is new, adding it to the build list
+
+2020-10-15 0:48:54   INFO (Reeemake) Checking whether to build ./src/Args.cpp
+
+2020-10-15 0:48:54   DEBUG (Reeemake) Checking if file data exists for ./src/Args.cpp
+
+2020-10-15 0:48:54   DEBUG (Reeemake) 
+
+2020-10-15 0:48:54   DEBUG (Reeemake) This source file is new, adding it to the build list
+
+2020-10-15 0:48:54   INFO (Reeemake) Compiling objects
+
+2020-10-15 0:48:54   INFO (Reeemake) Running system command g++-8 -c ./src/ConfigFile.cpp -I . -Wall -std=c++17 -o ./.reeemake/binary//build/ConfigFile.o -Wno-sign-compare
+
+2020-10-15 0:48:54   INFO (Reeemake) Running system command g++-8 -c ./src/Logging.cpp -I . -Wall -std=c++17 -o ./.reeemake/binary//build/Logging.o -Wno-sign-compare
+
+2020-10-15 0:48:55   INFO (Reeemake) Running system command g++-8 -c ./src/main.cpp -I . -Wall -std=c++17 -o ./.reeemake/binary//build/main.o -Wno-sign-compare
+
+2020-10-15 0:48:56   INFO (Reeemake) Running system command g++-8 -c ./src/Reeemake.cpp -I . -Wall -std=c++17 -o ./.reeemake/binary//build/Reeemake.o -Wno-sign-compare
+
+2020-10-15 0:48:57   INFO (Reeemake) Running system command g++-8 -c ./src/SourceFile.cpp -I . -Wall -std=c++17 -o ./.reeemake/binary//build/SourceFile.o -Wno-sign-compare
+
+2020-10-15 0:48:58   INFO (Reeemake) Running system command g++-8 -c ./src/Args.cpp -I . -Wall -std=c++17 -o ./.reeemake/binary//build/Args.o -Wno-sign-compare
+
+2020-10-15 0:48:58   INFO (Reeemake) Building
+
+2020-10-15 0:48:58   INFO (Reeemake) Running system command g++-8 ./.reeemake/binary//build/ConfigFile.o ./.reeemake/binary//build/Logging.o ./.reeemake/binary//build/main.o ./.reeemake/binary//build/Reeemake.o ./.reeemake/binary//build/SourceFile.o ./.reeemake/binary//build/Args.o -o ./reeemake -lstdc++fs -Wno-sign-compare
+
+2020-10-15 0:48:58   INFO (Reeemake) Updating fileData
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Updating fileData for file ./src/ConfigFile.cpp
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Generating a SourceFile for ./src/ConfigFile.cpp
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Getting dependencies for file ./src/ConfigFile.cpp
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Was a dependency
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Got dependency ./src/ConfigFile.h
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Generating a SourceFile for ./src/ConfigFile.h
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Getting dependencies for file ./src/ConfigFile.h
+
+2020-10-15 0:48:58   INFO (Reeemake) Serializing source file ./.reeemake/binary//fileData/./src/ConfigFile.cpp.dat
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Checking directory structure
+
+2020-10-15 0:48:58   DEBUG (Reeemake) The .dat file already existed, removed it
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Opening file handle
+
+2020-10-15 0:48:58   DEBUG (1) Generating serialized text
+
+2020-10-15 0:48:58   DEBUG (1) Adding path
+
+2020-10-15 0:48:58   DEBUG (1) Getting lastBuildTime
+
+2020-10-15 0:48:58   DEBUG (1) Adding lastBuildTime
+
+2020-10-15 0:48:58   DEBUG (1) Adding dependencies
+
+2020-10-15 0:48:58   DEBUG (1) Adding dependency ./src/ConfigFile.h
+
+2020-10-15 0:48:58   DEBUG (1) Generating serialized text
+
+2020-10-15 0:48:58   DEBUG (1) Adding path
+
+2020-10-15 0:48:58   DEBUG (1) Getting lastBuildTime
+
+2020-10-15 0:48:58   DEBUG (1) Adding lastBuildTime
+
+2020-10-15 0:48:58   DEBUG (1) Adding dependencies
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Updating fileData for file ./src/Logging.cpp
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Generating a SourceFile for ./src/Logging.cpp
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Getting dependencies for file ./src/Logging.cpp
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Was a dependency
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Got dependency ./src/Logging.h
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Generating a SourceFile for ./src/Logging.h
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Getting dependencies for file ./src/Logging.h
+
+2020-10-15 0:48:58   INFO (Reeemake) Serializing source file ./.reeemake/binary//fileData/./src/Logging.cpp.dat
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Checking directory structure
+
+2020-10-15 0:48:58   DEBUG (Reeemake) The .dat file already existed, removed it
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Opening file handle
+
+2020-10-15 0:48:58   DEBUG (1) Generating serialized text
+
+2020-10-15 0:48:58   DEBUG (1) Adding path
+
+2020-10-15 0:48:58   DEBUG (1) Getting lastBuildTime
+
+2020-10-15 0:48:58   DEBUG (1) Adding lastBuildTime
+
+2020-10-15 0:48:58   DEBUG (1) Adding dependencies
+
+2020-10-15 0:48:58   DEBUG (1) Adding dependency ./src/Logging.h
+
+2020-10-15 0:48:58   DEBUG (1) Generating serialized text
+
+2020-10-15 0:48:58   DEBUG (1) Adding path
+
+2020-10-15 0:48:58   DEBUG (1) Getting lastBuildTime
+
+2020-10-15 0:48:58   DEBUG (1) Adding lastBuildTime
+
+2020-10-15 0:48:58   DEBUG (1) Adding dependencies
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Updating fileData for file ./src/main.cpp
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Generating a SourceFile for ./src/main.cpp
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Getting dependencies for file ./src/main.cpp
+
+2020-10-15 0:48:58   INFO (Reeemake) Serializing source file ./.reeemake/binary//fileData/./src/main.cpp.dat
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Checking directory structure
+
+2020-10-15 0:48:58   DEBUG (Reeemake) The .dat file already existed, removed it
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Opening file handle
+
+2020-10-15 0:48:58   DEBUG (1) Generating serialized text
+
+2020-10-15 0:48:58   DEBUG (1) Adding path
+
+2020-10-15 0:48:58   DEBUG (1) Getting lastBuildTime
+
+2020-10-15 0:48:58   DEBUG (1) Adding lastBuildTime
+
+2020-10-15 0:48:58   DEBUG (1) Adding dependencies
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Updating fileData for file ./src/Reeemake.cpp
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Generating a SourceFile for ./src/Reeemake.cpp
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Getting dependencies for file ./src/Reeemake.cpp
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Was a dependency
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Got dependency ./src/Reeemake.h
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Generating a SourceFile for ./src/Reeemake.h
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Getting dependencies for file ./src/Reeemake.h
+
+2020-10-15 0:48:58   INFO (Reeemake) Serializing source file ./.reeemake/binary//fileData/./src/Reeemake.cpp.dat
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Checking directory structure
+
+2020-10-15 0:48:58   DEBUG (Reeemake) The .dat file already existed, removed it
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Opening file handle
+
+2020-10-15 0:48:58   DEBUG (1) Generating serialized text
+
+2020-10-15 0:48:58   DEBUG (1) Adding path
+
+2020-10-15 0:48:58   DEBUG (1) Getting lastBuildTime
+
+2020-10-15 0:48:58   DEBUG (1) Adding lastBuildTime
+
+2020-10-15 0:48:58   DEBUG (1) Adding dependencies
+
+2020-10-15 0:48:58   DEBUG (1) Adding dependency ./src/Reeemake.h
+
+2020-10-15 0:48:58   DEBUG (1) Generating serialized text
+
+2020-10-15 0:48:58   DEBUG (1) Adding path
+
+2020-10-15 0:48:58   DEBUG (1) Getting lastBuildTime
+
+2020-10-15 0:48:58   DEBUG (1) Adding lastBuildTime
+
+2020-10-15 0:48:58   DEBUG (1) Adding dependencies
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Updating fileData for file ./src/SourceFile.cpp
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Generating a SourceFile for ./src/SourceFile.cpp
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Getting dependencies for file ./src/SourceFile.cpp
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Was a dependency
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Got dependency ./src/SourceFile.h
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Generating a SourceFile for ./src/SourceFile.h
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Getting dependencies for file ./src/SourceFile.h
+
+2020-10-15 0:48:58   INFO (Reeemake) Serializing source file ./.reeemake/binary//fileData/./src/SourceFile.cpp.dat
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Checking directory structure
+
+2020-10-15 0:48:58   DEBUG (Reeemake) The .dat file already existed, removed it
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Opening file handle
+
+2020-10-15 0:48:58   DEBUG (1) Generating serialized text
+
+2020-10-15 0:48:58   DEBUG (1) Adding path
+
+2020-10-15 0:48:58   DEBUG (1) Getting lastBuildTime
+
+2020-10-15 0:48:58   DEBUG (1) Adding lastBuildTime
+
+2020-10-15 0:48:58   DEBUG (1) Adding dependencies
+
+2020-10-15 0:48:58   DEBUG (1) Adding dependency ./src/SourceFile.h
+
+2020-10-15 0:48:58   DEBUG (1) Generating serialized text
+
+2020-10-15 0:48:58   DEBUG (1) Adding path
+
+2020-10-15 0:48:58   DEBUG (1) Getting lastBuildTime
+
+2020-10-15 0:48:58   DEBUG (1) Adding lastBuildTime
+
+2020-10-15 0:48:58   DEBUG (1) Adding dependencies
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Updating fileData for file ./src/Args.cpp
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Generating a SourceFile for ./src/Args.cpp
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Getting dependencies for file ./src/Args.cpp
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Was a dependency
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Got dependency ./src/Args.h
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Generating a SourceFile for ./src/Args.h
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Getting dependencies for file ./src/Args.h
+
+2020-10-15 0:48:58   INFO (Reeemake) Serializing source file ./.reeemake/binary//fileData/./src/Args.cpp.dat
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Checking directory structure
+
+2020-10-15 0:48:58   DEBUG (Reeemake) The .dat file already existed, removed it
+
+2020-10-15 0:48:58   DEBUG (Reeemake) Opening file handle
+
+2020-10-15 0:48:58   DEBUG (1) Generating serialized text
+
+2020-10-15 0:48:58   DEBUG (1) Adding path
+
+2020-10-15 0:48:58   DEBUG (1) Getting lastBuildTime
+
+2020-10-15 0:48:58   DEBUG (1) Adding lastBuildTime
+
+2020-10-15 0:48:58   DEBUG (1) Adding dependencies
+
+2020-10-15 0:48:58   DEBUG (1) Adding dependency ./src/Args.h
+
+2020-10-15 0:48:58   DEBUG (1) Generating serialized text
+
+2020-10-15 0:48:58   DEBUG (1) Adding path
+
+2020-10-15 0:48:58   DEBUG (1) Getting lastBuildTime
+
+2020-10-15 0:48:58   DEBUG (1) Adding lastBuildTime
+
+2020-10-15 0:48:58   DEBUG (1) Adding dependencies
+

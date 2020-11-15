@@ -75,7 +75,11 @@
 			"cinttypes": "cpp",
 			"typeindex": "cpp",
 			"typeinfo": "cpp",
-			"*.ipp": "c"
+			"*.ipp": "c",
+			"bit": "cpp",
+			"compare": "cpp",
+			"concepts": "cpp",
+			"ranges": "cpp"
 		}
 	}
 }

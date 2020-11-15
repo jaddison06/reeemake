@@ -1,0 +1,356 @@
+2020-10-15 1:0:49   DEBUG (./reeemake.main) Initialized
+
+2020-10-15 1:0:49   INFO (ArgParser) Super-Fast, Cross-Platform Build System For C++! Simple And Exciting! (version 0.25)
+
+2020-10-15 1:0:49   DEBUG (ArgParser) ArgParser created
+
+2020-10-15 1:0:49   INFO (ArgParser) Parsing args
+
+2020-10-15 1:0:49   DEBUG (ArgParser) Checking for duplicate arg names
+
+2020-10-15 1:0:49   DEBUG (ArgParser) Checking optional conf
+
+2020-10-15 1:0:49   DEBUG (ArgParser) Optional conf OK
+
+2020-10-15 1:0:49   DEBUG (ArgParser) Checking optional help
+
+2020-10-15 1:0:49   DEBUG (ArgParser) Optional help OK
+
+2020-10-15 1:0:49   DEBUG (ArgParser) Got arg ./reeemake
+
+2020-10-15 1:0:49   DEBUG (ArgParser) Is first arg - program name
+
+2020-10-15 1:0:49   DEBUG (ArgParser) Got arg -c
+
+2020-10-15 1:0:49   DEBUG (ArgParser) is optional switch
+
+2020-10-15 1:0:49   DEBUG (ArgParser) is short name
+
+2020-10-15 1:0:49   DEBUG (ArgParser) Is a valid arg
+
+2020-10-15 1:0:49   DEBUG (ArgParser) Arg takes a parameter
+
+2020-10-15 1:0:49   DEBUG (ArgParser) Got arg ./config/binary.reee
+
+2020-10-15 1:0:49   DEBUG (ArgParser) isn't a switch
+
+2020-10-15 1:0:49   DEBUG (ArgParser) is a value for an optional arg
+
+2020-10-15 1:0:49   DEBUG (ArgParser) Checking type
+
+2020-10-15 1:0:49   DEBUG (ArgParser) Type is good
+
+2020-10-15 1:0:49   INFO (ArgParser) Adding return arg to output:
+conf, ./config/binary.reee
+0 1
+string
+
+
+2020-10-15 1:0:49   DEBUG (ArgParser) Output doesn't have a ParserOutputItem for this, creating one
+
+2020-10-15 1:0:49   DEBUG (ArgParser) Checking for illegal duplicates
+
+2020-10-15 1:0:49   DEBUG (ArgParser) conf isn't allowed duplicates, checking
+
+2020-10-15 1:0:49   DEBUG (ArgParser) Argument conf didn't have any illegal duplicates
+
+2020-10-15 1:0:49   DEBUG (Reeemake) Looking for config arg
+
+2020-10-15 1:0:49   DEBUG (Reeemake) Got arg conf
+
+2020-10-15 1:0:49   INFO (Reeemake) Config arg was supplied, using it
+
+2020-10-15 1:0:49   INFO (Reeemake) Using config ./config/binary.reee
+
+2020-10-15 1:0:49   INFO (Reeemake) configToUse is ./config/binary.reee
+
+2020-10-15 1:0:49   INFO (ConfigFileParser 1) Parsing config file ./config/binary.reee at level 1
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) got file:
+import config/main.reee
+
+build binary
+
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) Checking if import config/main.reee is a command
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) Checking if "import config/main.reee" is whitespace
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) Wasn't whitespace
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) Is a command
+
+2020-10-15 1:0:49   INFO (ConfigFileParser 1) Splitting string " config/main.reee" by delimiter " "
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) Output:
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) config/main.reee
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) Checking if  is a command
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) Checking if "" is whitespace
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) Was whitespace
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) Isn't a command
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) Checking if build binary is a command
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) Checking if "build binary" is whitespace
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) Wasn't whitespace
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) Is a command
+
+2020-10-15 1:0:49   INFO (ConfigFileParser 1) Splitting string " binary" by delimiter " "
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) Output:
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) binary
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) all commands & options:
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) import
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) config/main.reee
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) 
+
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) build
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) binary
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) 
+
+
+2020-10-15 1:0:49   INFO (ConfigFileParser 1) Parsing command import at level 1 with 1 options
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) config/main.reee
+
+2020-10-15 1:0:49   INFO (ConfigFileParser 2) Parsing config file config/main.reee at level 2
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) got file:
+linux comp g++-8
+
+output reeemake
+std 17
+linux library stdc++fs
+linux comp-flag -Wno-sign-compare
+
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Checking if linux comp g++-8 is a command
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Checking if "linux comp g++-8" is whitespace
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Wasn't whitespace
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Is a command
+
+2020-10-15 1:0:49   INFO (ConfigFileParser 2) Splitting string " comp g++-8" by delimiter " "
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Output:
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) comp
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) g++-8
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Checking if  is a command
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Checking if "" is whitespace
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Was whitespace
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Isn't a command
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Checking if output reeemake is a command
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Checking if "output reeemake" is whitespace
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Wasn't whitespace
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Is a command
+
+2020-10-15 1:0:49   INFO (ConfigFileParser 2) Splitting string " reeemake" by delimiter " "
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Output:
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) reeemake
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Checking if std 17 is a command
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Checking if "std 17" is whitespace
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Wasn't whitespace
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Is a command
+
+2020-10-15 1:0:49   INFO (ConfigFileParser 2) Splitting string " 17" by delimiter " "
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Output:
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) 17
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Checking if linux library stdc++fs is a command
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Checking if "linux library stdc++fs" is whitespace
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Wasn't whitespace
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Is a command
+
+2020-10-15 1:0:49   INFO (ConfigFileParser 2) Splitting string " library stdc++fs" by delimiter " "
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Output:
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) library
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) stdc++fs
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Checking if linux comp-flag -Wno-sign-compare is a command
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Checking if "linux comp-flag -Wno-sign-compare" is whitespace
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Wasn't whitespace
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Is a command
+
+2020-10-15 1:0:49   INFO (ConfigFileParser 2) Splitting string " comp-flag -Wno-sign-compare" by delimiter " "
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Output:
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) comp-flag
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) -Wno-sign-compare
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) all commands & options:
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) linux
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) comp
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) g++-8
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) 
+
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) output
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) reeemake
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) 
+
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) std
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) 17
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) 
+
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) linux
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) library
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) stdc++fs
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) 
+
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) linux
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) comp-flag
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) -Wno-sign-compare
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) 
+
+
+2020-10-15 1:0:49   INFO (ConfigFileParser 2) Parsing command linux at level 2 with 2 options
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) comp
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) g++-8
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Parsing OS specific command:
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) linux
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) comp
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) g++-8
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) New command: comp
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Options:
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) g++-8
+
+2020-10-15 1:0:49   INFO (ConfigFileParser 3) Parsing command comp at level 3 with 1 options
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 3) g++-8
+
+2020-10-15 1:0:49   INFO (ConfigFileParser 2) Parsing command output at level 2 with 1 options
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) reeemake
+
+2020-10-15 1:0:49   INFO (ConfigFileParser 2) Parsing command std at level 2 with 1 options
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) 17
+
+2020-10-15 1:0:49   INFO (ConfigFileParser 2) Parsing command linux at level 2 with 2 options
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) library
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) stdc++fs
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Parsing OS specific command:
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) linux
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) library
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) stdc++fs
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) New command: library
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Options:
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) stdc++fs
+
+2020-10-15 1:0:49   INFO (ConfigFileParser 3) Parsing command library at level 3 with 1 options
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 3) stdc++fs
+
+2020-10-15 1:0:49   INFO (ConfigFileParser 2) Parsing command linux at level 2 with 2 options
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) comp-flag
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) -Wno-sign-compare
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Parsing OS specific command:
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) linux
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) comp-flag
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) -Wno-sign-compare
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) New command: comp-flag
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) Options:
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 2) -Wno-sign-compare
+
+2020-10-15 1:0:49   INFO (ConfigFileParser 3) Parsing command comp-flag at level 3 with 1 options
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 3) -Wno-sign-compare
+
+2020-10-15 1:0:49   INFO (ConfigFileParser 1) Parsing command build at level 1 with 1 options
+
+2020-10-15 1:0:49   DEBUG (ConfigFileParser 1) binary
+
+2020-10-15 1:0:49   INFO (Reeemake) Compiling objects
+
+2020-10-15 1:0:49   INFO (Reeemake) Updating fileData
+

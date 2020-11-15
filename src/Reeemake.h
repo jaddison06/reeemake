@@ -17,7 +17,7 @@
 */
 
 //! Reeemake version
-#define VERSION "0.25"
+#define VERSION "0.26"
 
 //! \todo make this not dumbass
 //! Reeemake description
@@ -43,6 +43,9 @@ class Reeemake
         std::vector<fs::path> getDependencies(fs::path *, std::vector<fs::path> *);
         bool hasBeenModified(SourceFile *);
         SourceFile genSourceFile(fs::path *, std::vector<fs::path> *);
+
+        bool containsDirs(std::vector<fs::path>);
+        std::vector<fs::path> getFilesInDirRecursive(fs::path);
 
         std::vector<ParserOutputItem> parsedArgs;
 

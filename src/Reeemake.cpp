@@ -79,10 +79,13 @@ std::string Reeemake::time_t_to_string(time_t *time)
 * \param fileData Vector of all the SourceFiles we currently have data on
 * \param fileDataIndex If data exists for the file, this will be set to the index of the data in fileData
 * \return Whether the data exists or not
+*
+* \todo this isn't finding stuff in subdirs
 */
 bool Reeemake::fileDataExists(fs::path *path, std::vector<SourceFile> *fileData, int *fileDataIndex)
 {
-    //logger.debug("Checking if file data exists for "+path->string());
+    logger.debug("Checking if file data exists for "+path->string());
+    //for (auto file:*fileData){logger.debug(file.path.string());}
     for (int i=0; i<fileData->size(); i++)
     {
         auto file = fileData->at(i);
@@ -164,8 +167,8 @@ void Reeemake::parseArgs(int argc, char *argv[])
 /*! Check if we need to build a particular source file
 * Params similar to Reeemake::fileDataExists()
 * \param sourceFile The SourceFile to check, can be used instead of path (sort of)
-* \todo this isn't finding stuff in subdirs, but it's so badly writted idk where to even start
 */
+// ok so fileDataExists is the actual problem here
 bool Reeemake::needToBuild(fs::path *path, std::vector<SourceFile> *fileData, std::optional<SourceFile> sourceFile)
 {
     logger.info("Checking whether to build "+path->string());
@@ -295,6 +298,58 @@ SourceFile Reeemake::genSourceFile(fs::path *file, std::vector<fs::path> *allFil
 
     return newSourceFile;
 }
+
+/*! Check if a vector of paths contains any directories
+* \param vec Vector to check
+*/
+bool Reeemake::containsDirs(std::vector<fs::path> vec)
+{
+    for (auto item : vec)
+    {
+        if (fs::is_directory(item)) { return true; }
+    }
+    return false;
+}
+
+//! Wrapper for getFilesInDir
+std::vector<fs::path> Reeemake::getFilesInDirRecursive(fs::path dir)
+{
+
+    bool annoyingDir = isAnnoyingDir(dir.string());
+    if (!annoyingDir) {logger.debug("Getting all files in dir "+dir.string());}
+    std::vector<fs::path> allFilesInDir = getFilesInDir(dir);
+    std::vector<int> entriesToRemove;
+    std::vector<fs::path> subdirs;
+
+    while (containsDirs(allFilesInDir))
+    {
+        entriesToRemove.clear();
+        subdirs.clear();
+        // spicy removeItemFromVector
+        for (int i=0; i<allFilesInDir.size(); i++)
+        {
+            auto entry = allFilesInDir.at(i);
+            if (fs::is_directory(entry))
+            {
+                if ( !annoyingDir)
+                {
+                    logger.debug("Found directory "+entry.string()+", searching it");
+                }
+                entriesToRemove.push_back(i);
+                subdirs.push_back(allFilesInDir.at(i));
+            }
+        }
+        for (auto entry:entriesToRemove) { allFilesInDir.erase(allFilesInDir.begin() + entry); }
+        for (auto subdir:subdirs)
+        {
+            std::vector<fs::path> newFiles = getFilesInDirRecursive(subdir);
+            allFilesInDir.insert(allFilesInDir.end(), newFiles.begin(), newFiles.end());
+        }
+    }
+
+    return allFilesInDir;
+}
+
 /*! Reeemake entrypoint.
 * \param argc The argc passed to your program
 * \param argv The argv passed to your program
@@ -377,28 +432,8 @@ void Reeemake::build(int argc, char *argv[])
 
     }
 
-    std::vector<fs::path> allFilesInDir;
+    std::vector<fs::path> allFilesInDir = getFilesInDirRecursive(".");
     std::vector<fs::path> cxxSourceFiles;
-
-    allFilesInDir = getFilesInDir(".");
-    std::vector<int> entriesToRemove;
-
-    // spicy removeItemFromVector
-    for (int i=0; i<allFilesInDir.size(); i++)
-    {
-        auto entry = allFilesInDir.at(i);
-        if (fs::is_directory(entry))
-        {
-            bool annoyingDir = isAnnoyingDir(entry.string());
-            if ( !annoyingDir)
-            {
-                logger.debug("Found directory "+entry.string()+", searching it");
-            }
-            entriesToRemove.push_back(i);
-            std::vector<fs::path> newFiles = getFilesInDir(allFilesInDir.at(i));
-            allFilesInDir.insert(allFilesInDir.end(), newFiles.begin(), newFiles.end());
-        }
-    }
 
     for (auto file: allFilesInDir) {
         if (file.extension() == ".cpp")
@@ -416,9 +451,9 @@ void Reeemake::build(int argc, char *argv[])
     std::vector<SourceFile> fileData;
     fs::path fileDataPath(configPath.string()+"/fileData");
     if (!fs::exists(fileDataPath)) { fs::create_directories(fileDataPath); }
-    for (auto sourceFile : fs::directory_iterator(fileDataPath))
+    for (auto sourceFile : getFilesInDirRecursive(fileDataPath))
     {
-        std::string fileString = readEntireFile(sourceFile.path());
+        std::string fileString = readEntireFile(sourceFile);
         fileData.push_back(serializationUtil.DeserializeSourceFile(&fileString));
     }
 
