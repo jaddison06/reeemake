@@ -1,0 +1,1603 @@
+2020-10-15 10:54:34   DEBUG (./reeemake.main) Initialized
+
+2020-10-15 10:54:34   INFO (ArgParser) Super-Fast, Cross-Platform Build System For C++! Simple And Exciting! (version 0.3)
+
+2020-10-15 10:54:34   DEBUG (ArgParser) ArgParser created
+
+2020-10-15 10:54:34   INFO (ArgParser) Parsing args
+
+2020-10-15 10:54:34   DEBUG (ArgParser) Checking for duplicate arg names
+
+2020-10-15 10:54:34   DEBUG (ArgParser) Checking optional conf
+
+2020-10-15 10:54:34   DEBUG (ArgParser) Optional conf OK
+
+2020-10-15 10:54:34   DEBUG (ArgParser) Checking optional help
+
+2020-10-15 10:54:34   DEBUG (ArgParser) Optional help OK
+
+2020-10-15 10:54:34   DEBUG (ArgParser) Got arg ./reeemake
+
+2020-10-15 10:54:34   DEBUG (ArgParser) Is first arg - program name
+
+2020-10-15 10:54:34   DEBUG (ArgParser) Got arg -c
+
+2020-10-15 10:54:34   DEBUG (ArgParser) is optional switch
+
+2020-10-15 10:54:34   DEBUG (ArgParser) is short name
+
+2020-10-15 10:54:34   DEBUG (ArgParser) Is a valid arg
+
+2020-10-15 10:54:34   DEBUG (ArgParser) Arg takes a parameter
+
+2020-10-15 10:54:34   DEBUG (ArgParser) Got arg ./config/binary.reee
+
+2020-10-15 10:54:34   DEBUG (ArgParser) isn't a switch
+
+2020-10-15 10:54:34   DEBUG (ArgParser) is a value for an optional arg
+
+2020-10-15 10:54:34   DEBUG (ArgParser) Checking type
+
+2020-10-15 10:54:34   DEBUG (ArgParser) Type is good
+
+2020-10-15 10:54:34   INFO (ArgParser) Adding return arg to output:
+conf, ./config/binary.reee
+0 1
+string
+
+
+2020-10-15 10:54:34   DEBUG (ArgParser) Output doesn't have a ParserOutputItem for this, creating one
+
+2020-10-15 10:54:34   DEBUG (ArgParser) Checking for illegal duplicates
+
+2020-10-15 10:54:34   DEBUG (ArgParser) conf isn't allowed duplicates, checking
+
+2020-10-15 10:54:34   DEBUG (ArgParser) Argument conf didn't have any illegal duplicates
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Looking for config arg
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got arg conf
+
+2020-10-15 10:54:34   INFO (Reeemake) Config arg was supplied, using it
+
+2020-10-15 10:54:34   INFO (Reeemake) Using config ./config/binary.reee
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Getting all files in dir .
+
+2020-10-15 10:54:34   INFO (Reeemake) Getting all files in dir .
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./reeemake.code-workspace
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./extension
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./reeemake_copy
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./.vscode
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./.git
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./config
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./reeemake
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./docs
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./readme.md
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./.reeemake
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./.github
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./src
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found directory ./extension, searching it
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found directory ./.vscode, searching it
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found directory ./.git, searching it
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found directory ./config, searching it
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found directory ./docs, searching it
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found directory ./.reeemake, searching it
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found directory ./.github, searching it
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found directory ./src, searching it
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Getting all files in dir ./extension
+
+2020-10-15 10:54:34   INFO (Reeemake) Getting all files in dir ./extension
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./extension/package.json
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./extension/.vscode
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./extension/README.md
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./extension/.vscodeignore
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./extension/vsc-extension-quickstart.md
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./extension/.gitattributes
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./extension/language-configuration.json
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./extension/CHANGELOG.md
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./extension/syntaxes
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./extension/.gitignore
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found directory ./extension/.vscode, searching it
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found directory ./extension/syntaxes, searching it
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Getting all files in dir ./extension/.vscode
+
+2020-10-15 10:54:34   INFO (Reeemake) Getting all files in dir ./extension/.vscode
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./extension/.vscode/launch.json
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Getting all files in dir ./extension/syntaxes
+
+2020-10-15 10:54:34   INFO (Reeemake) Getting all files in dir ./extension/syntaxes
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./extension/syntaxes/reeemake.tmLanguage.json
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found directory ./extension/syntaxes, searching it
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Getting all files in dir ./extension/syntaxes
+
+2020-10-15 10:54:34   INFO (Reeemake) Getting all files in dir ./extension/syntaxes
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./extension/syntaxes/reeemake.tmLanguage.json
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Getting all files in dir ./.vscode
+
+2020-10-15 10:54:34   INFO (Reeemake) Getting all files in dir ./.vscode
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./.vscode/tasks.json
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./.vscode/settings.json
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Getting all files in dir ./config
+
+2020-10-15 10:54:34   INFO (Reeemake) Getting all files in dir ./config
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./config/binary.reee
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./config/buildScript.reee
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./config/main.reee
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./config/config.txt
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Getting all files in dir ./docs
+
+2020-10-15 10:54:34   INFO (Reeemake) Getting all files in dir ./docs
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./docs/conf.py
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./docs/index.rst
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./docs/Doxyfile
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./docs/clean.sh
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./docs/make.sh
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Getting all files in dir ./src
+
+2020-10-15 10:54:34   INFO (Reeemake) Getting all files in dir ./src
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./src/SourceFile.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./src/ConfigFile.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./src/Logging.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./src/VectorThings.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./src/Args.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./src/main.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./src/Logging.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./src/Reeemake.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./src/ConfigFile.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./src/SourceFile.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./src/Reeemake.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./src/Args.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found directory ./.vscode, searching it
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found directory ./config, searching it
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Getting all files in dir ./.vscode
+
+2020-10-15 10:54:34   INFO (Reeemake) Getting all files in dir ./.vscode
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./.vscode/tasks.json
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./.vscode/settings.json
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Getting all files in dir ./config
+
+2020-10-15 10:54:34   INFO (Reeemake) Getting all files in dir ./config
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./config/binary.reee
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./config/buildScript.reee
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./config/main.reee
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./config/config.txt
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found directory ./config, searching it
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Getting all files in dir ./config
+
+2020-10-15 10:54:34   INFO (Reeemake) Getting all files in dir ./config
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./config/binary.reee
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./config/buildScript.reee
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./config/main.reee
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dir entry ./config/config.txt
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found c++ source file ./src/ConfigFile.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found c++ source file ./src/Logging.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found c++ source file ./src/main.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found c++ source file ./src/Reeemake.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found c++ source file ./src/SourceFile.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found c++ source file ./src/Args.cpp
+
+2020-10-15 10:54:34   INFO (1) Deserializing source file:
+./src/SourceFile.cpp
+1605437607
+DEPENDS START
+./src/SourceFile.h
+1605437607
+DEPENDS START
+DEPENDS END
+DEPENDS END
+
+(at level 1)
+
+2020-10-15 10:54:34   DEBUG (1) Got line ./src/SourceFile.cpp
+
+2020-10-15 10:54:34   DEBUG (1) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Outside of dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Line is path
+
+2020-10-15 10:54:34   DEBUG (1) Got line 1605437607
+
+2020-10-15 10:54:34   DEBUG (1) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Outside of dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Line is lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Got line DEPENDS START
+
+2020-10-15 10:54:34   DEBUG (1) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) At start of dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Got line ./src/SourceFile.h
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Not inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) At start of next dependency
+
+2020-10-15 10:54:34   DEBUG (1) Got line 1605437607
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) Dependency line
+
+2020-10-15 10:54:34   DEBUG (1) Got line DEPENDS START
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) Dependency line
+
+2020-10-15 10:54:34   DEBUG (1) Got line DEPENDS END
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) At end of dependency, whole thing:
+./src/SourceFile.h
+1605437607
+DEPENDS START
+DEPENDS END
+Deserializing it
+
+2020-10-15 10:54:34   INFO (2) Deserializing source file:
+./src/SourceFile.h
+1605437607
+DEPENDS START
+DEPENDS END
+(at level 2)
+
+2020-10-15 10:54:34   DEBUG (2) Got line ./src/SourceFile.h
+
+2020-10-15 10:54:34   DEBUG (2) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Outside of dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Line is path
+
+2020-10-15 10:54:34   DEBUG (2) Got line 1605437607
+
+2020-10-15 10:54:34   DEBUG (2) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Outside of dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Line is lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (2) Got line DEPENDS START
+
+2020-10-15 10:54:34   DEBUG (2) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (2) At start of dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Got line DEPENDS END
+
+2020-10-15 10:54:34   DEBUG (2) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Not inside a dependency
+
+2020-10-15 10:54:34   DEBUG (2) At end of dependencies
+
+2020-10-15 10:54:34   INFO (2) Finished deserializing (level 2)
+
+2020-10-15 10:54:34   DEBUG (1) Got line DEPENDS END
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Not inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) At end of dependencies
+
+2020-10-15 10:54:34   INFO (1) Finished deserializing (level 1)
+
+2020-10-15 10:54:34   INFO (1) Deserializing source file:
+./src/Reeemake.cpp
+1605437607
+DEPENDS START
+./src/Reeemake.h
+1605437607
+DEPENDS START
+DEPENDS END
+DEPENDS END
+
+(at level 1)
+
+2020-10-15 10:54:34   DEBUG (1) Got line ./src/Reeemake.cpp
+
+2020-10-15 10:54:34   DEBUG (1) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Outside of dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Line is path
+
+2020-10-15 10:54:34   DEBUG (1) Got line 1605437607
+
+2020-10-15 10:54:34   DEBUG (1) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Outside of dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Line is lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Got line DEPENDS START
+
+2020-10-15 10:54:34   DEBUG (1) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) At start of dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Got line ./src/Reeemake.h
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Not inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) At start of next dependency
+
+2020-10-15 10:54:34   DEBUG (1) Got line 1605437607
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) Dependency line
+
+2020-10-15 10:54:34   DEBUG (1) Got line DEPENDS START
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) Dependency line
+
+2020-10-15 10:54:34   DEBUG (1) Got line DEPENDS END
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) At end of dependency, whole thing:
+./src/Reeemake.h
+1605437607
+DEPENDS START
+DEPENDS END
+Deserializing it
+
+2020-10-15 10:54:34   INFO (2) Deserializing source file:
+./src/Reeemake.h
+1605437607
+DEPENDS START
+DEPENDS END
+(at level 2)
+
+2020-10-15 10:54:34   DEBUG (2) Got line ./src/Reeemake.h
+
+2020-10-15 10:54:34   DEBUG (2) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Outside of dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Line is path
+
+2020-10-15 10:54:34   DEBUG (2) Got line 1605437607
+
+2020-10-15 10:54:34   DEBUG (2) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Outside of dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Line is lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (2) Got line DEPENDS START
+
+2020-10-15 10:54:34   DEBUG (2) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (2) At start of dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Got line DEPENDS END
+
+2020-10-15 10:54:34   DEBUG (2) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Not inside a dependency
+
+2020-10-15 10:54:34   DEBUG (2) At end of dependencies
+
+2020-10-15 10:54:34   INFO (2) Finished deserializing (level 2)
+
+2020-10-15 10:54:34   DEBUG (1) Got line DEPENDS END
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Not inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) At end of dependencies
+
+2020-10-15 10:54:34   INFO (1) Finished deserializing (level 1)
+
+2020-10-15 10:54:34   INFO (1) Deserializing source file:
+./src/Logging.cpp
+1605437607
+DEPENDS START
+./src/Logging.h
+1605437607
+DEPENDS START
+DEPENDS END
+DEPENDS END
+
+(at level 1)
+
+2020-10-15 10:54:34   DEBUG (1) Got line ./src/Logging.cpp
+
+2020-10-15 10:54:34   DEBUG (1) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Outside of dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Line is path
+
+2020-10-15 10:54:34   DEBUG (1) Got line 1605437607
+
+2020-10-15 10:54:34   DEBUG (1) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Outside of dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Line is lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Got line DEPENDS START
+
+2020-10-15 10:54:34   DEBUG (1) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) At start of dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Got line ./src/Logging.h
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Not inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) At start of next dependency
+
+2020-10-15 10:54:34   DEBUG (1) Got line 1605437607
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) Dependency line
+
+2020-10-15 10:54:34   DEBUG (1) Got line DEPENDS START
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) Dependency line
+
+2020-10-15 10:54:34   DEBUG (1) Got line DEPENDS END
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) At end of dependency, whole thing:
+./src/Logging.h
+1605437607
+DEPENDS START
+DEPENDS END
+Deserializing it
+
+2020-10-15 10:54:34   INFO (2) Deserializing source file:
+./src/Logging.h
+1605437607
+DEPENDS START
+DEPENDS END
+(at level 2)
+
+2020-10-15 10:54:34   DEBUG (2) Got line ./src/Logging.h
+
+2020-10-15 10:54:34   DEBUG (2) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Outside of dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Line is path
+
+2020-10-15 10:54:34   DEBUG (2) Got line 1605437607
+
+2020-10-15 10:54:34   DEBUG (2) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Outside of dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Line is lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (2) Got line DEPENDS START
+
+2020-10-15 10:54:34   DEBUG (2) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (2) At start of dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Got line DEPENDS END
+
+2020-10-15 10:54:34   DEBUG (2) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Not inside a dependency
+
+2020-10-15 10:54:34   DEBUG (2) At end of dependencies
+
+2020-10-15 10:54:34   INFO (2) Finished deserializing (level 2)
+
+2020-10-15 10:54:34   DEBUG (1) Got line DEPENDS END
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Not inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) At end of dependencies
+
+2020-10-15 10:54:34   INFO (1) Finished deserializing (level 1)
+
+2020-10-15 10:54:34   INFO (1) Deserializing source file:
+./src/ConfigFile.cpp
+1605437607
+DEPENDS START
+./src/ConfigFile.h
+1605437607
+DEPENDS START
+DEPENDS END
+DEPENDS END
+
+(at level 1)
+
+2020-10-15 10:54:34   DEBUG (1) Got line ./src/ConfigFile.cpp
+
+2020-10-15 10:54:34   DEBUG (1) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Outside of dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Line is path
+
+2020-10-15 10:54:34   DEBUG (1) Got line 1605437607
+
+2020-10-15 10:54:34   DEBUG (1) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Outside of dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Line is lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Got line DEPENDS START
+
+2020-10-15 10:54:34   DEBUG (1) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) At start of dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Got line ./src/ConfigFile.h
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Not inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) At start of next dependency
+
+2020-10-15 10:54:34   DEBUG (1) Got line 1605437607
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) Dependency line
+
+2020-10-15 10:54:34   DEBUG (1) Got line DEPENDS START
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) Dependency line
+
+2020-10-15 10:54:34   DEBUG (1) Got line DEPENDS END
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) At end of dependency, whole thing:
+./src/ConfigFile.h
+1605437607
+DEPENDS START
+DEPENDS END
+Deserializing it
+
+2020-10-15 10:54:34   INFO (2) Deserializing source file:
+./src/ConfigFile.h
+1605437607
+DEPENDS START
+DEPENDS END
+(at level 2)
+
+2020-10-15 10:54:34   DEBUG (2) Got line ./src/ConfigFile.h
+
+2020-10-15 10:54:34   DEBUG (2) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Outside of dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Line is path
+
+2020-10-15 10:54:34   DEBUG (2) Got line 1605437607
+
+2020-10-15 10:54:34   DEBUG (2) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Outside of dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Line is lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (2) Got line DEPENDS START
+
+2020-10-15 10:54:34   DEBUG (2) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (2) At start of dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Got line DEPENDS END
+
+2020-10-15 10:54:34   DEBUG (2) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Not inside a dependency
+
+2020-10-15 10:54:34   DEBUG (2) At end of dependencies
+
+2020-10-15 10:54:34   INFO (2) Finished deserializing (level 2)
+
+2020-10-15 10:54:34   DEBUG (1) Got line DEPENDS END
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Not inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) At end of dependencies
+
+2020-10-15 10:54:34   INFO (1) Finished deserializing (level 1)
+
+2020-10-15 10:54:34   INFO (1) Deserializing source file:
+./src/main.cpp
+1605437607
+DEPENDS START
+DEPENDS END
+
+(at level 1)
+
+2020-10-15 10:54:34   DEBUG (1) Got line ./src/main.cpp
+
+2020-10-15 10:54:34   DEBUG (1) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Outside of dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Line is path
+
+2020-10-15 10:54:34   DEBUG (1) Got line 1605437607
+
+2020-10-15 10:54:34   DEBUG (1) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Outside of dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Line is lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Got line DEPENDS START
+
+2020-10-15 10:54:34   DEBUG (1) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) At start of dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Got line DEPENDS END
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Not inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) At end of dependencies
+
+2020-10-15 10:54:34   INFO (1) Finished deserializing (level 1)
+
+2020-10-15 10:54:34   INFO (1) Deserializing source file:
+./src/Args.cpp
+1605437607
+DEPENDS START
+./src/Args.h
+1605437607
+DEPENDS START
+DEPENDS END
+DEPENDS END
+
+(at level 1)
+
+2020-10-15 10:54:34   DEBUG (1) Got line ./src/Args.cpp
+
+2020-10-15 10:54:34   DEBUG (1) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Outside of dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Line is path
+
+2020-10-15 10:54:34   DEBUG (1) Got line 1605437607
+
+2020-10-15 10:54:34   DEBUG (1) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Outside of dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Line is lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Got line DEPENDS START
+
+2020-10-15 10:54:34   DEBUG (1) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) At start of dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Got line ./src/Args.h
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Not inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) At start of next dependency
+
+2020-10-15 10:54:34   DEBUG (1) Got line 1605437607
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) Dependency line
+
+2020-10-15 10:54:34   DEBUG (1) Got line DEPENDS START
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) Dependency line
+
+2020-10-15 10:54:34   DEBUG (1) Got line DEPENDS END
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) At end of dependency, whole thing:
+./src/Args.h
+1605437607
+DEPENDS START
+DEPENDS END
+Deserializing it
+
+2020-10-15 10:54:34   INFO (2) Deserializing source file:
+./src/Args.h
+1605437607
+DEPENDS START
+DEPENDS END
+(at level 2)
+
+2020-10-15 10:54:34   DEBUG (2) Got line ./src/Args.h
+
+2020-10-15 10:54:34   DEBUG (2) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Outside of dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Line is path
+
+2020-10-15 10:54:34   DEBUG (2) Got line 1605437607
+
+2020-10-15 10:54:34   DEBUG (2) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Outside of dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Line is lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (2) Got line DEPENDS START
+
+2020-10-15 10:54:34   DEBUG (2) Not inside dependencies
+
+2020-10-15 10:54:34   DEBUG (2) At start of dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Got line DEPENDS END
+
+2020-10-15 10:54:34   DEBUG (2) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (2) Not inside a dependency
+
+2020-10-15 10:54:34   DEBUG (2) At end of dependencies
+
+2020-10-15 10:54:34   INFO (2) Finished deserializing (level 2)
+
+2020-10-15 10:54:34   DEBUG (1) Got line DEPENDS END
+
+2020-10-15 10:54:34   DEBUG (1) Currently inside dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Not inside a dependency
+
+2020-10-15 10:54:34   DEBUG (1) At end of dependencies
+
+2020-10-15 10:54:34   INFO (1) Finished deserializing (level 1)
+
+2020-10-15 10:54:34   INFO (Reeemake) configToUse is ./config/binary.reee
+
+2020-10-15 10:54:34   INFO (ConfigFileParser 1) Parsing config file ./config/binary.reee at level 1
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) got file:
+import config/main.reee
+
+build binary
+
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) Checking if import config/main.reee is a command
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) Checking if "import config/main.reee" is whitespace
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) Wasn't whitespace
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) Is a command
+
+2020-10-15 10:54:34   INFO (ConfigFileParser 1) Splitting string " config/main.reee" by delimiter " "
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) Output:
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) config/main.reee
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) Checking if  is a command
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) Checking if "" is whitespace
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) Was whitespace
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) Isn't a command
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) Checking if build binary is a command
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) Checking if "build binary" is whitespace
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) Wasn't whitespace
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) Is a command
+
+2020-10-15 10:54:34   INFO (ConfigFileParser 1) Splitting string " binary" by delimiter " "
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) Output:
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) binary
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) all commands & options:
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) import
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) config/main.reee
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) 
+
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) build
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) binary
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) 
+
+
+2020-10-15 10:54:34   INFO (ConfigFileParser 1) Parsing command import at level 1 with 1 options
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) config/main.reee
+
+2020-10-15 10:54:34   INFO (ConfigFileParser 2) Parsing config file config/main.reee at level 2
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) got file:
+linux comp g++-8
+
+std 17
+linux library stdc++fs
+linux comp-flag -Wno-sign-compare
+
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Checking if linux comp g++-8 is a command
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Checking if "linux comp g++-8" is whitespace
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Wasn't whitespace
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Is a command
+
+2020-10-15 10:54:34   INFO (ConfigFileParser 2) Splitting string " comp g++-8" by delimiter " "
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Output:
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) comp
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) g++-8
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Checking if  is a command
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Checking if "" is whitespace
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Was whitespace
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Isn't a command
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Checking if std 17 is a command
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Checking if "std 17" is whitespace
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Wasn't whitespace
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Is a command
+
+2020-10-15 10:54:34   INFO (ConfigFileParser 2) Splitting string " 17" by delimiter " "
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Output:
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) 17
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Checking if linux library stdc++fs is a command
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Checking if "linux library stdc++fs" is whitespace
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Wasn't whitespace
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Is a command
+
+2020-10-15 10:54:34   INFO (ConfigFileParser 2) Splitting string " library stdc++fs" by delimiter " "
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Output:
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) library
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) stdc++fs
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Checking if linux comp-flag -Wno-sign-compare is a command
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Checking if "linux comp-flag -Wno-sign-compare" is whitespace
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Wasn't whitespace
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Is a command
+
+2020-10-15 10:54:34   INFO (ConfigFileParser 2) Splitting string " comp-flag -Wno-sign-compare" by delimiter " "
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Output:
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) comp-flag
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) -Wno-sign-compare
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) all commands & options:
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) linux
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) comp
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) g++-8
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) 
+
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) std
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) 17
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) 
+
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) linux
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) library
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) stdc++fs
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) 
+
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) linux
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) comp-flag
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) -Wno-sign-compare
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) 
+
+
+2020-10-15 10:54:34   INFO (ConfigFileParser 2) Parsing command linux at level 2 with 2 options
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) comp
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) g++-8
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Parsing OS specific command:
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) linux
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) comp
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) g++-8
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) New command: comp
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Options:
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) g++-8
+
+2020-10-15 10:54:34   INFO (ConfigFileParser 3) Parsing command comp at level 3 with 1 options
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 3) g++-8
+
+2020-10-15 10:54:34   INFO (ConfigFileParser 2) Parsing command std at level 2 with 1 options
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) 17
+
+2020-10-15 10:54:34   INFO (ConfigFileParser 2) Parsing command linux at level 2 with 2 options
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) library
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) stdc++fs
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Parsing OS specific command:
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) linux
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) library
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) stdc++fs
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) New command: library
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Options:
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) stdc++fs
+
+2020-10-15 10:54:34   INFO (ConfigFileParser 3) Parsing command library at level 3 with 1 options
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 3) stdc++fs
+
+2020-10-15 10:54:34   INFO (ConfigFileParser 2) Parsing command linux at level 2 with 2 options
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) comp-flag
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) -Wno-sign-compare
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Parsing OS specific command:
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) linux
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) comp-flag
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) -Wno-sign-compare
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) New command: comp-flag
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) Options:
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 2) -Wno-sign-compare
+
+2020-10-15 10:54:34   INFO (ConfigFileParser 3) Parsing command comp-flag at level 3 with 1 options
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 3) -Wno-sign-compare
+
+2020-10-15 10:54:34   INFO (ConfigFileParser 1) Parsing command build at level 1 with 1 options
+
+2020-10-15 10:54:34   DEBUG (ConfigFileParser 1) binary
+
+2020-10-15 10:54:34   INFO (Reeemake) Checking whether to build ./src/ConfigFile.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Checking if file data exists for ./src/ConfigFile.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found file data or SourceFile
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Last write time Sun Nov 15 10:48:55 2020
+
+Last build time Sun Nov 15 10:53:27 2020
+
+
+2020-10-15 10:54:34   DEBUG (Reeemake) No file change, checking dependencies
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dependency ./src/ConfigFile.h
+
+2020-10-15 10:54:34   INFO (Reeemake) Checking whether to build ./src/ConfigFile.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Checking if file data exists for ./src/ConfigFile.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found file data or SourceFile
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Last write time Sat Nov 14 21:57:40 2020
+
+Last build time Sun Nov 15 10:53:27 2020
+
+
+2020-10-15 10:54:34   DEBUG (Reeemake) No file change, checking dependencies
+
+2020-10-15 10:54:34   DEBUG (Reeemake) File hasn't been modified
+
+2020-10-15 10:54:34   DEBUG (Reeemake) No change to dependency
+
+2020-10-15 10:54:34   DEBUG (Reeemake) File hasn't been modified
+
+2020-10-15 10:54:34   INFO (Reeemake) Checking whether to build ./src/Logging.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Checking if file data exists for ./src/Logging.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found file data or SourceFile
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Last write time Sat Nov 14 21:57:40 2020
+
+Last build time Sun Nov 15 10:53:27 2020
+
+
+2020-10-15 10:54:34   DEBUG (Reeemake) No file change, checking dependencies
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dependency ./src/Logging.h
+
+2020-10-15 10:54:34   INFO (Reeemake) Checking whether to build ./src/Logging.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Checking if file data exists for ./src/Logging.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found file data or SourceFile
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Last write time Sat Nov 14 21:57:40 2020
+
+Last build time Sun Nov 15 10:53:27 2020
+
+
+2020-10-15 10:54:34   DEBUG (Reeemake) No file change, checking dependencies
+
+2020-10-15 10:54:34   DEBUG (Reeemake) File hasn't been modified
+
+2020-10-15 10:54:34   DEBUG (Reeemake) No change to dependency
+
+2020-10-15 10:54:34   DEBUG (Reeemake) File hasn't been modified
+
+2020-10-15 10:54:34   INFO (Reeemake) Checking whether to build ./src/main.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Checking if file data exists for ./src/main.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found file data or SourceFile
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Last write time Sat Nov 14 21:57:40 2020
+
+Last build time Sun Nov 15 10:53:27 2020
+
+
+2020-10-15 10:54:34   DEBUG (Reeemake) No file change, checking dependencies
+
+2020-10-15 10:54:34   DEBUG (Reeemake) File hasn't been modified
+
+2020-10-15 10:54:34   INFO (Reeemake) Checking whether to build ./src/Reeemake.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Checking if file data exists for ./src/Reeemake.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found file data or SourceFile
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Last write time Sun Nov 15 10:22:53 2020
+
+Last build time Sun Nov 15 10:53:27 2020
+
+
+2020-10-15 10:54:34   DEBUG (Reeemake) No file change, checking dependencies
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dependency ./src/Reeemake.h
+
+2020-10-15 10:54:34   INFO (Reeemake) Checking whether to build ./src/Reeemake.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Checking if file data exists for ./src/Reeemake.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found file data or SourceFile
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Last write time Sun Nov 15 10:23:18 2020
+
+Last build time Sun Nov 15 10:53:27 2020
+
+
+2020-10-15 10:54:34   DEBUG (Reeemake) No file change, checking dependencies
+
+2020-10-15 10:54:34   DEBUG (Reeemake) File hasn't been modified
+
+2020-10-15 10:54:34   DEBUG (Reeemake) No change to dependency
+
+2020-10-15 10:54:34   DEBUG (Reeemake) File hasn't been modified
+
+2020-10-15 10:54:34   INFO (Reeemake) Checking whether to build ./src/SourceFile.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Checking if file data exists for ./src/SourceFile.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found file data or SourceFile
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Last write time Sat Nov 14 21:57:40 2020
+
+Last build time Sun Nov 15 10:53:27 2020
+
+
+2020-10-15 10:54:34   DEBUG (Reeemake) No file change, checking dependencies
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dependency ./src/SourceFile.h
+
+2020-10-15 10:54:34   INFO (Reeemake) Checking whether to build ./src/SourceFile.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Checking if file data exists for ./src/SourceFile.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found file data or SourceFile
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Last write time Sat Nov 14 21:57:40 2020
+
+Last build time Sun Nov 15 10:53:27 2020
+
+
+2020-10-15 10:54:34   DEBUG (Reeemake) No file change, checking dependencies
+
+2020-10-15 10:54:34   DEBUG (Reeemake) File hasn't been modified
+
+2020-10-15 10:54:34   DEBUG (Reeemake) No change to dependency
+
+2020-10-15 10:54:34   DEBUG (Reeemake) File hasn't been modified
+
+2020-10-15 10:54:34   INFO (Reeemake) Checking whether to build ./src/Args.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Checking if file data exists for ./src/Args.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found file data or SourceFile
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Last write time Sat Nov 14 22:00:16 2020
+
+Last build time Sun Nov 15 10:53:27 2020
+
+
+2020-10-15 10:54:34   DEBUG (Reeemake) No file change, checking dependencies
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dependency ./src/Args.h
+
+2020-10-15 10:54:34   INFO (Reeemake) Checking whether to build ./src/Args.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Checking if file data exists for ./src/Args.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Found file data or SourceFile
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Last write time Sat Nov 14 21:57:40 2020
+
+Last build time Sun Nov 15 10:53:27 2020
+
+
+2020-10-15 10:54:34   DEBUG (Reeemake) No file change, checking dependencies
+
+2020-10-15 10:54:34   DEBUG (Reeemake) File hasn't been modified
+
+2020-10-15 10:54:34   DEBUG (Reeemake) No change to dependency
+
+2020-10-15 10:54:34   DEBUG (Reeemake) File hasn't been modified
+
+2020-10-15 10:54:34   INFO (Reeemake) Compiling objects
+
+2020-10-15 10:54:34   INFO (Reeemake) Updating fileData
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Updating fileData for file ./src/ConfigFile.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Generating a SourceFile for ./src/ConfigFile.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Getting dependencies for file ./src/ConfigFile.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Was a dependency
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dependency ./src/ConfigFile.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Generating a SourceFile for ./src/ConfigFile.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Getting dependencies for file ./src/ConfigFile.h
+
+2020-10-15 10:54:34   INFO (Reeemake) Serializing source file ./.reeemake/binary//fileData/./src/ConfigFile.cpp.dat
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Checking directory structure
+
+2020-10-15 10:54:34   DEBUG (Reeemake) The .dat file already existed, removed it
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Opening file handle
+
+2020-10-15 10:54:34   DEBUG (1) Generating serialized text
+
+2020-10-15 10:54:34   DEBUG (1) Adding path
+
+2020-10-15 10:54:34   DEBUG (1) Getting lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Adding lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Adding dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Adding dependency ./src/ConfigFile.h
+
+2020-10-15 10:54:34   DEBUG (1) Generating serialized text
+
+2020-10-15 10:54:34   DEBUG (1) Adding path
+
+2020-10-15 10:54:34   DEBUG (1) Getting lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Adding lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Adding dependencies
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Updating fileData for file ./src/Logging.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Generating a SourceFile for ./src/Logging.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Getting dependencies for file ./src/Logging.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Was a dependency
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dependency ./src/Logging.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Generating a SourceFile for ./src/Logging.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Getting dependencies for file ./src/Logging.h
+
+2020-10-15 10:54:34   INFO (Reeemake) Serializing source file ./.reeemake/binary//fileData/./src/Logging.cpp.dat
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Checking directory structure
+
+2020-10-15 10:54:34   DEBUG (Reeemake) The .dat file already existed, removed it
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Opening file handle
+
+2020-10-15 10:54:34   DEBUG (1) Generating serialized text
+
+2020-10-15 10:54:34   DEBUG (1) Adding path
+
+2020-10-15 10:54:34   DEBUG (1) Getting lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Adding lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Adding dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Adding dependency ./src/Logging.h
+
+2020-10-15 10:54:34   DEBUG (1) Generating serialized text
+
+2020-10-15 10:54:34   DEBUG (1) Adding path
+
+2020-10-15 10:54:34   DEBUG (1) Getting lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Adding lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Adding dependencies
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Updating fileData for file ./src/main.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Generating a SourceFile for ./src/main.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Getting dependencies for file ./src/main.cpp
+
+2020-10-15 10:54:34   INFO (Reeemake) Serializing source file ./.reeemake/binary//fileData/./src/main.cpp.dat
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Checking directory structure
+
+2020-10-15 10:54:34   DEBUG (Reeemake) The .dat file already existed, removed it
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Opening file handle
+
+2020-10-15 10:54:34   DEBUG (1) Generating serialized text
+
+2020-10-15 10:54:34   DEBUG (1) Adding path
+
+2020-10-15 10:54:34   DEBUG (1) Getting lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Adding lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Adding dependencies
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Updating fileData for file ./src/Reeemake.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Generating a SourceFile for ./src/Reeemake.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Getting dependencies for file ./src/Reeemake.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Was a dependency
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dependency ./src/Reeemake.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Generating a SourceFile for ./src/Reeemake.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Getting dependencies for file ./src/Reeemake.h
+
+2020-10-15 10:54:34   INFO (Reeemake) Serializing source file ./.reeemake/binary//fileData/./src/Reeemake.cpp.dat
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Checking directory structure
+
+2020-10-15 10:54:34   DEBUG (Reeemake) The .dat file already existed, removed it
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Opening file handle
+
+2020-10-15 10:54:34   DEBUG (1) Generating serialized text
+
+2020-10-15 10:54:34   DEBUG (1) Adding path
+
+2020-10-15 10:54:34   DEBUG (1) Getting lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Adding lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Adding dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Adding dependency ./src/Reeemake.h
+
+2020-10-15 10:54:34   DEBUG (1) Generating serialized text
+
+2020-10-15 10:54:34   DEBUG (1) Adding path
+
+2020-10-15 10:54:34   DEBUG (1) Getting lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Adding lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Adding dependencies
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Updating fileData for file ./src/SourceFile.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Generating a SourceFile for ./src/SourceFile.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Getting dependencies for file ./src/SourceFile.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Was a dependency
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dependency ./src/SourceFile.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Generating a SourceFile for ./src/SourceFile.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Getting dependencies for file ./src/SourceFile.h
+
+2020-10-15 10:54:34   INFO (Reeemake) Serializing source file ./.reeemake/binary//fileData/./src/SourceFile.cpp.dat
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Checking directory structure
+
+2020-10-15 10:54:34   DEBUG (Reeemake) The .dat file already existed, removed it
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Opening file handle
+
+2020-10-15 10:54:34   DEBUG (1) Generating serialized text
+
+2020-10-15 10:54:34   DEBUG (1) Adding path
+
+2020-10-15 10:54:34   DEBUG (1) Getting lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Adding lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Adding dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Adding dependency ./src/SourceFile.h
+
+2020-10-15 10:54:34   DEBUG (1) Generating serialized text
+
+2020-10-15 10:54:34   DEBUG (1) Adding path
+
+2020-10-15 10:54:34   DEBUG (1) Getting lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Adding lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Adding dependencies
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Updating fileData for file ./src/Args.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Generating a SourceFile for ./src/Args.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Getting dependencies for file ./src/Args.cpp
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Was a dependency
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Got dependency ./src/Args.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Generating a SourceFile for ./src/Args.h
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Getting dependencies for file ./src/Args.h
+
+2020-10-15 10:54:34   INFO (Reeemake) Serializing source file ./.reeemake/binary//fileData/./src/Args.cpp.dat
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Checking directory structure
+
+2020-10-15 10:54:34   DEBUG (Reeemake) The .dat file already existed, removed it
+
+2020-10-15 10:54:34   DEBUG (Reeemake) Opening file handle
+
+2020-10-15 10:54:34   DEBUG (1) Generating serialized text
+
+2020-10-15 10:54:34   DEBUG (1) Adding path
+
+2020-10-15 10:54:34   DEBUG (1) Getting lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Adding lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Adding dependencies
+
+2020-10-15 10:54:34   DEBUG (1) Adding dependency ./src/Args.h
+
+2020-10-15 10:54:34   DEBUG (1) Generating serialized text
+
+2020-10-15 10:54:34   DEBUG (1) Adding path
+
+2020-10-15 10:54:34   DEBUG (1) Getting lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Adding lastBuildTime
+
+2020-10-15 10:54:34   DEBUG (1) Adding dependencies
+

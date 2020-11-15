@@ -6,12 +6,9 @@
 
 // file paths should not be having a trailing / please
 
-//! \todo generally add lots of logging
-
 /*! Get all files in a directory (non-recursive)
 * \param dir The directory to search 
 * \return A vector of paths to all the files
-* \todo Optimize this nugget
 */
 std::vector<fs::path> Reeemake::getFilesInDir(fs::path dir)
 {
@@ -45,8 +42,6 @@ void Reeemake::verboseSystem(std::string cmd)
 // something in the implementation probably
 /*! Check if a directory is annoying
 * \param dirName the directory to check
-* \todo how the hell does this work on ./extension/.git ??
-*       blind luck apparently
 */
 bool Reeemake::isAnnoyingDir(std::string dirName)
 {
@@ -79,8 +74,6 @@ std::string Reeemake::time_t_to_string(time_t *time)
 * \param fileData Vector of all the SourceFiles we currently have data on
 * \param fileDataIndex If data exists for the file, this will be set to the index of the data in fileData
 * \return Whether the data exists or not
-*
-* \todo this isn't finding stuff in subdirs
 */
 bool Reeemake::fileDataExists(fs::path *path, std::vector<SourceFile> *fileData, int *fileDataIndex)
 {
