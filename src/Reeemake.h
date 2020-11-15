@@ -17,7 +17,7 @@
 */
 
 //! Reeemake version
-#define VERSION "0.26"
+#define VERSION "0.3"
 
 //! \todo make this not dumbass
 //! Reeemake description
